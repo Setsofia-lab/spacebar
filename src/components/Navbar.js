@@ -15,7 +15,7 @@ const Navbar = () => {
         </a>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <a
                 className="nav-link"
                 href="#home"
@@ -23,7 +23,7 @@ const Navbar = () => {
               >
                 HOME
               </a>
-            </li>
+            </li> */}
             <li className="nav-item">
               <a
                 className="nav-link pointer"
@@ -38,7 +38,7 @@ const Navbar = () => {
                 EVENT SPACES
               </a>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <a
                 className="nav-link"
                 href="#services"
@@ -46,7 +46,7 @@ const Navbar = () => {
               >
                 OUR SERVICES
               </a>
-            </li>
+            </li> */}
             <li className="nav-item">
               <a
                 className="nav-link"
@@ -56,7 +56,7 @@ const Navbar = () => {
                 EXPLORE
               </a>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <a
                 className="nav-link"
                 href="#contact"
@@ -64,8 +64,8 @@ const Navbar = () => {
               >
                 CONTACT
               </a>
-            </li>
-            <li className="nav-item">
+            </li> */}
+            <li className="nav-item" style={{paddingRight:"15px"}}>
               <a
                 href="#listing"
                 className="btn btn-brand"
@@ -80,6 +80,26 @@ const Navbar = () => {
                 }}
               >
                 Add listing
+              </a>
+            </li>
+            <li className="nav-item">
+              <a
+                href="#listing"
+                onClick={() => {
+                  navigate("booking");
+                }}
+                className="btn btn-brand"
+                style={{
+                  backgroundColor: "#ff5a60",
+                  color: "#fff",
+                  fontWeight: "500",
+                  fontSize: "12px",
+                  textTransform: "uppercase",
+                  padding: "12px 28px",
+                  borderRadius: "30",
+                }}
+              >
+                Sign Up
               </a>
             </li>
           </ul>

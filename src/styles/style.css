@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,300;0,500;1,600&display=swap');
 
 body {
   line-height: normal;
   color: #898fa1;
   font-size: 15px;
-  font-family: "Lato" sans-serif;
+  font-family: "Montserrat Alternates" sans-serif;
 }
 
 h1,
@@ -13,7 +13,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 1px;
   color: #11245a;
 }
@@ -67,23 +67,23 @@ section {
 
 @keyframes background-images {
   0% {
-    background: linear-gradient(hsla(0, 4%, 33%, 0.8), hsla(0, 4%, 33%, 0.8)),
+    background-image: linear-gradient(hsla(0, 4%, 33%, 0.8), hsla(0, 4%, 33%, 0.8)),
       url(../images/background2.jpg);
   }
   25% {
-    background: linear-gradient(hsla(0, 4%, 33%, 0.8), hsla(0, 4%, 33%, 0.8)),
-      url(../images/wedding.jpg);
+    background-image: linear-gradient(hsla(0, 4%, 33%, 0.8), hsla(0, 4%, 33%, 0.8)),
+      url(../images/b1.jpg);
   }
-  50% {
-    background: linear-gradient(hsla(0, 4%, 33%, 0.8), hsla(0, 4%, 33%, 0.8)),
-      url(../images/clubs.jpg);
-  }
+  /* 50% {
+    background-image: linear-gradient(hsla(0, 4%, 33%, 0.8), hsla(0, 4%, 33%, 0.8)),
+      url(../images/b2.jpg);
+  } */
   75% {
-    background: linear-gradient(hsla(0, 4%, 33%, 0.8), hsla(0, 4%, 33%, 0.8)),
-      url(../images/engagement.jpg);
+    background-image: linear-gradient(hsla(0, 4%, 33%, 0.8), hsla(0, 4%, 33%, 0.8)),
+      url(../images/b3.jpg);
   }
   100% {
-    background: linear-gradient(hsla(0, 4%, 33%, 0.8), hsla(0, 4%, 33%, 0.8)),
+    background-image: linear-gradient(hsla(0, 4%, 33%, 0.8), hsla(0, 4%, 33%, 0.8)),
       url(../images/background1.jpg);
   }
 }

@@ -1,14 +1,20 @@
 import React from "react";
+import {useNavigate} from "react-router-dom";
 
-const eventType = ({ image,type }) => {
+const EventType = ({ image, type }) => {
+  const navigate = useNavigate();
   return (
     <div className="col-lg-4 col-sm-6 p-4">
-      <div>
-        <img src={{ uri: image }} alt="" />
+      <div
+        onClick={() => {
+          navigate("space");
+        }}
+      >
+        <img src={image} alt="" style={{ borderRadius: "5px" }} />
       </div>
-      <h6>{type}</h6>
+      <h4 >{type}</h4>
     </div>
   );
 };
 
-export default eventType;
+export default EventType;

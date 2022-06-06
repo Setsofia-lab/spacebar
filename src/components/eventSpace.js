@@ -2,7 +2,6 @@ import React from "react";
 
 const EventSpace = ({
   image,
-  description,
   price,
   name,
   location,
@@ -11,16 +10,15 @@ const EventSpace = ({
   return (
     <div className="col-lg-4 col-sm-6 p-4">
       <div>
-        <img src={{ uri: image }} alt="" />
+        <img src={image} alt="" style={{borderRadius:"10px"}} />
       </div>
-      <div className="row">
-        <h5>{name}</h5> <h6>{location}</h6>
+      <div className="d-flex ">
+        <p className="h6" style={{ fontStyle: "italic ", fontSize: "20px" , marginRight:"40px" }}>{name}</p> <p className="h6" style={{ fontStyle: "italic ", fontSize: "20px" }}>{location}</p>
       </div>
-      <p style={{ fontStyle: "italic ", fontSize: "18px" }}>{price}</p>
-      <p style={{ fontStyle: "italic ", fontSize: "18px" }}>{capacity}</p>
-      <p style={{ fontStyle: "italic bold", fontSize: "20px" }}>
-        {description}{" "}
-      </p>
+      <div className="d-flex ">
+      <p style={{ fontStyle: "bold", fontSize: "18px" , marginRight:"40px"}}>{price}</p> <hr></hr>
+      <p style={{ fontStyle: "italic ", fontSize: "18px" , marginRight:"40px"}}>{capacity}</p>
+      </div>
     </div>
   );
 };

@@ -7,44 +7,54 @@ import Navbar from "../components/Navbar";
 
 const spaces = [
   {
-    name: "Pheonix",
+    name: "Pheonix Lounge ",
     price: "GHc800/hr",
     capacity: "100 heads",
     location: "Labone",
-    description: "Blah blah blah",
-    image: "https://www.istockphoto.com/photo/table-setting-for-an-event-party-or-wedding-reception-gm1177485677-328741458?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fevent-space&utm_term=event%20space%3A%3Asearch-explore-top-affiliate-outside-feed-x-v2%3Acontrol",
+    image:
+      "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+  },
+  {
+    name: "The Dome ",
+    price: "GHc800/hr",
+    capacity: "100 heads",
+    location: "East Legon",
+
+    image:
+      "https://images.unsplash.com/photo-1527359443443-84a48aec73d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+  },
+  {
+    name: "Bambam Cottage",
+    price: "GHc800/hr",
+    capacity: "100 heads",
+    location: "Labadi",
+    image:
+      "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+  },
+  {
+    name: "Mushroom Garden",
+    price: "GHc800/hr",
+    capacity: "100 heads",
+    location: "Osu",
+
+    image:
+      "https://images.unsplash.com/photo-1527359443443-84a48aec73d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
   },
   {
     name: "Pheonix",
     price: "GHc800/hr",
     capacity: "100 heads",
     location: "Labone",
-    description: "Blah blah blah",
-    image: "https://unsplash.com/photos/Ht9FPY8XLog",
+    image:
+      "https://images.unsplash.com/photo-1527359443443-84a48aec73d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
   },
   {
     name: "Pheonix",
     price: "GHc800/hr",
     capacity: "100 heads",
     location: "Labone",
-    description: "Blah blah blah",
-    image: "https://unsplash.com/photos/fIHozNWfcvs",
-  },
-  {
-    name: "Pheonix",
-    price: "GHc800/hr",
-    capacity: "100 heads",
-    location: "Labone",
-    description: "Blah blah blah",
-    image: "https://unsplash.com/photos/csK5XPO87lI",
-  },
-  {
-    name: "Pheonix",
-    price: "GHc800/hr",
-    capacity: "100 heads",
-    location: "Labone",
-    description: "Blah blah blah",
-    image: "https://unsplash.com/photos/OBXjQtturqk",
+    image:
+      "https://images.unsplash.com/photo-1543325768-b7c960228a24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
   },
 ];
 
@@ -54,51 +64,49 @@ function Space() {
     <div>
       <Navbar />
 
-      
-        <div className="container">
-          <div className="row align-items-center">
-            <div className="col-12 section-intro">
-              <div className="hline"></div>
-            </div>
-            <div className="col-lg-4">
-              <img src={require("../images/clubs.jpg")} alt="" />
-            </div>
-            <div className="col-lg-6 offset-lg-1">
-              <h2
-                style={{
-                  textAlign: "left",
-                  fontWeight: "400",
-                  paddingBottom: "2%",
-                }}
-              >
-                How Spacebar works
-              </h2>
+      <div className="container">
+        <div className="row align-items-center">
+          <div className="col-12 section-intro">
+            <div className="hline"></div>
+          </div>
+          <div className="col-lg-4">
+            <img src={require("../images/clubs.jpg")} alt="" />
+          </div>
+          <div className="col-lg-6 offset-lg-1">
+            <h2
+              style={{
+                textAlign: "left",
+                fontWeight: "400",
+                paddingBottom: "2%",
+              }}
+            >
+              How Spacebar works
+            </h2>
 
-              <h4>Find the perfect space</h4>
-              <p>
-                Browse the marketplace and tailor your search to your activity
-                needs.
-              </p>
-              <h4>Book it with ease</h4>
-              <p>
-                Once you find a perfect match, book the space and pay online
-                through our easy-to-use payment system
-              </p>
-              <h4>Meet and create memorable events</h4>
-              <p>
-                Create a memorable experience in a memorable space, and enjoy!
-              </p>
-            </div>
+            <h4>Find the perfect space</h4>
+            <p>
+              Browse the marketplace and tailor your search to your activity
+              needs.
+            </p>
+            <h4>Book it with ease</h4>
+            <p>
+              Once you find a perfect match, book the space and pay online
+              through our easy-to-use payment system
+            </p>
+            <h4>Meet and create memorable events</h4>
+            <p>
+              Create a memorable experience in a memorable space, and enjoy!
+            </p>
           </div>
         </div>
-      
+      </div>
 
       <section id="spaces">
         <div className="container">
           <div className="row">
             <div className="col-12 section-intro">
               <h2 style={{ textAlign: "center", fontWeight: "400" }}>
-                Available event spaces
+                Available event spaces nearby
               </h2>
               <div className="hline"></div>
             </div>
@@ -116,7 +124,6 @@ function Space() {
                 />
               );
             })}
-          
           </div>
         </div>
       </section>
@@ -144,7 +151,6 @@ function Space() {
             </div>
           </div>
         </div>
-        
       </section>
 
       <Footer />
