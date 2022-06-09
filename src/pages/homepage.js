@@ -7,7 +7,7 @@ import Navbar from "../components/Navbar";
 
 const eventType = [
   {
-    image: "https://ondistudio.com/wp-content/uploads/2020/05/drone1.jpg",
+    image: "https://twinlakescamp.org/wp-content/uploads/2019/02/136-e1550856143411-1024x438.jpg",
     type: "Coporate Meeting",
   },
   {
@@ -15,19 +15,19 @@ const eventType = [
     type: "Wedding",
   },
   {
-    image: "https://ondistudio.com/wp-content/uploads/2020/05/drone1.jpg",
+    image: "https://res.cloudinary.com/splacer/image/upload/e_improve,f_auto,q_auto,g_auto,c_fill,dpr_2,w_1920,h_1080/v1/production/Splaces/013518/14_q4dgeq.jpg",
     type: "Parties",
   },
   {
-    image: "https://ondistudio.com/wp-content/uploads/2020/05/drone1.jpg",
+    image: "https://flo.health/uploads/media/sulu-630x-inset/09/1229-Pregnant%20woman%20is%20opening%20a%20new%20gift%20at%20baby%20shower.jpg?v=1-0",
     type: "Baby Shower",
   },
   {
-    image: "https://ondistudio.com/wp-content/uploads/2020/05/drone1.jpg",
+    image: "https://pbblogassets.s3.amazonaws.com/uploads/2016/07/BTS-Featured1.jpg",
     type: "Shoots",
   },
   {
-    image: "https://ondistudio.com/wp-content/uploads/2020/05/drone1.jpg",
+    image: "https://images.squarespace-cdn.com/content/v1/5d842a5884f8e80274cf429d/1599360995544-3O7VZBP4W38G9VEG1FA8/funeral+venue+south+eastern+melbourne?format=500w",
     type: "Funerals",
   },
   // {
@@ -46,25 +46,27 @@ function HomePage() {
 
   return (
     <div data-bs-spy="scroll" data-bs-target="#navbar-example">
-      <section id="home">
+      <section id="home" style={{paddingTop:"0px"}}>
         <Navbar />
-
         <div className="container text-center">
           <div className="row justify-content-center">
-            <div className="col-md-10">
+            <div className="col-md-10" >
+              <div className="container" style={{backgroundColor:"hsla(0, 4%, 33%, 0.4)"}}>
               <p
                 className="text-white h1"
                 style={{
                   textAlign: "center",
                   fontWeight: "600",
-                  paddingBottom: "5%",
-                  paddingTop: "10%",
+                  paddingBottom: "0%",
+                  paddingTop: "15%",
+                 
                 }}
               >
                 Find affordable and unique event spaces for your upcoming events{" "}
               </p>
+              </div>
 
-              <div className="search-container">
+              <div className="search-container" style={{paddingTop:"6%"}}>
                 <form action="/action_page.php">
                   <input
                     type="text"
@@ -130,7 +132,9 @@ function HomePage() {
           <div className="row">
             {eventType.map((eventType) => {
               return (
-                <EventType type={eventType.type} image={eventType.image} />
+                <EventType 
+                type={eventType.type}
+                image={eventType.image} />
               );
             })}
           </div>

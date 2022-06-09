@@ -66,10 +66,7 @@ function Space() {
 
       <div className="container">
         <div className="row align-items-center">
-          <div className="col-12 section-intro">
-            <div className="hline"></div>
-          </div>
-          <div className="col-lg-4">
+          <div className="col-lg-4" style={{paddingTop:"50px"}}>
             <img src={require("../images/clubs.jpg")} alt="" />
           </div>
           <div className="col-lg-6 offset-lg-1">
