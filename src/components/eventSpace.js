@@ -4,6 +4,7 @@ import React from "react";
 const EventSpace = ({ image, price, name, location, capacity }) => {
   return (
     <div className="col-lg-4 col-sm-6 p-4">
+      <section id="book">
       <div className=" e-card">
         <div className="e-card-image">
           <img src={image} alt="" style={{ borderRadius: "10px" }} />
@@ -35,6 +36,7 @@ const EventSpace = ({ image, price, name, location, capacity }) => {
           </div>
           <button
             type="submit"
+            href="#book"
             className="btn btn-brand"
             style={{
               backgroundColor: "#fff",
@@ -53,6 +55,7 @@ const EventSpace = ({ image, price, name, location, capacity }) => {
           </button>
         </div>
       </div>
+      </section>
     </div>
   );
 };

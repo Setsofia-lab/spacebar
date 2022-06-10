@@ -4,12 +4,11 @@ import { useNavigate } from "react-router-dom";
 import Footer from "../components/footer";
 import Navbar from "../components/Navbar";
 
-
 function Listing() {
   const navigate = useNavigate();
   return (
     <div>
-    <Navbar/>
+      <Navbar />
 
       <section id="listing">
         <div className="container">
@@ -195,6 +194,7 @@ function Listing() {
             </div>
             <button
               type="submit"
+              href="#home"
               className="btn btn-brand"
               style={{
                 backgroundColor: "#ff5a60",
@@ -212,7 +212,7 @@ function Listing() {
         </div>
       </section>
 
-      <section id="listing" className="py-5">
+      <section id="list" className="py-5" >
         <div className="container py-4">
           <div className="row justify-content-center">
             <div className="col-md-6">
@@ -237,7 +237,7 @@ function Listing() {
         </div>
       </section>
 
-      <Footer/>
+      <Footer />
     </div>
   );
 }

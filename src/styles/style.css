@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,500;1,600&display=swap");
 
 body {
   line-height: normal;
   color: #898fa1;
   font-size: 15px;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .HomePageNav {
@@ -153,6 +153,9 @@ form .form-control:focus {
 #listing {
   background-color: #fff;
 }
+#list {
+  background-color: #ff5a60;
+}
 
 .footer-top {
   padding-top: 80px;
@@ -241,4 +244,3 @@ button {
 button:hover {
   border: 2px solid black;
 }
-
