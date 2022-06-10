@@ -3,7 +3,7 @@ import "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/footer";
 import Navbar from "../components/Navbar";
-import EventSpace from "../components/eventSpace";
+
 
 function Booking() {
   const navigate = useNavigate();

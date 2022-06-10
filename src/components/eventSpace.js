@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Booking from "../pages/booking";
+
 
 const EventSpace = ({ image, price, name, location, capacity }) => {
   const navigate = useNavigate();

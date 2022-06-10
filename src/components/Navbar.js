@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Listing from "../pages/listing";
+
 
 
 const Navbar = () => {
@@ -58,7 +58,6 @@ const Navbar = () => {
             </a>
 
             <a
-              href="#listing"
               onClick={() => {
                 navigate("space");
               }}
