@@ -212,7 +212,7 @@ function Listing() {
         </div>
       </section>
 
-      <section id="list" className="py-5" >
+      <section id="list" className="py-5">
         <div className="container py-4">
           <div className="row justify-content-center">
             <div className="col-md-6">

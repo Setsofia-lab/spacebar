@@ -5,10 +5,10 @@ import EventType from "../components/eventType";
 import Footer from "../components/footer";
 import Navbar from "../components/Navbar";
 
-
 const eventType = [
   {
-    image: "https://twinlakescamp.org/wp-content/uploads/2019/02/136-e1550856143411-1024x438.jpg",
+    image:
+      "https://twinlakescamp.org/wp-content/uploads/2019/02/136-e1550856143411-1024x438.jpg",
     type: "Coporate Meeting",
   },
   {
@@ -16,19 +16,23 @@ const eventType = [
     type: "Wedding",
   },
   {
-    image: "https://res.cloudinary.com/splacer/image/upload/e_improve,f_auto,q_auto,g_auto,c_fill,dpr_2,w_1920,h_1080/v1/production/Splaces/013518/14_q4dgeq.jpg",
+    image:
+      "https://res.cloudinary.com/splacer/image/upload/e_improve,f_auto,q_auto,g_auto,c_fill,dpr_2,w_1920,h_1080/v1/production/Splaces/013518/14_q4dgeq.jpg",
     type: "Parties",
   },
   {
-    image: "https://flo.health/uploads/media/sulu-630x-inset/09/1229-Pregnant%20woman%20is%20opening%20a%20new%20gift%20at%20baby%20shower.jpg?v=1-0",
+    image:
+      "https://flo.health/uploads/media/sulu-630x-inset/09/1229-Pregnant%20woman%20is%20opening%20a%20new%20gift%20at%20baby%20shower.jpg?v=1-0",
     type: "Baby Shower",
   },
   {
-    image: "https://pbblogassets.s3.amazonaws.com/uploads/2016/07/BTS-Featured1.jpg",
+    image:
+      "https://pbblogassets.s3.amazonaws.com/uploads/2016/07/BTS-Featured1.jpg",
     type: "Shoots",
   },
   {
-    image: "https://images.squarespace-cdn.com/content/v1/5d842a5884f8e80274cf429d/1599360995544-3O7VZBP4W38G9VEG1FA8/funeral+venue+south+eastern+melbourne?format=500w",
+    image:
+      "https://images.squarespace-cdn.com/content/v1/5d842a5884f8e80274cf429d/1599360995544-3O7VZBP4W38G9VEG1FA8/funeral+venue+south+eastern+melbourne?format=500w",
     type: "Funerals",
   },
   // {
@@ -47,27 +51,30 @@ function HomePage() {
 
   return (
     <div data-bs-spy="scroll" data-bs-target="#navbar-example">
-      <section id="home" style={{paddingTop:"0px"}}>
+      <section id="home" style={{ paddingTop: "0px" }}>
         <Navbar />
         <div className="container text-center">
           <div className="row justify-content-center">
-            <div className="col-md-10" >
-              <div className="container" style={{backgroundColor:"hsla(0, 4%, 33%, 0.4)"}}>
-              <p
-                className="text-white h1"
-                style={{
-                  textAlign: "center",
-                  fontWeight: "600",
-                  paddingBottom: "0%",
-                  paddingTop: "15%",
-                 
-                }}
+            <div className="col-md-10">
+              <div
+                className="container"
+                style={{ backgroundColor: "hsla(0, 4%, 33%, 0.4)" }}
               >
-                Find affordable and unique event spaces for your upcoming events{" "}
-              </p>
+                <p
+                  className="text-white h1"
+                  style={{
+                    textAlign: "center",
+                    fontWeight: "600",
+                    paddingBottom: "0%",
+                    paddingTop: "15%",
+                  }}
+                >
+                  Find affordable and unique event spaces for your upcoming
+                  events{" "}
+                </p>
               </div>
 
-              <div className="search-container" style={{paddingTop:"6%"}}>
+              <div className="search-container" style={{ paddingTop: "6%" }}>
                 <form action="/action_page.php">
                   <input
                     type="text"
@@ -85,7 +92,11 @@ function HomePage() {
                     type="date"
                     placeholder="When.."
                     // value=""
-                    style={{ width: "25%", height: "45px" , paddingRight:"15px" }}
+                    style={{
+                      width: "25%",
+                      height: "45px",
+                      paddingRight: "15px",
+                    }}
                   />
                   <button
                     type="submit"
@@ -101,7 +112,7 @@ function HomePage() {
                       textTransform: "uppercase",
                       padding: "12px 28px",
                       borderRadius: "30",
-                      height:"45px"
+                      height: "45px",
                     }}
                   >
                     Search
@@ -133,9 +144,7 @@ function HomePage() {
           <div className="row">
             {eventType.map((eventType) => {
               return (
-                <EventType 
-                type={eventType.type}
-                image={eventType.image} />
+                <EventType type={eventType.type} image={eventType.image} />
               );
             })}
           </div>
@@ -177,7 +186,7 @@ function HomePage() {
             </p>
           </div>
         </div>
-      </div> 
+      </div>
 
       <section id="explore">
         <div className="container">
@@ -209,7 +218,7 @@ function HomePage() {
                   style={{ borderRadius: "5px" }}
                 />
               </div>
-              <h4 >Osu</h4>
+              <h4>Osu</h4>
             </div>
             <div className="col-lg-4 col-sm-6 p-4">
               <div
@@ -223,7 +232,7 @@ function HomePage() {
                   style={{ borderRadius: "5px" }}
                 />
               </div>
-              <h4 >East Legon</h4>
+              <h4>East Legon</h4>
             </div>
             <div className="col-lg-4 col-sm-6 p-4">
               <div
@@ -237,7 +246,7 @@ function HomePage() {
                   style={{ borderRadius: "5px" }}
                 />
               </div>
-              <h4 >Dansoman</h4>
+              <h4>Dansoman</h4>
             </div>
             <div className="col-lg-4 col-sm-6 p-4">
               <div
@@ -251,7 +260,7 @@ function HomePage() {
                   style={{ borderRadius: "5px" }}
                 />
               </div>
-              <h4 >Labadi</h4>
+              <h4>Labadi</h4>
             </div>
             <div className="col-lg-4 col-sm-6 p-4">
               <div
@@ -265,7 +274,7 @@ function HomePage() {
                   style={{ borderRadius: "5px" }}
                 />
               </div>
-              <h4 >Tema</h4>
+              <h4>Tema</h4>
             </div>
             <div className="col-lg-4 col-sm-6 p-4">
               <div
@@ -279,7 +288,7 @@ function HomePage() {
                   style={{ borderRadius: "10px" }}
                 />
               </div>
-              <h4 >Adenta</h4>
+              <h4>Adenta</h4>
             </div>
           </div>
         </div>
@@ -345,7 +354,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section id="listing" className="py-5">
+      <section id="list" className="py-5">
         <div className="container py-4">
           <div className="row justify-content-center">
             <div className="col-md-6">

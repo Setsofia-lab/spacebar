@@ -66,7 +66,7 @@ function Space() {
 
       <div className="container">
         <div className="row align-items-center">
-          <div className="col-lg-4" style={{paddingTop:"50px"}}>
+          <div className="col-lg-4" style={{ paddingTop: "50px" }}>
             <img src={require("../images/clubs.jpg")} alt="" />
           </div>
           <div className="col-lg-6 offset-lg-1">
@@ -125,7 +125,7 @@ function Space() {
         </div>
       </section>
 
-      <section id="listing" className="py-5">
+      <section id="list" className="py-5">
         <div className="container py-4">
           <div className="row justify-content-center">
             <div className="col-md-6">
