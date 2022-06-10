@@ -5,6 +5,7 @@ import EventType from "../components/eventType";
 import Footer from "../components/footer";
 import Navbar from "../components/Navbar";
 
+
 const eventType = [
   {
     image: "https://twinlakescamp.org/wp-content/uploads/2019/02/136-e1550856143411-1024x438.jpg",

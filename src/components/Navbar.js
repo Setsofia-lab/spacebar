@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Listing from "../pages/listing";
 
 
 const Navbar = () => {
@@ -39,7 +40,9 @@ const Navbar = () => {
           </ul>
           <div className="ButtonHolder">
             <a
-              href="#listing"
+              onClick={() => {
+                navigate("listing");
+              }}
               className="btn btn-brand"
               style={{
                 backgroundColor: "#ff5a60",

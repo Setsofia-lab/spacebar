@@ -4,13 +4,14 @@ import { useNavigate } from "react-router-dom";
 import Footer from "../components/footer";
 import Navbar from "../components/Navbar";
 
+
 function Listing() {
   const navigate = useNavigate();
   return (
     <div>
     <Navbar/>
 
-      <section>
+      <section id="listing">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-12 section-intro">
