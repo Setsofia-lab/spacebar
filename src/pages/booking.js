@@ -96,7 +96,7 @@ function Booking() {
                           type="text"
                           id="name"
                           name="name"
-                          placeholder="Name"
+                          placeholder="Sam Spacebar"
                           pattern="[A-Z\sa-z]{3,50}"
                           required
                         />
@@ -106,7 +106,7 @@ function Booking() {
                           type="email"
                           id="email"
                           name="email"
-                          placeholder="name@email.com"
+                          placeholder="sam@spacebar.com"
                           required
                         />
                       </div>
@@ -115,7 +115,7 @@ function Booking() {
                           type="tel"
                           id="phone"
                           name="phone"
-                          placeholder="000-000-0000"
+                          placeholder="050-136-9080"
                           pattern="(\d{3})-?\s?(\d{3})-?\s?(\d{4})"
                           required
                         />

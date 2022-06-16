@@ -64,7 +64,7 @@ function Listing() {
                 type="text"
                 id="name"
                 name="name"
-                placeholder="Name"
+                placeholder="Samuel Setsofia"
                 pattern="[A-Z\sa-z]{3,50}"
                 required
               />
@@ -74,7 +74,7 @@ function Listing() {
                 type="email"
                 id="email"
                 name="email"
-                placeholder="name@email.com"
+                placeholder="samuel@email.com"
                 required
               />
             </div>
@@ -83,7 +83,7 @@ function Listing() {
                 type="tel"
                 id="phone"
                 name="phone"
-                placeholder="000-000-0000"
+                placeholder="025-068-8900"
                 pattern="(\d{3})-?\s?(\d{3})-?\s?(\d{4})"
                 required
               />
@@ -110,7 +110,7 @@ function Listing() {
                 type="number"
                 id="attendance"
                 name="total_attendance"
-                placeholder="e.g 100"
+                placeholder=" 100"
                 min="10"
                 required
               />
@@ -121,7 +121,7 @@ function Listing() {
                 type="number"
                 id="rate"
                 name="rate"
-                placeholder="e.g GHS 250"
+                placeholder=" GHS 250"
                 required
               />
             </div>
@@ -139,7 +139,7 @@ function Listing() {
               <textarea
                 id="amenities"
                 name="amenities"
-                placeholder="What amenities does your space provide"
+                placeholder="Washroom,CCTV,BBQ,"
                 required
               ></textarea>
             </div>
@@ -148,7 +148,12 @@ function Listing() {
               <textarea
                 id="message"
                 name="visitor_message"
-                placeholder="Tell us anything else that might be important."
+                placeholder=" This studio was created out of our passion for visual arts
+                and with a mission to support contemporary talent. We
+                understand your needs, and are here to help you to create
+                your dreams. We can offer creative set designs and all
+                lighting and grip demands of the most talented and demanding
+                of creatives. One of New York oldest prop-house is 10 ft"
                 required
               ></textarea>
             </div>

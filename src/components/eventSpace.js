@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-
 const EventSpace = ({ image, price, name, location, capacity }) => {
   const navigate = useNavigate();
   return (
@@ -38,11 +37,11 @@ const EventSpace = ({ image, price, name, location, capacity }) => {
             </div>
             <div
               onClick={() => {
-                navigate("booking");
+                navigate("/booking");
               }}
             >
               <button
-                href="#booking"
+                href="/booking"
                 className="btn btn-brand"
                 style={{
                   backgroundColor: "#fff",
