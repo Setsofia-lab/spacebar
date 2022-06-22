@@ -115,7 +115,7 @@ function Booking() {
                           type="tel"
                           id="phone"
                           name="phone"
-                          placeholder="050-136-9080"
+                          placeholder="000-000-0000"
                           pattern="(\d{3})-?\s?(\d{3})-?\s?(\d{4})"
                           required
                         />

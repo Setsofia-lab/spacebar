@@ -7,6 +7,8 @@ import Space from "./pages/spaces";
 import "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/style.css";
+import Signup from "./pages/signup";
+import Blog from "./pages/signup";
 
 const App = () => {
   return (
@@ -17,6 +19,8 @@ const App = () => {
         <Route path="/booking" element={<Booking />} />
         <Route path="/listing" element={<Listing />} />
         <Route path="/space" element={<Space />} />
+        <Route path="/signup" element={<Signup/>} />
+        <Route path="/blog" element={<Blog/>} />
       </Routes>
     </HashRouter>
   );
