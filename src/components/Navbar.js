@@ -59,7 +59,7 @@ const Navbar = () => {
 
             <a
               onClick={() => {
-                navigate("space");
+                navigate("signup");
               }}
               className="btn btn-brand"
               style={{
