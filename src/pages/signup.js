@@ -75,67 +75,65 @@ function Signup() {
     <div>
       <section id="signup">
         <Navbar />
+        <div className="d-flex container justify-content-center">
+          <div
+            className="form"
+            // style  ={{ paddingRight: "20%", paddingLeft: "20%" }}
+          >
+            <div>
+              <h1>Sign Up</h1>
+            </div>
 
-        <div
-          className="form"
-          style={{ paddingRight: "20%", paddingLeft: "20%" }}
-        >
-          <div>
-            <h1>Sign Up</h1>
+            {/* Calling to the methods */}
+            <div className="messages">
+              {errorMessage()}
+              {successMessage()}
+            </div>
+
+            <form>
+              <label className="label">Name</label>
+              <input
+                onChange={handleName}
+                className="input"
+                value={name}
+                type="text"
+              />
+
+              <label className="label">Email</label>
+              <input
+                onChange={handleEmail}
+                className="input"
+                value={email}
+                type="email"
+              />
+
+              <label className="label">Password</label>
+              <input
+                onChange={handlePassword}
+                className="input"
+                value={password}
+                type="password"
+              />
+
+              <button
+                onClick={handleSubmit}
+                className="btn"
+                type="submit"
+                style={{
+                  backgroundColor: "#ff5a60",
+                  color: "#fff",
+                  fontWeight: "500",
+                  fontSize: "12px",
+                  textTransform: "uppercase",
+                  padding: "12px 28px",
+                  borderRadius: "30",
+                  width: "40%",
+                }}
+              >
+                Sign Up
+              </button>
+            </form>
           </div>
-
-          {/* Calling to the methods */}
-          <div className="messages">
-            {errorMessage()}
-            {successMessage()}
-          </div>
-
-          <form>
-            <label className="label" >Name</label>
-            <input
-              onChange={handleName}
-              className="input"
-              value={name}
-              type="text"
-              style={{ width: "40%" }}
-            />
-
-            <label className="label">Email</label>
-            <input
-              onChange={handleEmail}
-              className="input"
-              value={email}
-              type="email"
-              style={{ width: "40%" }}
-            />
-
-            <label className="label">Password</label>
-            <input
-              onChange={handlePassword}
-              className="input"
-              value={password}
-              type="password"
-              style={{ width: "40%" }}
-            />
-
-            <button
-              onClick={handleSubmit}
-              className="btn"
-              type="submit"
-              style={{
-                backgroundColor: "#ff5a60",
-                color: "#fff",
-                fontWeight: "500",
-                fontSize: "12px",
-                textTransform: "uppercase",
-                padding: "12px 28px",
-                borderRadius: "30",
-                width: "40%",
-              }}
-            >
-              Sign Up
-            </button>
-          </form>
         </div>
       </section>
 

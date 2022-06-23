@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
 
 body {
   line-height: normal;
   color: #898fa1;
   font-size: 15px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .HomePageNav {
@@ -247,23 +247,21 @@ button:hover {
 
 .App {
   text-align: center;
-  background-color:green;
-  }
-  
-  .label{
+}
+
+.label {
   display: block;
   font-size: larger;
   color: black;
   padding: 5px;
-  }
-  
-  .input{
+}
+
+.input {
   font-size: larger;
   padding: 5px;
   margin: 2px;
-  
-  }
-  .btn{
+}
+.btn {
   color: white;
   /* background-color: red; */
   border-radius: 5px;
@@ -271,28 +269,27 @@ button:hover {
   display: block;
   padding: 5px;
   margin: 10px auto;
-  }
-  
-  .messages{
+}
+
+.messages {
   display: flex;
   justify-content: center;
-  }
-  
-  .error{
+}
+
+.error {
   display: block;
-  background-color: red;
+  /* background-color: red; */
   color: white;
   width: fit-content;
   height: 50px;
   padding: 5px;
-  }
-  
-  .success{
+}
+
+.success {
   display: block;
-  background-color: lightblue;
+  /* background-color: lightblue; */
   color: black;
   width: fit-content;
   height: 50px;
   padding: 5px;
-  }
-  
+}

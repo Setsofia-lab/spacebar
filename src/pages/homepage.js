@@ -58,7 +58,7 @@ function HomePage() {
             <div className="col-md-10">
               <div
                 className="container"
-                style={{ backgroundColor: "hsla(0, 4%, 33%, 0.4)" }}
+                style={{ backgroundColor: "hsla(0, 4%, 20%, 0.4)" }}
               >
                 <p
                   className="text-white h1"

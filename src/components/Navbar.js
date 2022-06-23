@@ -1,8 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-
-
 const Navbar = () => {
   const navigate = useNavigate();
   return (
@@ -11,13 +9,28 @@ const Navbar = () => {
         <a
           className="navbar-brand"
           href="#"
-          style={{ color: "#ff5a60", fontWeight: "700" , fontSize:"32px" }}
+          style={{ color: "#ff5a60", fontWeight: "700", fontSize: "32px" }}
         >
           spacebar
         </a>
-        
-        <div className="collapse navbar-collapse" id="navbarSupportedContent" style={{paddingLeft:"30%"}}>
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          className="collapse navbar-collapse"
+          id="navbarSupportedContent"
+          style={{ paddingLeft: "30%" }}
+        >
+          <ul className="navbar-nav mr-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <a className="nav-link active" aria-current="page" href="#space">
                 EVENT SPACES
@@ -33,7 +46,14 @@ const Navbar = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#footer">
+              <a
+                className="nav-link active"
+                aria-current="page"
+                href="#blog"
+                // onClick={() => {
+                //   navigate("blog");
+                // }}
+              >
                 BLOG
               </a>
             </li>

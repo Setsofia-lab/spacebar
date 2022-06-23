@@ -8,7 +8,7 @@ import "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/style.css";
 import Signup from "./pages/signup";
-import Blog from "./pages/signup";
+import Blog from "./pages/blog";
 
 const App = () => {
   return (
