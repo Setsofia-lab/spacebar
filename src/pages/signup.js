@@ -127,7 +127,7 @@ function Signup() {
                   textTransform: "uppercase",
                   padding: "12px 28px",
                   borderRadius: "30",
-                  width: "40%",
+                  width: "100%",
                 }}
               >
                 Sign Up

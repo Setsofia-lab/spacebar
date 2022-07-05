@@ -1,69 +1,32 @@
 import React from "react";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
 import { useNavigate } from "react-router-dom";
 
-const Navbar = () => {
+export default () => {
   const navigate = useNavigate();
   return (
-    <div className="navbar navbar-expand-lg navbar-light bg-light">
-      <div className="container-fluid">
-        <a
-          className="navbar-brand"
-          href="#"
-          style={{ color: "#ff5a60", fontWeight: "700", fontSize: "32px" }}
-        >
+    <Navbar bg="light" expand="lg">
+      <Container>
+        <Navbar.Brand href="/" style={{ color: "#ff5a60", fontSize: "36px" }}>
           spacebar
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ms-auto" style={{ alignItems: "center" }}>
+            <Nav.Link href="/space">Event Spaces</Nav.Link>
+            <Nav.Link href="/explore">Explore</Nav.Link>
+            <NavDropdown title="Blog" id="basic-nav-dropdown">
+              <NavDropdown.Item href="/blog">Blog</NavDropdown.Item>
+              <NavDropdown.Item href="/contact">Contact Us</NavDropdown.Item>
+              <NavDropdown.Item href="">Spacebar Moments</NavDropdown.Item>
+            </NavDropdown>
 
-        <div
-          className="collapse navbar-collapse"
-          id="navbarSupportedContent"
-          style={{ paddingLeft: "30%" }}
-        >
-          <ul className="navbar-nav mr-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#space">
-                EVENT SPACES
-              </a>
-            </li>
-            <li className="nav-item">
-              <a
-                className="nav-link active"
-                aria-current="page"
-                href="#explore"
-              >
-                EXPLORE
-              </a>
-            </li>
-            <li className="nav-item">
-              <a
-                className="nav-link active"
-                aria-current="page"
-                href="#blog"
-                // onClick={() => {
-                //   navigate("blog");
-                // }}
-              >
-                BLOG
-              </a>
-            </li>
-          </ul>
-          <div className="ButtonHolder">
-            <a
-              onClick={() => {
-                navigate("listing");
-              }}
+            <button
               className="btn btn-brand"
+              onClick={() => navigate("/listing")}
               style={{
                 backgroundColor: "#ff5a60",
                 color: "#fff",
@@ -74,14 +37,12 @@ const Navbar = () => {
                 borderRadius: "30",
               }}
             >
-              Add listing
-            </a>
+              Add Listing
+            </button>
 
-            <a
-              onClick={() => {
-                navigate("signup");
-              }}
+            <button
               className="btn btn-brand"
+              onClick={() => navigate("/signup")}
               style={{
                 backgroundColor: "#ff5a60",
                 color: "#fff",
@@ -90,92 +51,14 @@ const Navbar = () => {
                 textTransform: "uppercase",
                 padding: "12px 28px",
                 borderRadius: "30",
+                marginLeft: "10px",
               }}
             >
               Sign Up
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+            </button>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 };
-
-export default Navbar;
-
-{
-  /* <div className=ame="HomePageNav">
-      <div className=ame="SpacebarHeaderLogo">
-        {" "}
-        <a
-          className=ame="navbar-brand logo-text"
-          href="#"
-          style={{ color: "#ff5a60", fontWeight: "700" }}
-        >
-          spacebar
-        </a>
-      </div>
-      <div className=ame="HeaderOption">
-      <a
-          className=ame="nav-link pointer"
-          onClick={() => {
-            navigate("space");
-          }}
-          style={{ color: "#ff5a60", fontWeight: "bold" }}
-        >
-          EVENT SPACES
-        </a>
-        <a
-          className=ame="nav-link pointer"
-          href="#explore"
-          style={{ color: "#ff5a60", fontWeight: "bold" }}
-        >
-          EXPLORE
-        </a>
-        <a
-          className=ame="nav-link pointer"
-          href="#"
-          style={{ color: "#ff5a60", fontWeight: "bold" }}
-        >
-          BLOG
-        </a>
-      </div>
-      <div className=ame="ButtonHolder">
-        <a
-          href="#listing"
-          className=ame="btn btn-brand"
-          style={{
-            backgroundColor: "#ff5a60",
-            color: "#fff",
-            fontWeight: "500",
-            fontSize: "12px",
-            textTransform: "uppercase",
-            padding: "12px 28px",
-            borderRadius: "30",
-          }}
-        >
-          Add listing
-        </a>
-
-        
-        <a
-          href="#listing"
-          onClick={() => {
-            navigate("space");
-          }}
-          className=ame="btn btn-brand"
-          style={{
-            backgroundColor: "#ff5a60",
-            color: "#fff",
-            fontWeight: "500",
-            fontSize: "12px",
-            textTransform: "uppercase",
-            padding: "12px 28px",
-            borderRadius: "30",
-          }}
-        >
-          Sign Up
-        </a>
-      </div>
-    </div> */
-}

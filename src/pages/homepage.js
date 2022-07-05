@@ -50,9 +50,10 @@ function HomePage() {
   const navigate = useNavigate();
 
   return (
-    <div data-bs-spy="scroll" data-bs-target="#navbar-example">
-      <section id="home" style={{ paddingTop: "0px" }}>
-        <Navbar />
+    <div>
+      <Navbar />
+
+      <section id="home">
         <div className="container text-center">
           <div className="row justify-content-center">
             <div className="col-md-10">
@@ -75,7 +76,7 @@ function HomePage() {
               </div>
 
               <div className="search-container" style={{ paddingTop: "6%" }}>
-                <form action="/action_page.php">
+                <form action="">
                   <input
                     type="text"
                     placeholder="What are you planning.."
@@ -370,7 +371,7 @@ function HomePage() {
               </h3>
             </div>
             <div className="col-auto">
-              <a href="#contact" className="btn btn-light">
+              <a href="#contact" className="btn btn-light" style={{color:"#ff5a60"}}>
                 {" "}
                 Get Started
               </a>

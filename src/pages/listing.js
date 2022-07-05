@@ -58,13 +58,13 @@ function Listing() {
             List your space
           </h1>
 
-          <form action="reservation.php" method="post">
+          <form action="reservation" method="post">
             <div className="elem-group">
               <input
                 type="text"
                 id="name"
                 name="name"
-                placeholder="Samuel Setsofia"
+                placeholder="name"
                 pattern="[A-Z\sa-z]{3,50}"
                 required
               />
@@ -74,7 +74,7 @@ function Listing() {
                 type="email"
                 id="email"
                 name="email"
-                placeholder="samuel@email.com"
+                placeholder="abc@email.com"
                 required
               />
             </div>
@@ -83,7 +83,7 @@ function Listing() {
                 type="tel"
                 id="phone"
                 name="phone"
-                placeholder="025-068-8900"
+                placeholder="000-000-0000"
                 pattern="(\d{3})-?\s?(\d{3})-?\s?(\d{4})"
                 required
               />
@@ -159,7 +159,7 @@ function Listing() {
             </div>
             <hr></hr>
             <div className="elem-group">
-              <p>Upload at least quality iamges of your space:</p>
+              <p>Upload at least quality images of your space:</p>
               <input
                 type="file"
                 id="images"

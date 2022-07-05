@@ -1,18 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import EventSpace from "../components/eventSpace";
 import Footer from "../components/footer";
 import Navbar from "../components/Navbar";
+import SimpleImageSlider from "react-simple-image-slider";
+import { getListings } from "../utils/firebase";
 
+const images = [
+  {
+    url:
+      "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+  },
+  {
+    url:
+      "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+  },
+
+  {
+    url:
+      "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+  },
+];
 const spaces = [
   {
     name: "Pheonix Lounge ",
     price: "GHc800/hr",
     capacity: "100 heads",
     location: "Labone",
-    image:
+    image: [
       "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+      "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+      "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+    ],
   },
   {
     name: "The Dome ",
@@ -20,16 +40,22 @@ const spaces = [
     capacity: "100 heads",
     location: "East Legon",
 
-    image:
+    image: [
       "https://images.unsplash.com/photo-1527359443443-84a48aec73d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      "https://images.unsplash.com/photo-1527359443443-84a48aec73d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      "https://images.unsplash.com/photo-1527359443443-84a48aec73d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    ],
   },
   {
     name: "Bambam Cottage",
     price: "GHc800/hr",
     capacity: "100 heads",
     location: "Labadi",
-    image:
+    image: [
       "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+      "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+      "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+    ],
   },
   {
     name: "Mushroom Garden",
@@ -37,28 +63,47 @@ const spaces = [
     capacity: "100 heads",
     location: "Osu",
 
-    image:
+    image: [
       "https://images.unsplash.com/photo-1527359443443-84a48aec73d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      "https://images.unsplash.com/photo-1527359443443-84a48aec73d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      "https://images.unsplash.com/photo-1527359443443-84a48aec73d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    ],
   },
   {
     name: "Pheonix",
     price: "GHc800/hr",
     capacity: "100 heads",
     location: "Labone",
-    image:
+    image: [
       "https://images.unsplash.com/photo-1527359443443-84a48aec73d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      "https://images.unsplash.com/photo-1527359443443-84a48aec73d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      "https://images.unsplash.com/photo-1527359443443-84a48aec73d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    ],
   },
   {
     name: "Pheonix",
     price: "GHc800/hr",
     capacity: "100 heads",
     location: "Labone",
-    image:
+    image: [
       "https://images.unsplash.com/photo-1543325768-b7c960228a24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      "https://images.unsplash.com/photo-1543325768-b7c960228a24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      "https://images.unsplash.com/photo-1543325768-b7c960228a24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    ],
   },
 ];
 
 function Space() {
+  const [listings, setListings] = useState([]);
+
+  useEffect(() => {
+    const getAllSpaces = async () => {
+      const spacesFromDB = await getListings();
+      setListings(spacesFromDB);
+    };
+    getAllSpaces();
+  }, []);
+
   const navigate = useNavigate();
   return (
     <div>
@@ -67,7 +112,15 @@ function Space() {
       <div className="container">
         <div className="row align-items-center">
           <div className="col-lg-4" style={{ paddingTop: "50px" }}>
-            <img src={require("../images/clubs.jpg")} alt="" />
+            <div>
+              <SimpleImageSlider
+                width={496}
+                height={304}
+                images={images}
+                showBullets={true}
+                showNavs={true}
+              />
+            </div>
           </div>
           <div className="col-lg-6 offset-lg-1">
             <h2
@@ -109,15 +162,15 @@ function Space() {
             </div>
           </div>
           <div className="row">
-            {spaces.map((space) => {
+            {listings.map((space) => {
               return (
                 <EventSpace
                   description={space.description}
-                  price={space.price}
-                  name={space.name}
+                  price={space.hourlyRate}
+                  name={space.a}
                   location={space.location}
                   capacity={space.capacity}
-                  image={space.image}
+                  image={space.images}
                 />
               );
             })}
@@ -141,7 +194,11 @@ function Space() {
               </h3>
             </div>
             <div className="col-auto">
-              <a href="#contact" className="btn btn-light">
+              <a
+                href="#contact"
+                className="btn btn-light"
+                style={{ color: "#ff5a60" }}
+              >
                 {" "}
                 Get Started
               </a>

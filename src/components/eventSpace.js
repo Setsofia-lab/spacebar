@@ -1,14 +1,22 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import SimpleImageSlider from "react-simple-image-slider";
 
 const EventSpace = ({ image, price, name, location, capacity }) => {
+  console.log(image);
   const navigate = useNavigate();
   return (
     <div className="col-lg-4 col-sm-6 p-4">
       <section id="book">
         <div className=" e-card">
           <div className="e-card-image">
-            <img src={image} alt="" style={{ borderRadius: "10px" }} />
+            <SimpleImageSlider
+              width={"25%"}
+              height={"40vh"}
+              images={image}
+              showBullets={true}
+              showNavs={true}
+            />
           </div>
           <div className=" e-card-body">
             {" "}
@@ -20,7 +28,7 @@ const EventSpace = ({ image, price, name, location, capacity }) => {
               >
                 <h6>{location}</h6>
               </div>
-              <div className=" e-card-text">
+              <div className=" e-card-icon">
                 <h6>rating</h6>
               </div>
             </div>

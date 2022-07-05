@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import Footer from "../components/footer";
 import Navbar from "../components/Navbar";
 
-
 function Booking() {
   const navigate = useNavigate();
   return (
@@ -201,7 +200,7 @@ function Booking() {
                           borderRadius: "30",
                         }}
                       >
-                        <i className="fa fa-search"> Book for Space</i>
+                        Book for Space
                       </button>
                     </form>
                   </div>
@@ -223,7 +222,7 @@ function Booking() {
                 </h3>
               </div>
               <div className="col-auto">
-                <a href="#contact" className="btn btn-light">
+                <a href="#contact" className="btn btn-light" style={{color:"#ff5a60"}}>
                   {" "}
                   Get Started
                 </a>
@@ -240,50 +239,3 @@ function Booking() {
 
 export default Booking;
 
-//  <section>
-//   <div className="row align-items-center">
-//   <div className="col-12 section-intro">
-//     <div className="hline"></div>
-//   </div>
-//   <div className="col-lg-4">
-//     <img
-//       src={require("../images/clubs.jpg")}
-//       alt=""
-//       style={{ paddingBottom: "5%" }}
-//     />
-//     <h3 style={{ fontWeight: "400", paddingBottom: "5%" }}>
-//       Pheonix Lounge - Labone
-//     </h3>
-
-//     <h4>About Space</h4>
-//     <p>
-//       This studio was created out of our passion for visual arts and
-//       with a mission to support contemporary talent. We understand
-//       your needs, and are here to help you to create your dreams. We
-//       can offer creative set designs and all lighting and grip demands
-//       of the most talented and demanding of creatives. One of New York
-//       oldest prop-house is 10 ft away, opening up a whole new real of
-//       set up possibilities. And we are have a network of talents: from
-//       make up artists and stylist to set designers and print{" "}
-//     </p>
-//     <hr></hr>
-//     <h4>Cost per hour</h4>
-//     <p>GHS 850 per hour</p>
-//     <hr></hr>
-//     <h4>Availability</h4>
-//     <p> Open 24/7</p>
-//     <hr></hr>
-//     <h4>Capacity</h4>
-//     <p> 150 heads</p>
-//     <hr></hr>
-//     <h4>Amenities</h4>
-//     <li>
-//       Tableware Bathrooms Heat Large table Photography Lighting{" "}
-//     </li>
-//     <hr></hr>
-//     <h4>Safety Policy</h4>
-//     <link> Read About our Safety Policy</link>
-//   </div>
-
-// </div>
-// </section>
