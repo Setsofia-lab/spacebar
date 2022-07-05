@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import SimpleImageSlider from "react-simple-image-slider";
 
 const EventSpace = ({ image, price, name, location, capacity }) => {
-  console.log(image);
   const navigate = useNavigate();
   return (
     <div className="col-lg-4 col-sm-6 p-4">
@@ -29,7 +28,7 @@ const EventSpace = ({ image, price, name, location, capacity }) => {
                 <h6>{location}</h6>
               </div>
               <div className=" e-card-icon">
-                <h6>rating</h6>
+                <h6>4.5/5 stars</h6>
               </div>
             </div>
             <div className="d-flex justify-content-between">
@@ -37,10 +36,10 @@ const EventSpace = ({ image, price, name, location, capacity }) => {
                 className=" e-card-text"
                 style={{ fontStyle: "italic ", marginRight: "50px" }}
               >
-                <h6>{price}</h6>
+                <h6>{price} GHS/hr</h6>
               </div>
               <div className=" e-card-text">
-                <h6>{capacity}</h6>
+                <h6>{capacity} heads</h6>
               </div>
             </div>
             <div

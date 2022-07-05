@@ -10,8 +10,19 @@ import "./styles/style.css";
 import Signup from "./pages/signup";
 import Blog from "./pages/blog";
 import "./utils/firebase";
+import { useState } from "react";
+import {useSelector, useDispatch} from "@reduxjs/toolkit";
+
+
+
 
 const App = () => {
+  const dispatch = useDispatch();
+  const userList = useSelector((state) => state.listings.value);
+
+  const [list, setListings] = useState("");
+  const [book, setBookings] = useState("");
+
   return (
     <BrowserRouter base="/">
       <Routes>
