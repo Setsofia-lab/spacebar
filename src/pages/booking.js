@@ -49,7 +49,10 @@ function Booking() {
             >
               <div className="row align-items-center">
                 <div className="col-lg-6">
-                  <img src={selectedListing.images} alt="something" />
+                  <img
+                    src={selectedListing.images && selectedListing.images[0]}
+                    alt="something"
+                  />
 
                   <h4>{selectedListing.name}</h4>
                   <hr></hr>
@@ -148,12 +151,16 @@ function Booking() {
                           <option value="">Choose from the List</option>
                           <option value="Party">Party</option>
                           <option value="wedding">Wedding</option>
-                          <option value="Coporate Meeting">Coporate Meeting</option>
+                          <option value="Coporate Meeting">
+                            Coporate Meeting
+                          </option>
                           <option value="Bridal Shower">Bridal Shower</option>
                           <option value="Video Shoot">Video Shoot</option>
                           <option value="Photo Shoot">Photo Shoot</option>
                           <option value="Funeral">Funeral</option>
-                          <option value="Networking Event">Networking Event</option>
+                          <option value="Networking Event">
+                            Networking Event
+                          </option>
                           <option value="Other">Other</option>
                         </select>
                       </div>
