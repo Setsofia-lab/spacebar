@@ -1,7 +1,13 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getFirestore, collection, getDocs } from "firebase/firestore/lite";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  addDoc,
+  setDoc,
+} from "firebase/firestore/lite";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -44,5 +50,34 @@ export async function getListings() {
     return lisitngsList;
   } catch (e) {
     console.log(e);
+  }
+}
+
+export async function addBookings({
+  name,
+  email,
+  phone,
+  eventSelection,
+  attendance,
+  checkinDate,
+  startTime,
+  endTime,
+  info,
+}) {
+  try {
+    const bookings = await addDoc(collection(db, "bookings"), {
+      name: name,
+      email: email,
+      phone: phone,
+      eventSelection: eventSelection,
+      attendance: attendance,
+      checkinDate: checkinDate,
+      startTime: startTime,
+      endTime: endTime,
+      info: info,
+    });
+    console.log("Booking with user ID :", bookings.id);
+  } catch (e) {
+    console.error("Error with booking:", e);
   }
 }

@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit/dist/createSlice";
+import { createSlice } from "@reduxjs/toolkit";
 
 export const UserSlice = createSlice({
   name: "users",
@@ -11,8 +11,7 @@ export const UserSlice = createSlice({
       state.booking = action.payload;
     },
     setListingsToState: (state, action) => {
-      console.log("here");
-      state.listings.push(action.payload);
+      state.listings = action.payload;
     },
     selectedListing: (state, actions) => {
       state.listing = actions.payload;
@@ -25,4 +24,5 @@ export const {
   setListingsToState,
   selectedListing,
 } = UserSlice.actions;
-export default userSlice.reducer;
+
+export default UserSlice.reducer;

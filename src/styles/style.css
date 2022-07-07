@@ -95,36 +95,19 @@ section {
 
 @keyframes background-images {
   0% {
-    background-image: 
-    /* linear-gradient(
-        hsla(0, 4%, 33%, 0.8),
-        hsla(0, 4%, 33%, 0.8)
-      ), */ url(../images/b2.jpg);
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz16NObHPkXwcAbGlF9Va8-X2aGB0prhtpLQ&usqp=CAU");
   }
   25% {
-    background-image: 
-    /* linear-gradient(
-        hsla(0, 4%, 33%, 0.8),
-        hsla(0, 4%, 33%, 0.8)
-      ), */ url(../images/b1.jpg);
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz16NObHPkXwcAbGlF9Va8-X2aGB0prhtpLQ&usqp=CAU");
   }
   50% {
-    background-image: 
-    /* linear-gradient(hsla(0, 4%, 33%, 0.8), hsla(0, 4%, 33%, 0.8)), */ url(../images/b2.jpg);
+    background-image: url("https://media.istockphoto.com/photos/modern-backyard-with-oriental-inspired-background-3d-rendering-picture-id1305085060?k=20&m=1305085060&s=612x612&w=0&h=8qWe7Pisjn_EB1U-61VpZBzn_D8i8JUVWruAFZrybgM=");
   }
   75% {
-    background-image:
-     /* linear-gradient(
-        hsla(0, 4%, 33%, 0.8),
-        hsla(0, 4%, 33%, 0.8)
-      ), */ url(../images/b3.jpg);
+    background-image: url("https://media.istockphoto.com/photos/backyard-paver-patio-with-garden-accessories-picture-id477970197?k=20&m=477970197&s=612x612&w=0&h=1UR5k1P2U10arMNmUFftYRFm2HGR_GY6luxJHNONgeE=");
   }
   100% {
-    background-image: 
-    /* linear-gradient(
-        hsla(0, 4%, 33%, 0.8),
-        hsla(0, 4%, 33%, 0.8)
-      ), */ url(../images/background1.jpg);
+    background-image: url("https://t4.ftcdn.net/jpg/03/41/47/83/360_F_341478371_HLwHOMw1HMqmFlUq31saH6fCZOaELwsT.jpg");
   }
 }
 

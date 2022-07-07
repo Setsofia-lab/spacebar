@@ -1,10 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "react-bootstrap";
+import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/footer";
 import Navbar from "../components/Navbar";
+import { addBookings } from "../utils/firebase";
 
 function Booking() {
+  const dispatch = useDispatch();
+  // const bookingList = useSelector((state) =>state.booking.value);
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [eventSelection, setEventSelection] = useState("");
+  const [attendance, setAttendance] = useState("");
+  const [checkinDate, setCheckinDate] = useState("");
+  const [startTime, setStartTime] = useState("");
+  const [endTime, setEndTime] = useState("");
+  const [info, setInfo] = useState("");
+
+  const [selectedListing, setSelectedListing] = useState({});
+  const { listing, listings } = useSelector((state) => state.users);
+
+  useEffect(() => {
+    const filteredListing = listings.filter((spaces) => {
+      return spaces.name == listing;
+    });
+    filteredListing.length && setSelectedListing(filteredListing[0]);
+  }, []);
+  useEffect(() => {
+    console.log(selectedListing);
+  }, [selectedListing]);
   const navigate = useNavigate();
   return (
     <div>
@@ -22,50 +49,27 @@ function Booking() {
             >
               <div className="row align-items-center">
                 <div className="col-lg-6">
-                  <img
-                    src={require("../images/wedding.jpg")}
-                    alt=""
-                    style={{ height: "250px" }}
-                  />
-                  <h4
-                    style={{
-                      textAlign: "left",
-                      fontWeight: "400",
-                      paddingBottom: "2%",
-                    }}
-                  >
-                    Phoenix Lounge Osu{" "}
-                  </h4>
+                  <img src={selectedListing.images} alt="something" />
 
+                  <h4>{selectedListing.name}</h4>
+                  <hr></hr>
+                  <h5>Location</h5>
+                  <p>{selectedListing.location}</p>
+                  <hr></hr>
                   <h5>About Space</h5>
-                  <p>
-                    This studio was created out of our passion for visual arts
-                    and with a mission to support contemporary talent. We
-                    understand your needs, and are here to help you to create
-                    your dreams. We can offer creative set designs and all
-                    lighting and grip demands of the most talented and demanding
-                    of creatives. One of New York oldest prop-house is 10 ft
-                    away, opening up a whole new real of set up possibilities.
-                    And we are have a network of talents: from make up artists
-                    and stylist to set designers and print{" "}
-                  </p>
+                  <p>{selectedListing.description}</p>
                   <hr></hr>
                   <h5>Rate</h5>
-                  <p>GHS 850</p>
+                  <p>{selectedListing.hourlyRate}GHS/hr</p>
                   <hr></hr>
                   <h5>Availability</h5>
                   <p>24/7</p>
                   <hr></hr>
                   <h5>Capacity</h5>
-                  <p>100 heads</p>
+                  <p>{selectedListing.capacity}heads</p>
                   <hr></hr>
                   <h5>Amenities</h5>
-                  <p>
-                    Expect a call from spacebar team and discussion on payment
-                    and security. Once you confirm, your guests will receive
-                    information on how to get there and details like your wifi
-                    code.
-                  </p>
+                  <p>{selectedListing.amenities}</p>
                   <hr></hr>
                   <h5>Host Rules</h5>
                   <p>
@@ -80,7 +84,9 @@ function Booking() {
                     system. Your payout is directly deposited after each event,
                     minus our 25% service fee.
                   </p>
+                  <hr></hr>
                 </div>
+
                 <div className="col-lg-6 ">
                   <div
                     className="container"
@@ -89,7 +95,7 @@ function Booking() {
                     <h1 style={{ fontWeight: "400", paddingleft: "25%" }}>
                       Request for booking
                     </h1>
-                    <form action="reservation.php" method="post">
+                    <form action="reservation">
                       <div className="elem-group">
                         <input
                           type="text"
@@ -98,6 +104,9 @@ function Booking() {
                           placeholder="Sam Spacebar"
                           pattern="[A-Z\sa-z]{3,50}"
                           required
+                          onChange={(event) => {
+                            setName(event.target.value);
+                          }}
                         />
                       </div>
                       <div className="elem-group">
@@ -107,6 +116,9 @@ function Booking() {
                           name="email"
                           placeholder="sam@spacebar.com"
                           required
+                          onChange={(event) => {
+                            setEmail(event.target.value);
+                          }}
                         />
                       </div>
                       <div className="elem-group">
@@ -117,26 +129,32 @@ function Booking() {
                           placeholder="000-000-0000"
                           pattern="(\d{3})-?\s?(\d{3})-?\s?(\d{4})"
                           required
+                          onChange={(event) => {
+                            setPhone(event.target.value);
+                          }}
                         />
                       </div>
                       <hr></hr>
                       <div className="elem-group">
-                        <label for="event-selection">Event type</label>
+                        <label for="eventSelection">Event type</label>
                         <select
-                          id="event-selection"
-                          name="event-selection"
+                          id="eventSelection"
+                          name="eventSelection"
                           required
+                          onChange={(event) => {
+                            setEventSelection(event.target.value);
+                          }}
                         >
                           <option value="">Choose from the List</option>
-                          <option value="connecting">Party</option>
-                          <option value="adjoining">Wedding</option>
-                          <option value="adjacent">Coporate Meeting</option>
-                          <option value="adjacent">Bridal Shower</option>
-                          <option value="adjacent">Video Shoot</option>
-                          <option value="adjacent">Photo Shoot</option>
-                          <option value="adjacent">Funeral</option>
-                          <option value="adjacent">Networking Event</option>
-                          <option value="adjacent">Other</option>
+                          <option value="Party">Party</option>
+                          <option value="wedding">Wedding</option>
+                          <option value="Coporate Meeting">Coporate Meeting</option>
+                          <option value="Bridal Shower">Bridal Shower</option>
+                          <option value="Video Shoot">Video Shoot</option>
+                          <option value="Photo Shoot">Photo Shoot</option>
+                          <option value="Funeral">Funeral</option>
+                          <option value="Networking Event">Networking Event</option>
+                          <option value="Other">Other</option>
                         </select>
                       </div>
                       <div className="elem-group ">
@@ -144,50 +162,79 @@ function Booking() {
                         <input
                           type="number"
                           id="attendance"
-                          name="total_attendance"
+                          name="attendance"
                           placeholder="e.g 100"
                           min="10"
                           required
+                          onChange={(event) => {
+                            setAttendance(event.target.value);
+                          }}
                         />
                       </div>
                       <div className="elem-group">
                         <label for="date">Event Date</label>
                         <input
                           type="date"
-                          id="checkin-date"
-                          name="checkin"
+                          id="checkinDate"
+                          name="checkinDate"
                           required
+                          onChange={(event) => {
+                            setCheckinDate(event.target.value);
+                          }}
                         />
                       </div>
                       <div className="elem-group inlined">
                         <label for="start-time">Start Time</label>
                         <input
                           type="time"
-                          id="start-time"
-                          name="start-time"
+                          id="startTime"
+                          name="startTime"
                           required
+                          onChange={(event) => {
+                            setStartTime(event.target.value);
+                          }}
                         />
                       </div>
                       <div className="elem-group inlined">
                         <label for="end-date">End Time</label>
                         <input
                           type="time"
-                          id="end-time"
-                          name="end-time"
+                          id="endTime"
+                          name="endTime"
                           required
+                          onChange={(event) => {
+                            setEndTime(event.target.value);
+                          }}
                         />
                       </div>
                       <hr></hr>
                       <div className="elem-group">
-                        <label for="message">Description</label>
+                        <label for="message">Additional Info</label>
                         <textarea
-                          id="message"
-                          name="visitor_message"
+                          id="info"
+                          name="info"
                           placeholder="Tell us anything else that might be important."
                           required
+                          onChange={(event) => {
+                            setInfo(event.target.value);
+                          }}
                         ></textarea>
                       </div>
                       <button
+                        onClick={async (e) => {
+                          e.preventDefault();
+                          await addBookings({
+                            name,
+                            email,
+                            phone,
+                            eventSelection,
+                            attendance,
+                            checkinDate,
+                            startTime,
+                            endTime,
+                            info,
+                          });
+                        }}
                         type="submit"
                         className="btn btn-brand"
                         style={{
@@ -200,7 +247,7 @@ function Booking() {
                           borderRadius: "30",
                         }}
                       >
-                        Book for Space
+                        Book
                       </button>
                     </form>
                   </div>
@@ -222,7 +269,11 @@ function Booking() {
                 </h3>
               </div>
               <div className="col-auto">
-                <a href="#contact" className="btn btn-light" style={{color:"#ff5a60"}}>
+                <a
+                  href="listing"
+                  className="btn btn-light"
+                  style={{ color: "#ff5a60" }}
+                >
                   {" "}
                   Get Started
                 </a>
@@ -238,4 +289,3 @@ function Booking() {
 }
 
 export default Booking;
-

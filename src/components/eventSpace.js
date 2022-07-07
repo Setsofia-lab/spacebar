@@ -1,20 +1,26 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import SimpleImageSlider from "react-simple-image-slider";
+import { selectedListing } from "../redux/users";
 
 const EventSpace = ({ image, price, name, location, capacity }) => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   return (
     <div className="col-lg-4 col-sm-6 p-4">
       <section id="book">
-        <div className=" e-card">
+        <div className="e-card">
           <div className="e-card-image">
             <SimpleImageSlider
-              width={"25%"}
+              width={"100%"}
               height={"40vh"}
               images={image}
               showBullets={true}
               showNavs={true}
+              style={{
+                position: "relative",
+              }}
             />
           </div>
           <div className=" e-card-body">
@@ -44,6 +50,7 @@ const EventSpace = ({ image, price, name, location, capacity }) => {
             </div>
             <div
               onClick={() => {
+                dispatch(selectedListing(name));
                 navigate("/booking");
               }}
             >

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/homepage";
@@ -10,15 +11,11 @@ import "./styles/style.css";
 import Signup from "./pages/signup";
 import Blog from "./pages/blog";
 import "./utils/firebase";
-import { useState } from "react";
-import {useSelector, useDispatch} from "@reduxjs/toolkit";
-
-
-
+import { useSelector, useDispatch } from "react-redux";
 
 const App = () => {
   const dispatch = useDispatch();
-  const userList = useSelector((state) => state.listings.value);
+  // const userList = useSelector((state) => state.listings.value);
 
   const [list, setListings] = useState("");
   const [book, setBookings] = useState("");
@@ -27,7 +24,6 @@ const App = () => {
     <BrowserRouter base="/">
       <Routes>
         <Route path="/" element={<HomePage />} />
-
         <Route path="/booking" element={<Booking />} />
         <Route path="/listing" element={<Listing />} />
         <Route path="/space" element={<Space />} />

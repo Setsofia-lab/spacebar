@@ -5,7 +5,7 @@ import Footer from "../components/footer";
 import Navbar from "../components/Navbar";
 
 function Listing() {
-  const navigate = useNavigate();
+   const navigate = useNavigate();
   return (
     <div>
       <Navbar />
@@ -211,7 +211,7 @@ function Listing() {
                 borderRadius: "30",
               }}
             >
-              <i className="fa fa-search"> List on Spacebar </i>
+               List Space 
             </button>
           </form>
         </div>
@@ -233,7 +233,11 @@ function Listing() {
               </h3>
             </div>
             <div className="col-auto">
-              <a href="#contact" className="btn btn-light">
+            <a
+                href="listing"
+                className="btn btn-light"
+                style={{ color: "#ff5a60" }}
+              >
                 {" "}
                 Know More
               </a>

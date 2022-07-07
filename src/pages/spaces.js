@@ -5,8 +5,9 @@ import EventSpace from "../components/eventSpace";
 import Footer from "../components/footer";
 import Navbar from "../components/Navbar";
 import SimpleImageSlider from "react-simple-image-slider";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setListingsToState } from "../redux/users";
+import { getListings } from "../utils/firebase";
 
 const images = [
   {
@@ -26,8 +27,7 @@ const images = [
 
 function Space() {
   const dispatch = useDispatch();
-  const [listings, setListings] = useState([]);
-
+  const { listings } = useSelector((state) => state.users);
   useEffect(() => {
     const getAllSpaces = async () => {
       const spacesFromDB = await getListings();
@@ -94,18 +94,19 @@ function Space() {
             </div>
           </div>
           <div className="row">
-            {listings?.map((space) => {
-              return (
-                <EventSpace
-                  description={space.description}
-                  price={space.hourlyRate}
-                  name={space.name}
-                  location={space.location}
-                  capacity={space.capacity}
-                  image={space.images}
-                />
-              );
-            })}
+            {listings &&
+              listings.map((space) => {
+                return (
+                  <EventSpace
+                    description={space.description}
+                    price={space.hourlyRate}
+                    name={space.name}
+                    location={space.location}
+                    capacity={space.capacity}
+                    image={space.images}
+                  />
+                );
+              })}
           </div>
         </div>
       </section>
