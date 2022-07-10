@@ -1,6 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import "firebase/auth";
 import {
   getFirestore,
   collection,
@@ -23,12 +24,21 @@ const firebaseConfig = {
   measurementId: process.env.REACT_APP_MEASUREMENT_ID,
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getFirestore(app);
 
-// Get a list of cities from your database
+export async function getUsers() {
+  try {
+    const usersCol = collection(db, "spaces");
+    const usersSnapshot = await getDocs(usersCol);
+    const usersList = usersSnapshot.docs.map((doc) => doc.data());
+    console.log(usersList);
+    return usersList;
+  } catch (e) {
+    console.log(e);
+  }
+}
 export async function getSpaces() {
   try {
     const spacesCol = collection(db, "spaces");
@@ -50,6 +60,39 @@ export async function getListings() {
     return lisitngsList;
   } catch (e) {
     console.log(e);
+  }
+}
+
+export async function addListing({
+  name,
+  email,
+  phone,
+  location,
+  capacity,
+  dailyRate,
+  startDate,
+  endDate,
+  amenities,
+  info,
+  images,
+}) {
+  try {
+    const listing = await addDoc(collection(db, "listing"), {
+      name: name,
+      email: email,
+      phone: phone,
+      location:location,
+      capacity: capacity,
+      dailyRate : dailyRate,
+      startDate :startDate,
+      endDate : endDate,
+      amenities : amenities,
+      info : info,
+      images:images,
+    });
+    console.log("Lisitng ID :", listing.id);
+  } catch (e) {
+    console.error("Error with lisitng:", e);
   }
 }
 
@@ -76,8 +119,9 @@ export async function addBookings({
       endTime: endTime,
       info: info,
     });
-    console.log("Booking with user ID :", bookings.id);
+    console.log("Booking with booking ID :", bookings.id);
   } catch (e) {
     console.error("Error with booking:", e);
   }
 }
+export { app, db };

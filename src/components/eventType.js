@@ -11,7 +11,7 @@ const EventType = ({ image, type }) => {
           navigate("space");
         }}
       >
-        <img src={image} alt="" style={{ borderRadius: "5px" , height:"150px"}} />
+        <img src={image} alt="" style={{ borderTopLeftRadius: "25px" , borderBottomRightRadius:"25px"   , height:"200px"}} />
       </div>
       <div className="e-card-title"><h4 style={{ textAlign:"center" }}>{type}</h4></div>
       </div>

@@ -19,6 +19,7 @@ const EventSpace = ({ image, price, name, location, capacity }) => {
               showBullets={true}
               showNavs={true}
               style={{
+                borderRadius:"15px",
                 position: "relative",
               }}
             />

@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import Footer from "../components/footer";
 import Navbar from "../components/Navbar";
 import { addBookings } from "../utils/firebase";
+import SimpleImageSlider from "react-simple-image-slider";
 
 function Booking() {
   const dispatch = useDispatch();
@@ -53,6 +54,16 @@ function Booking() {
                     src={selectedListing.images && selectedListing.images[0]}
                     alt="something"
                   />
+                  {/* <SimpleImageSlider
+                    width={"100%"}
+                    height={"40vh"}
+                    images={selectedListing.images}
+                    showBullets={true}
+                    showNavs={true}
+                    style={{
+                      position: "relative",
+                    }}
+                  /> */}
 
                   <h4>{selectedListing.name}</h4>
                   <hr></hr>
@@ -228,7 +239,7 @@ function Booking() {
                         ></textarea>
                       </div>
                       <button
-                        onClick={async (e) => {
+                        onClick= {async (e) => {
                           e.preventDefault();
                           await addBookings({
                             name,
@@ -243,6 +254,7 @@ function Booking() {
                           });
                         }}
                         type="submit"
+                        href="/"
                         className="btn btn-brand"
                         style={{
                           backgroundColor: "#ff5a60",

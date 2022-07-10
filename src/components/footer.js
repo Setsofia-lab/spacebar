@@ -15,25 +15,16 @@ const Footer = () => {
                   Create memorable moments with unique spaces for your upcoming
                   events - Book now
                 </p>
-                <div className="social-icons">
-                  <a href="#">
-                    <i className="bx bxl-facebook"></i>
-                  </a>
-                  <a href="#">
-                    <i className="bx bxl-twitter"></i>
-                  </a>
-                  <a href="#">
-                    <i className="bx bxl-instagram"></i>
-                  </a>
-                </div>
+                
               </div>
               <div className="col-md-2">
                 <h5 className="title-sm">Navigation</h5>
                 <div className="footer-links">
-                  <a href="#services">Services</a>
-                  <a href="#spaces">Find Spaces</a>
-                  <a href="#explore">Explore other Cities</a>
-                  <a href="#home">Contact Us</a>
+                  <a href="blog">Blog</a>
+                  <a href="spaces">Find Spaces</a>
+                  <a href="explore">Explore other Cities</a>
+                  <a href="home">Contact Us</a>
+                  <a href="">moments</a>
                 </div>
               </div>
               <div className="col-md-2">

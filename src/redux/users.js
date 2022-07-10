@@ -2,10 +2,10 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const UserSlice = createSlice({
   name: "users",
-  initialState: { listing: {}, listings: [], booking: {} },
+  initialState: { listing: {}, listings: [], booking: {}, user:{}, },
   reducers: {
     addlisting: (state, action) => {
-      state.listings.push(action.payload);
+      state.listing = action.payload;
     },
     addbooking: (state, action) => {
       state.booking = action.payload;
@@ -16,6 +16,9 @@ export const UserSlice = createSlice({
     selectedListing: (state, actions) => {
       state.listing = actions.payload;
     },
+    setUserToState:(state, action) =>{
+      state.user= action.payload;
+    }
   },
 });
 export const {
@@ -23,6 +26,7 @@ export const {
   addlisting,
   setListingsToState,
   selectedListing,
+  setUserToState
 } = UserSlice.actions;
 
 export default UserSlice.reducer;

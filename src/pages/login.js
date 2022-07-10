@@ -1,54 +1,47 @@
-import React, { createContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/footer";
 import Navbar from "../components/Navbar";
-import { useState, useEffect, useCallback } from "react";
-import { app } from "../utils/firebase";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import HomePage from "./homepage";
+import React, { useState, useEffect } from "react";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { useSelector, useDispatch } from "react-redux";
 import { setUserToState } from "../redux/users";
-import { useDispatch } from "react-redux";
 
-const Signup = ({ history }) => {
+const Login = ({ history }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   // States for checking the errors
   const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSignUp = async (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    console.log({ name, email, password });
-    if (name === "" || email === "" || password === "") {
-      setError(true);
+    console.log({ email, password });
+    if (email === "" || password === "") {
+      setError("Please Enter All Fields");
     } else {
       setSubmitted(true);
-      setError(false);
+      setError("");
       const auth = getAuth();
-      // const { name, email, password } = signup.target.elements;
       try {
-        const user = await createUserWithEmailAndPassword(
-          auth,
-          email,
-          password
-        );
+        const user = await signInWithEmailAndPassword(auth, email, password);
         dispatch(setUserToState(user));
         navigate("/");
       } catch (error) {
-        console.log(error);
+        setError("Wrong Email or Password");
       }
     }
   };
 
-  // Handling the name change
-  const handleName = (value) => {
-    if (value) setName(value);
-    // setSubmitted(false);
-  };
+  useEffect(() => {
+    console.log("timeout started");
+    setTimeout(() => {
+      console.log("timeout implementing");
+      setError("");
+    }, 5000);
+  }, [error]);
 
   // Handling the email change
   const handleEmail = (e) => {
@@ -62,44 +55,6 @@ const Signup = ({ history }) => {
     setSubmitted(false);
   };
 
-  // Handling the form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (name === "" || email === "" || password === "") {
-      setError(true);
-    } else {
-      setSubmitted(true);
-      setError(false);
-    }
-  };
-
-  // Showing success message
-  const successMessage = () => {
-    return (
-      <div
-        className="success"
-        style={{
-          display: submitted ? "" : "none",
-        }}
-      >
-        <h3> Welcome to spacebar, {name}!</h3>
-      </div>
-    );
-  };
-
-  // Showing error message if error is true
-  const errorMessage = () => {
-    return (
-      <div
-        className="error"
-        style={{
-          display: error ? "" : "none",
-        }}
-      >
-        <h3>Please enter all the fields</h3>
-      </div>
-    );
-  };
   return (
     <div>
       <section id="signup">
@@ -110,26 +65,20 @@ const Signup = ({ history }) => {
             // style  ={{ paddingRight: "20%", paddingLeft: "20%" }}
           >
             <div>
-              <h1>Sign Up</h1>
+              <h1>Log In</h1>
             </div>
 
             {/* Calling to the methods */}
             <div className="messages">
-              {errorMessage()}
-              {successMessage()}
+              {error && (
+                <div className="error">
+                  <h3>{error}</h3>
+                </div>
+              )}
+              {/* {successMessage()} */}
             </div>
 
             <form>
-              <label className="label">Name</label>
-              <input
-                onChange={({ target }) => {
-                  setName(target.value);
-                }}
-                className="input"
-                value={name}
-                type="text"
-              />
-
               <label className="label">Email</label>
               <input
                 onChange={handleEmail}
@@ -147,7 +96,7 @@ const Signup = ({ history }) => {
               />
 
               <button
-                onClick={handleSignUp}
+                onClick={handleLogin}
                 href="homepage"
                 className="btn"
                 type="submit"
@@ -162,14 +111,8 @@ const Signup = ({ history }) => {
                   width: "100%",
                 }}
               >
-                Sign Up
+                Log In
               </button>
-              <div>
-                <h6>
-                  {" "}
-                  Already have an account, <a href="login"> Log In</a>
-                </h6>
-              </div>
             </form>
           </div>
         </div>
@@ -180,4 +123,4 @@ const Signup = ({ history }) => {
   );
 };
 
-export default Signup;
+export default Login;

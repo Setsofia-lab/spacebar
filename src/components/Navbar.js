@@ -4,8 +4,10 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export default () => {
+  const user = useSelector((state) => state.users.user);
   const navigate = useNavigate();
   return (
     <Navbar bg="light" expand="lg">
@@ -40,22 +42,24 @@ export default () => {
               Add Listing
             </button>
 
-            <button
-              className="btn btn-brand"
-              onClick={() => navigate("/signup")}
-              style={{
-                backgroundColor: "#ff5a60",
-                color: "#fff",
-                fontWeight: "500",
-                fontSize: "12px",
-                textTransform: "uppercase",
-                padding: "12px 28px",
-                borderRadius: "30",
-                marginLeft: "10px",
-              }}
-            >
-              Sign Up
-            </button>
+            {!user && (
+              <button
+                className="btn btn-brand"
+                onClick={() => navigate("/signup")}
+                style={{
+                  backgroundColor: "#ff5a60",
+                  color: "#fff",
+                  fontWeight: "500",
+                  fontSize: "12px",
+                  textTransform: "uppercase",
+                  padding: "12px 28px",
+                  borderRadius: "30",
+                  marginLeft: "10px",
+                }}
+              >
+                Sign Up
+              </button>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>

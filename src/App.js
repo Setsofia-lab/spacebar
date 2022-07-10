@@ -9,9 +9,11 @@ import "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/style.css";
 import Signup from "./pages/signup";
+import Login from "./pages/login";
 import Blog from "./pages/blog";
 import "./utils/firebase";
 import { useSelector, useDispatch } from "react-redux";
+
 
 const App = () => {
   const dispatch = useDispatch();
@@ -29,6 +31,7 @@ const App = () => {
         <Route path="/space" element={<Space />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
   );

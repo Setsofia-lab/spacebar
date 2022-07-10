@@ -9,22 +9,23 @@ import Navbar from "../components/Navbar";
 const eventType = [
   {
     image:
-      "https://media.istockphoto.com/photos/corporate-business-team-and-manager-in-a-meeting-close-up-picture-id639467826?k=20&m=639467826&s=612x612&w=0&h=V0wmz5zqbEWiiFYL7FdXT_i5FOXy2bsMmVSwMR2ttIg=",
+      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTF8fGNvb3Jwb3JhdGUlMjBtZWV0aW5nc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
     type: "Coporate Meeting",
   },
   {
-    image: "https://ondistudio.com/wp-content/uploads/2020/05/drone1.jpg",
-    type: "Wedding",
+    image:
+      "https://images.unsplash.com/photo-1548357158-fdf73a1496b4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTJ8MjQ2Nzc2Nnx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60",
+    type: "Marriage Ceremonies",
   },
   {
     image:
-      "https://res.cloudinary.com/splacer/image/upload/e_improve,f_auto,q_auto,g_auto,c_fill,dpr_2,w_1920,h_1080/v1/production/Splaces/013518/14_q4dgeq.jpg",
+      "https://static01.nyt.com/images/2022/02/15/fashion/15NYFWPARTIES-laquan-lead/15NYFWPARTIES-laquan-lead-mediumSquareAt3X.jpg",
     type: "Parties",
   },
   {
     image:
       "https://flo.health/uploads/media/sulu-630x-inset/09/1229-Pregnant%20woman%20is%20opening%20a%20new%20gift%20at%20baby%20shower.jpg?v=1-0",
-    type: "Baby Shower",
+    type: "Bridal/Baby Showers",
   },
   {
     image:
@@ -44,30 +45,29 @@ const eventLocation = [
     location: "East Legon",
   },
   {
-    image: "https://images.unsplash.com/photo-1568306954278-df7b9ad9a72f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1189&q=80",
+    image:
+      "https://images.unsplash.com/photo-1568306954278-df7b9ad9a72f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1189&q=80",
     location: "Accra",
   },
   {
     image:
       "https://www.worldatlas.com/r/w1200/upload/ca/1e/b0/shutterstock-1177833901.jpg",
-      location: "Kasoa",
+    location: "Kasoa",
   },
   {
     image:
       "https://huvudstadsguiden.eu/wp-content/uploads/2021/01/Accra-1-580x368.jpg",
-      location: "Adenta",
+    location: "Adenta",
   },
   {
     image:
       "https://cdn.statically.io/img/i0.wp.com/odarteyghnews.com/wp-content/uploads/2021/12/Accra-odarteyghnews.com_.jpg?resize=768%2C409&ssl=1&quality=70&f=auto",
-      location: "Tema",
+    location: "Tema",
   },
   {
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/0/0a/Acca.jpg",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/0a/Acca.jpg",
     location: "Labadi",
   },
-  
 ];
 function HomePage() {
   const navigate = useNavigate();
@@ -231,14 +231,16 @@ function HomePage() {
           <div className="row">
             {eventLocation.map((eventLocation) => {
               return (
-                <EventLocation location={eventLocation.location} image={eventLocation.image} />
+                <EventLocation
+                  location={eventLocation.location}
+                  image={eventLocation.image}
+                />
               );
             })}
           </div>
         </div>
       </section>
 
-     
       {/* <section id="contact">
         <div className="container">
           <div className="row align-items-center">

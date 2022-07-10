@@ -1,10 +1,25 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/footer";
 import Navbar from "../components/Navbar";
+import {addListing} from "../utils/firebase";
 
 function Listing() {
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [location, setLocation] = useState("");
+  const [capacity, setCapacity] = useState("");
+  const [dailyRate, setDailyrate] = useState("");
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
+  const [info, setInfo] = useState("");
+  const [amenities, setAmenities] = useState("");
+  const [images, setImages] = useState("");
+
+
    const navigate = useNavigate();
   return (
     <div>
@@ -53,12 +68,12 @@ function Listing() {
       </section>
 
       <section>
-        <div style={{ paddingRight: "30%", paddingLeft: "30%" }}>
+        <div style={{ paddingRight: "20%", paddingLeft: "20%" }}>
           <h1 style={{ fontWeight: "400", paddingBottom: "2%" }}>
             List your space
           </h1>
 
-          <form action="reservation" method="post">
+          <form action="reservation" >
             <div className="elem-group">
               <input
                 type="text"
@@ -67,6 +82,9 @@ function Listing() {
                 placeholder="name"
                 pattern="[A-Z\sa-z]{3,50}"
                 required
+                onChange={(event) => {
+                  setName(event.target.value);
+                }}
               />
             </div>
             <div className="elem-group">
@@ -76,6 +94,9 @@ function Listing() {
                 name="email"
                 placeholder="abc@email.com"
                 required
+                onChange={(event) => {
+                  setEmail(event.target.value);
+                }}
               />
             </div>
             <div className="elem-group">
@@ -86,52 +107,65 @@ function Listing() {
                 placeholder="000-000-0000"
                 pattern="(\d{3})-?\s?(\d{3})-?\s?(\d{4})"
                 required
+                onChange={(event) => {
+                  setPhone(event.target.value);
+                }}
               />
             </div>
             <hr></hr>
             <div className="elem-group">
-              <label for="event-selection"> Select Event types</label>
-              <select id="event-selection" name="event-selection" required>
-                <option value="">Choose from the List</option>
-                <option value="connecting">Party</option>
-                <option value="adjoining">Party</option>
-                <option value="adjacent">Party</option>
-                <option value="adjacent">Party</option>
-                <option value="adjacent">Party</option>
-                <option value="adjacent">Party</option>
-                <option value="adjacent">Party</option>
-                <option value="adjacent">Party</option>
-                <option value="adjacent">Party</option>
-              </select>
+              <input
+                type="text"
+                id="location"
+                name="location"
+                placeholder="Location"
+                pattern="[A-Z\sa-z]{3,50}"
+                required
+                onChange={(event) => {
+                  setLocation(event.target.value);
+                }}
+              />
             </div>
+            
             <div className="elem-group ">
               <label for="adult">Capacity</label>
               <input
                 type="number"
-                id="attendance"
-                name="total_attendance"
+                id="capacity"
+                name="capacity"
                 placeholder=" 100"
                 min="10"
                 required
+                onChange={(event) => {
+                  setCapacity(event.target.value);
+                }}
               />
             </div>
             <div className="elem-group ">
-              <label for="adult">Hourly Rate</label>
+              <label for="adult">Daily Rate</label>
               <input
                 type="number"
-                id="rate"
-                name="rate"
+                id="dailyRate"
+                name="dailyRate"
                 placeholder=" GHS 250"
                 required
+                onChange={(event) => {
+                  setDailyrate(event.target.value);
+                }}
               />
             </div>
             <div className="elem-group inlined">
               <label for="start-date">Availability start date</label>
-              <input type="date" id="start-date" name="start-date" required />
+              <input type="date" id="startDate" name="startDate" required
+               onChange={(event) => {
+                setStartDate(event.target.value);
+              }} />
             </div>
             <div className="elem-group inlined">
               <label for="end-date">Availability end date</label>
-              <input type="date" id="end-date" name="end-date" required />
+              <input type="date" id="endDate" name="endDate" required onChange={(event) => {
+                  setEndDate(event.target.value);
+                }} />
             </div>
             <hr></hr>
             <div className="elem-group">
@@ -141,13 +175,16 @@ function Listing() {
                 name="amenities"
                 placeholder="Washroom,CCTV,BBQ,"
                 required
+                onChange={(event) => {
+                  setAmenities(event.target.value);
+                }}
               ></textarea>
             </div>
             <div className="elem-group">
               <label for="message">Description</label>
               <textarea
-                id="message"
-                name="visitor_message"
+                id="info"
+                name="info"
                 placeholder=" This studio was created out of our passion for visual arts
                 and with a mission to support contemporary talent. We
                 understand your needs, and are here to help you to create
@@ -155,6 +192,9 @@ function Listing() {
                 lighting and grip demands of the most talented and demanding
                 of creatives. One of New York oldest prop-house is 10 ft"
                 required
+                onChange={(event) => {
+                  setInfo(event.target.value);
+                }}
               ></textarea>
             </div>
             <hr></hr>
@@ -163,43 +203,76 @@ function Listing() {
               <input
                 type="file"
                 id="images"
-                name="filename"
+                name="images"
                 style={{ padding: "3%" }}
+                onChange={(event) => {
+                  setImages(event.target.value);
+                }}
               />
               <input
                 type="file"
                 id="images"
-                name="filename"
+                name="images"
                 style={{ padding: "3%" }}
+                onChange={(event) => {
+                  setImages(event.target.value);
+                }}
               />
               <input
                 type="file"
                 id="images"
-                name="filename"
+                name="images"
                 style={{ padding: "3%" }}
+                onChange={(event) => {
+                  setImages(event.target.value);
+                }}
               />
               <input
                 type="file"
                 id="images"
-                name="filename"
+                name="images"
                 style={{ padding: "3%" }}
+                onChange={(event) => {
+                  setImages(event.target.value);
+                }}
               />
               <input
                 type="file"
                 id="images"
-                name="filename"
+                name="images"
                 style={{ padding: "3%" }}
+                onChange={(event) => {
+                  setImages(event.target.value);
+                }}
               />
               <input
                 type="file"
                 id="images"
-                name="filename"
+                name="images"
                 style={{ padding: "3%" }}
+                onChange={(event) => {
+                  setImages(event.target.value);
+                }}
               />
             </div>
             <button
+            onClick={async (e) => {
+              e.preventDefault();
+              await addListing({
+                name,
+                email,
+                phone,
+                location,
+                capacity,
+                dailyRate,
+                startDate,
+                endDate,
+                amenities,
+                info,
+                images,
+              });
+            }}
               type="submit"
-              href="#home"
               className="btn btn-brand"
               style={{
                 backgroundColor: "#ff5a60",
@@ -210,8 +283,9 @@ function Listing() {
                 padding: "12px 28px",
                 borderRadius: "30",
               }}
+              
             >
-               List Space 
+               Add Space
             </button>
           </form>
         </div>
