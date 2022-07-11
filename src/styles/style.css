@@ -88,26 +88,26 @@ section {
   background-attachment: fixed;
   align-items: center;
   animation-name: background-images;
-  animation-duration: 25s;
+  animation-duration: 45s;
   animation-iteration-count: infinite;
   animation-direction: reverse;
 }
 
 @keyframes background-images {
   0% {
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz16NObHPkXwcAbGlF9Va8-X2aGB0prhtpLQ&usqp=CAU");
+    background-image: url("https://www.rifaidate.it/casa/costruire-una-casa/costruire-appartamenti-con-terrazzo_NG1.jpg");
   }
   25% {
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz16NObHPkXwcAbGlF9Va8-X2aGB0prhtpLQ&usqp=CAU");
+    background-image: url("https://citynews-riminitoday.stgy.ovh/~media/horizontal-hi/66384696782680/balcone-4.jpg");
   }
   50% {
-    background-image: url("https://media.istockphoto.com/photos/modern-backyard-with-oriental-inspired-background-3d-rendering-picture-id1305085060?k=20&m=1305085060&s=612x612&w=0&h=8qWe7Pisjn_EB1U-61VpZBzn_D8i8JUVWruAFZrybgM=");
+    background-image: url("https://florim-cdn.thron.com/delivery/public/image/florim/1589_015/gggcrc/std/1024x0/1589_015.jpg/?quality=80&format=webp&scalemode=centered&dpr=100");
   }
   75% {
-    background-image: url("https://media.istockphoto.com/photos/backyard-paver-patio-with-garden-accessories-picture-id477970197?k=20&m=477970197&s=612x612&w=0&h=1UR5k1P2U10arMNmUFftYRFm2HGR_GY6luxJHNONgeE=");
+    background-image: url("https://citynews-parmatoday.stgy.ovh/~media/horizontal-hi/11304736408210/privacy-terrazzo-2-2.jpeg");
   }
   100% {
-    background-image: url("https://t4.ftcdn.net/jpg/03/41/47/83/360_F_341478371_HLwHOMw1HMqmFlUq31saH6fCZOaELwsT.jpg");
+    background-image: url("https://citynews-milanotoday.stgy.ovh/~media/horizontal-hi/56343782060505/terrazzo-3-3.jpg");
   }
 }
 
