@@ -88,7 +88,7 @@ function Space() {
           <div className="row">
             <div className="col-12 section-intro">
               <h2 style={{ textAlign: "center", fontWeight: "400" }}>
-                Available event spaces nearby
+                Featured spaces on spacebar
               </h2>
               <div className="hline"></div>
             </div>
