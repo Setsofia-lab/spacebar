@@ -239,7 +239,7 @@ function Booking() {
                         ></textarea>
                       </div>
                       <button
-                        onClick= {async (e) => {
+                        onClick={async (e) => {
                           e.preventDefault();
                           await addBookings({
                             name,
@@ -251,10 +251,11 @@ function Booking() {
                             startTime,
                             endTime,
                             info,
+                            selectedListing,
                           });
+                          navigate("/space");
                         }}
                         type="submit"
-                        href="/"
                         className="btn btn-brand"
                         style={{
                           backgroundColor: "#ff5a60",

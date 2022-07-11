@@ -106,6 +106,7 @@ export async function addBookings({
   startTime,
   endTime,
   info,
+  selectedListing,
 }) {
   try {
     const bookings = await addDoc(collection(db, "bookings"), {
@@ -118,6 +119,7 @@ export async function addBookings({
       startTime: startTime,
       endTime: endTime,
       info: info,
+      selectedListing: selectedListing.name
     });
     console.log("Booking with booking ID :", bookings.id);
   } catch (e) {

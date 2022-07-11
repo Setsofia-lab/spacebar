@@ -24,15 +24,15 @@ const Footer = () => {
                   <a href="spaces">Find Spaces</a>
                   <a href="explore">Explore other Cities</a>
                   <a href="home">Contact Us</a>
-                  <a href="">moments</a>
+                  <a href="">Spacebar Moments</a>
                 </div>
               </div>
               <div className="col-md-2">
-                <h5 className="title-sm">More</h5>
+                <h5 className="title-sm">Social Media</h5>
                 <div className="footer-links">
-                  <a href="#">FAQ's</a>
-                  <a href="#">Privacy & Policy</a>
-                  <a href="#">Liscences</a>
+                  <a href="#">Instagram</a>
+                  <a href="#">Twitter</a>
+                  <a href="#">Facebook</a>
                 </div>
               </div>
               <div className="col-md-2">

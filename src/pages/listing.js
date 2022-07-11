@@ -271,6 +271,7 @@ function Listing() {
                 info,
                 images,
               });
+              navigate("/");
             }}
               type="submit"
               className="btn btn-brand"
