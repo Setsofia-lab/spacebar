@@ -148,7 +148,7 @@ const Signup = ({ history }) => {
 
               <button
                 onClick={handleSignUp}
-                href="homepage"
+                href="/"
                 className="btn"
                 type="submit"
                 style={{

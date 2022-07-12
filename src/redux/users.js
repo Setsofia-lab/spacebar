@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const UserSlice = createSlice({
   name: "users",
-  initialState: { listing: {}, listings: [], booking: {}, user:{}, },
+  initialState: { listing: {}, listings: [], booking: {}, user: null },
   reducers: {
     addlisting: (state, action) => {
       state.listing = action.payload;
@@ -16,9 +16,9 @@ export const UserSlice = createSlice({
     selectedListing: (state, actions) => {
       state.listing = actions.payload;
     },
-    setUserToState:(state, action) =>{
-      state.user= action.payload;
-    }
+    setUserToState: (state, action) => {
+      state.user = action.payload;
+    },
   },
 });
 export const {
@@ -26,7 +26,7 @@ export const {
   addlisting,
   setListingsToState,
   selectedListing,
-  setUserToState
+  setUserToState,
 } = UserSlice.actions;
 
 export default UserSlice.reducer;
