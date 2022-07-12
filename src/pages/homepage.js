@@ -93,7 +93,7 @@ function HomePage() {
                     paddingTop: "15%",
                   }}
                 >
-                  Find affordable and unique event spaces for your upcoming
+                  Find affordable and unique spaces for all your activities and
                   events{" "}
                 </p>
               </div>
