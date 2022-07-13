@@ -83,7 +83,7 @@ function Space() {
         </div>
       </div>
 
-      <section id="spaces">
+      <section id="space">
         <div className="container">
           <div className="row">
             <div className="col-12 section-intro">
