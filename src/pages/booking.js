@@ -87,16 +87,16 @@ function Booking() {
                   <hr></hr>
                   <h5>Host Rules</h5>
                   <p>
-                    Guests are charged upfront through Spacebar's secure payment
-                    system. Your payout is directly deposited after each event,
-                    minus our 25% service fee.
+                    Guests are charged upfront . Your payout is directly
+                    deposited after each event, minus our service fee.
                   </p>
                   <hr></hr>
                   <h5>Security and Safety Guidelines</h5>
                   <p>
-                    Guests are charged upfront through Spacebar's secure payment
-                    system. Your payout is directly deposited after each event,
-                    minus our 25% service fee.
+                    The Spacebar Insurance Policy protects hosts for general
+                    liability claims. Every booking made on Spacebar is covered
+                    automatically. Learn more about the Spacebar Insurance
+                    Policy here.
                   </p>
                   <hr></hr>
                 </div>

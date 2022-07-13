@@ -1,12 +1,11 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/footer";
 import Navbar from "../components/Navbar";
-import {addListing} from "../utils/firebase";
+import { addListing } from "../utils/firebase";
 
 function Listing() {
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -17,10 +16,9 @@ function Listing() {
   const [endDate, setEndDate] = useState("");
   const [info, setInfo] = useState("");
   const [amenities, setAmenities] = useState("");
-  const [images, setImages] = useState("");
+  const [images, setImages] = useState({});
 
-
-   const navigate = useNavigate();
+  const navigate = useNavigate();
   return (
     <div>
       <Navbar />
@@ -73,7 +71,7 @@ function Listing() {
             List your space
           </h1>
 
-          <form action="reservation" >
+          <form action="reservation">
             <div className="elem-group">
               <input
                 type="text"
@@ -126,7 +124,7 @@ function Listing() {
                 }}
               />
             </div>
-            
+
             <div className="elem-group ">
               <label for="adult">Capacity</label>
               <input
@@ -156,16 +154,27 @@ function Listing() {
             </div>
             <div className="elem-group inlined">
               <label for="start-date">Availability start date</label>
-              <input type="date" id="startDate" name="startDate" required
-               onChange={(event) => {
-                setStartDate(event.target.value);
-              }} />
+              <input
+                type="date"
+                id="startDate"
+                name="startDate"
+                required
+                onChange={(event) => {
+                  setStartDate(event.target.value);
+                }}
+              />
             </div>
             <div className="elem-group inlined">
               <label for="end-date">Availability end date</label>
-              <input type="date" id="endDate" name="endDate" required onChange={(event) => {
+              <input
+                type="date"
+                id="endDate"
+                name="endDate"
+                required
+                onChange={(event) => {
                   setEndDate(event.target.value);
-                }} />
+                }}
+              />
             </div>
             <hr></hr>
             <div className="elem-group">
@@ -206,7 +215,8 @@ function Listing() {
                 name="images"
                 style={{ padding: "3%" }}
                 onChange={(event) => {
-                  setImages(event.target.value);
+                  console.log(event.target.files[0]);
+                  setImages({ ...images, 0: event.target.files[0] });
                 }}
               />
               <input
@@ -215,7 +225,7 @@ function Listing() {
                 name="images"
                 style={{ padding: "3%" }}
                 onChange={(event) => {
-                  setImages(event.target.value);
+                  setImages({ ...images, 1: event.target.files[0] });
                 }}
               />
               <input
@@ -224,7 +234,7 @@ function Listing() {
                 name="images"
                 style={{ padding: "3%" }}
                 onChange={(event) => {
-                  setImages(event.target.value);
+                  setImages({ ...images, 2: event.target.files[0] });
                 }}
               />
               <input
@@ -233,7 +243,7 @@ function Listing() {
                 name="images"
                 style={{ padding: "3%" }}
                 onChange={(event) => {
-                  setImages(event.target.value);
+                  setImages({ ...images, 3: event.target.files[0] });
                 }}
               />
               <input
@@ -242,7 +252,7 @@ function Listing() {
                 name="images"
                 style={{ padding: "3%" }}
                 onChange={(event) => {
-                  setImages(event.target.value);
+                  setImages({ ...images, 4: event.target.files[0] });
                 }}
               />
               <input
@@ -251,28 +261,28 @@ function Listing() {
                 name="images"
                 style={{ padding: "3%" }}
                 onChange={(event) => {
-                  setImages(event.target.value);
+                  setImages({ ...images, 5: event.target.files[0] });
                 }}
               />
             </div>
             <button
-            onClick={async (e) => {
-              e.preventDefault();
-              await addListing({
-                name,
-                email,
-                phone,
-                location,
-                capacity,
-                dailyRate,
-                startDate,
-                endDate,
-                amenities,
-                info,
-                images,
-              });
-              navigate("/");
-            }}
+              onClick={async (e) => {
+                e.preventDefault();
+                await addListing({
+                  name,
+                  email,
+                  phone,
+                  location,
+                  capacity,
+                  dailyRate,
+                  startDate,
+                  endDate,
+                  amenities,
+                  info,
+                  images,
+                });
+                // navigate("/");
+              }}
               type="submit"
               className="btn btn-brand"
               style={{
@@ -284,9 +294,8 @@ function Listing() {
                 padding: "12px 28px",
                 borderRadius: "30",
               }}
-              
             >
-               Add Space
+              Add Space
             </button>
           </form>
         </div>
@@ -308,7 +317,7 @@ function Listing() {
               </h3>
             </div>
             <div className="col-auto">
-            <a
+              <a
                 href="listing"
                 className="btn btn-light"
                 style={{ color: "#ff5a60" }}

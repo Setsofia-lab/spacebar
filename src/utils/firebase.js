@@ -1,6 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import "firebase/auth";
 import {
   getFirestore,
@@ -27,6 +28,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getFirestore(app);
+
+const storage = getStorage();
 
 export async function getUsers() {
   try {
@@ -77,20 +80,36 @@ export async function addListing({
   images,
 }) {
   try {
-    const listing = await addDoc(collection(db, "listing"), {
-      name: name,
-      email: email,
-      phone: phone,
-      location:location,
-      capacity: capacity,
-      dailyRate : dailyRate,
-      startDate :startDate,
-      endDate : endDate,
-      amenities : amenities,
-      info : info,
-      images:images,
+    Promise.all(
+      Object.values(images).map(async (image) => {
+        return await uploadBytes(
+          ref(storage, `${name}-images/${image.name}`),
+          image
+        );
+      })
+    ).then(async (response) => {
+      Promise.all(
+        response.map(async (res) => {
+          return await getDownloadURL(res.ref);
+        })
+      ).then(async (finalResponse) => {
+        console.log(finalResponse);
+        const listing = await addDoc(collection(db, "listing"), {
+          name: name,
+          email: email,
+          phone: phone,
+          location: location,
+          capacity: capacity,
+          dailyRate: dailyRate,
+          startDate: startDate,
+          endDate: endDate,
+          amenities: amenities,
+          info: info,
+          images: finalResponse,
+        });
+        console.log("Lisitng ID :", listing.id);
+      });
     });
-    console.log("Lisitng ID :", listing.id);
   } catch (e) {
     console.error("Error with lisitng:", e);
   }
@@ -119,7 +138,7 @@ export async function addBookings({
       startTime: startTime,
       endTime: endTime,
       info: info,
-      selectedListing: selectedListing.name
+      selectedListing: selectedListing.name,
     });
     console.log("Booking with booking ID :", bookings.id);
   } catch (e) {

@@ -42,7 +42,7 @@ export default () => {
               Add Listing
             </button>
 
-            {!user && (
+            {user && (
               <button
                 className="btn btn-brand"
                 onClick={() => navigate("/signup")}
