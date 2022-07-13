@@ -19,11 +19,11 @@ export default () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto" style={{ alignItems: "center" }}>
             <Nav.Link href="/space">Event Spaces</Nav.Link>
-            <Nav.Link href="/explore">Explore</Nav.Link>
+            <Nav.Link href="/">Explore</Nav.Link>
             <NavDropdown title="Blog" id="basic-nav-dropdown">
               <NavDropdown.Item href="/blog">Blog</NavDropdown.Item>
               <NavDropdown.Item href="/contact">Contact Us</NavDropdown.Item>
-              <NavDropdown.Item href="">Spacebar Moments</NavDropdown.Item>
+              <NavDropdown.Item href="/">Spacebar Moments</NavDropdown.Item>
             </NavDropdown>
 
             <button

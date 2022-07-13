@@ -20,19 +20,19 @@ const Footer = () => {
               <div className="col-md-2">
                 <h5 className="title-sm">Navigation</h5>
                 <div className="footer-links">
-                  <a href="blog">Blog</a>
-                  <a href="spaces">Find Spaces</a>
-                  <a href="explore">Explore other Cities</a>
-                  <a href="home">Contact Us</a>
-                  <a href="">Spacebar Moments</a>
+                  <a href="/blog">Blog</a>
+                  <a href="/space">Find Spaces</a>
+                  <a href="/">Explore other Cities</a>
+                  <a href="/">Contact Us</a>
+                  <a href="/">Spacebar Moments</a>
                 </div>
               </div>
               <div className="col-md-2">
                 <h5 className="title-sm">Social Media</h5>
                 <div className="footer-links">
-                  <a href="#">Instagram</a>
-                  <a href="#">Twitter</a>
-                  <a href="#">Facebook</a>
+                  <a href="/">Instagram</a>
+                  <a href="/">Twitter</a>
+                  <a href="/">Facebook</a>
                 </div>
               </div>
               <div className="col-md-2">
