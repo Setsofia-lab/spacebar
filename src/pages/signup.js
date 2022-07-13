@@ -82,7 +82,14 @@ const Signup = ({ history }) => {
           display: submitted ? "" : "none",
         }}
       >
-        <h3> Welcome to spacebar, {name}!</h3>
+        <h6>Thanks for signing up, {name}!</h6>
+        <h6>
+          Continue browsing our featured <a href="space">Spaces</a> or{" "}
+        </h6>
+        <h6>
+          {" "}
+          Continue to <a href="/">Homepage</a>
+        </h6>
       </div>
     );
   };
@@ -148,7 +155,6 @@ const Signup = ({ history }) => {
 
               <button
                 onClick={handleSignUp}
-                href="/"
                 className="btn"
                 type="submit"
                 style={{
