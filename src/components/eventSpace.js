@@ -43,7 +43,7 @@ const EventSpace = ({ image, price, name, location, capacity }) => {
                 className=" e-card-text"
                 style={{ fontStyle: "italic ", marginRight: "50px" }}
               >
-                <h6>{price} GHS/hr</h6>
+                <h6>{price} GHS</h6>
               </div>
               <div className=" e-card-text">
                 <h6>{capacity} heads</h6>

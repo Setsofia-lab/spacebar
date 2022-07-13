@@ -99,7 +99,7 @@ function Space() {
                 return (
                   <EventSpace
                     description={space.description}
-                    price={space.hourlyRate}
+                    price={space.price}
                     name={space.name}
                     location={space.location}
                     capacity={space.capacity}
