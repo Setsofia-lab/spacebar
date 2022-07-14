@@ -30,6 +30,7 @@ export default () => {
               className="btn btn-brand"
               onClick={() => navigate("/listing")}
               style={{
+                fontFamily:"Source Sans Pro",
                 backgroundColor: "#ff5a60",
                 color: "#fff",
                 fontWeight: "500",

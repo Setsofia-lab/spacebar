@@ -104,19 +104,20 @@ function HomePage() {
                     type="text"
                     placeholder="What are you planning.."
                     name="search"
-                    style={{ width: "30%", height: "45px" }}
+                    style={{ fontFamily:"Source Sans Pro",width: "30%", height: "45px" }}
                   />
                   <input
                     type="text"
                     placeholder="Where.."
                     name="search"
-                    style={{ width: "25%", height: "45px" }}
+                    style={{ fontFamily:"Source Sans Pro",width: "25%", height: "45px" }}
                   />
                   <input
                     type="date"
                     placeholder="When.."
                     // value=""
                     style={{
+                      fontFamily:"Source Sans Pro",
                       width: "25%",
                       height: "45px",
                       paddingRight: "15px",
@@ -129,6 +130,7 @@ function HomePage() {
                     }}
                     className="btn btn-brand"
                     style={{
+                      fontFamily:"Source Sans Pro",
                       backgroundColor: "#ff5a60",
                       color: "#fff",
                       fontWeight: "500",

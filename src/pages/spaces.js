@@ -51,6 +51,10 @@ function Space() {
                 images={images}
                 showBullets={true}
                 showNavs={true}
+                style={{
+                  borderRadius:"15px",
+                  position: "relative",
+                }}
               />
             </div>
           </div>

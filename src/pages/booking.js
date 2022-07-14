@@ -121,7 +121,7 @@ function Booking() {
                           onChange={(event) => {
                             setName(event.target.value);
                           }}
-                          style={{borderColor:"#11245a" , borderRadius:"15px"}}
+                          style={{fontFamily:"Source Sans Pro",borderColor:"#11245a" , borderRadius:"15px"}}
                         />
                       </div>
                       <div className="elem-group">
@@ -134,7 +134,7 @@ function Booking() {
                           onChange={(event) => {
                             setEmail(event.target.value);
                           }}
-                          style={{borderColor:"#11245a", borderRadius:"15px"}}
+                          style={{fontFamily:"Source Sans Pro",borderColor:"#11245a", borderRadius:"15px"}}
                         />
                       </div>
                       <div className="elem-group">
@@ -148,7 +148,7 @@ function Booking() {
                           onChange={(event) => {
                             setPhone(event.target.value);
                           }}
-                          style={{borderColor:"#11245a", borderRadius:"15px"}}
+                          style={{fontFamily:"Source Sans Pro",borderColor:"#11245a", borderRadius:"15px"}}
                         />
                       </div>
                       <hr></hr>
@@ -161,7 +161,7 @@ function Booking() {
                           onChange={(event) => {
                             setEventSelection(event.target.value);
                           }}
-                          style={{borderColor:"#11245a", borderRadius:"15px"}}
+                          style={{fontFamily:"Source Sans Pro",borderColor:"#11245a", borderRadius:"15px"}}
                         >
                           <option value="">Choose from the List</option>
                           <option value="Party">Party</option>
@@ -191,7 +191,7 @@ function Booking() {
                           onChange={(event) => {
                             setAttendance(event.target.value);
                           }}
-                          style={{borderColor:"#11245a", borderRadius:"15px"}}
+                          style={{fontFamily:"Source Sans Pro",borderColor:"#11245a", borderRadius:"15px"}}
                         />
                       </div>
                       <div className="elem-group">
@@ -204,7 +204,7 @@ function Booking() {
                           onChange={(event) => {
                             setCheckinDate(event.target.value);
                           }}
-                          style={{borderColor:"#11245a", borderRadius:"15px"}}
+                          style={{fontFamily:"Source Sans Pro",borderColor:"#11245a", borderRadius:"15px"}}
                         />
                       </div>
                       <div className="elem-group inlined">
@@ -217,7 +217,7 @@ function Booking() {
                           onChange={(event) => {
                             setStartTime(event.target.value);
                           }}
-                          style={{borderColor:"#11245a", borderRadius:"15px"}}
+                          style={{fontFamily:"Source Sans Pro",borderColor:"#11245a", borderRadius:"15px"}}
                         />
                       </div>
                       <div className="elem-group inlined">
@@ -230,7 +230,7 @@ function Booking() {
                           onChange={(event) => {
                             setEndTime(event.target.value);
                           }}
-                          style={{borderColor:"#11245a", borderRadius:"15px"}}
+                          style={{fontFamily:"Source Sans Pro",borderColor:"#11245a", borderRadius:"15px"}}
                         />
                       </div>
                       <hr></hr>
@@ -244,7 +244,7 @@ function Booking() {
                           onChange={(event) => {
                             setInfo(event.target.value);
                           }}
-                          style={{borderColor:"#11245a", borderRadius:"15px"}}
+                          style={{fontFamily:"Source Sans Pro",borderColor:"#11245a", borderRadius:"15px"}}
                         ></textarea>
                       </div>
                       <button
@@ -267,6 +267,7 @@ function Booking() {
                         type="submit"
                         className="btn btn-brand"
                         style={{
+                          fontFamily:"Source Sans Pro",
                           backgroundColor: "#ff5a60",
                           color: "#fff",
                           fontWeight: "500",
