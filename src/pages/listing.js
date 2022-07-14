@@ -83,7 +83,11 @@ function Listing() {
                 onChange={(event) => {
                   setName(event.target.value);
                 }}
-                style={{fontFamily:"Source Sans Pro",borderColor:"#11245a", borderRadius:"15px"}}
+                style={{
+                  fontFamily: "Source Sans Pro",
+                  borderColor: "#11245a",
+                  borderRadius: "15px",
+                }}
               />
             </div>
             <div className="elem-group">
@@ -96,7 +100,11 @@ function Listing() {
                 onChange={(event) => {
                   setEmail(event.target.value);
                 }}
-                style={{fontFamily:"Source Sans Pro",borderColor:"#11245a", borderRadius:"15px"}}
+                style={{
+                  fontFamily: "Source Sans Pro",
+                  borderColor: "#11245a",
+                  borderRadius: "15px",
+                }}
               />
             </div>
             <div className="elem-group">
@@ -110,7 +118,11 @@ function Listing() {
                 onChange={(event) => {
                   setPhone(event.target.value);
                 }}
-                style={{fontFamily:"Source Sans Pro",borderColor:"#11245a", borderRadius:"15px"}}
+                style={{
+                  fontFamily: "Source Sans Pro",
+                  borderColor: "#11245a",
+                  borderRadius: "15px",
+                }}
               />
             </div>
             <hr></hr>
@@ -125,7 +137,11 @@ function Listing() {
                 onChange={(event) => {
                   setLocation(event.target.value);
                 }}
-                style={{fontFamily:"Source Sans Pro",borderColor:"#11245a", borderRadius:"15px"}}
+                style={{
+                  fontFamily: "Source Sans Pro",
+                  borderColor: "#11245a",
+                  borderRadius: "15px",
+                }}
               />
             </div>
 
@@ -141,7 +157,11 @@ function Listing() {
                 onChange={(event) => {
                   setCapacity(event.target.value);
                 }}
-                style={{fontFamily:"Source Sans Pro",borderColor:"#11245a", borderRadius:"15px"}}
+                style={{
+                  fontFamily: "Source Sans Pro",
+                  borderColor: "#11245a",
+                  borderRadius: "15px",
+                }}
               />
             </div>
             <div className="elem-group ">
@@ -155,7 +175,11 @@ function Listing() {
                 onChange={(event) => {
                   setDailyrate(event.target.value);
                 }}
-                style={{fontFamily:"Source Sans Pro",borderColor:"#11245a", borderRadius:"15px"}}
+                style={{
+                  fontFamily: "Source Sans Pro",
+                  borderColor: "#11245a",
+                  borderRadius: "15px",
+                }}
               />
             </div>
             <div className="elem-group inlined">
@@ -168,7 +192,11 @@ function Listing() {
                 onChange={(event) => {
                   setStartDate(event.target.value);
                 }}
-                style={{fontFamily:"Source Sans Pro",borderColor:"#11245a", borderRadius:"15px"}}
+                style={{
+                  fontFamily: "Source Sans Pro",
+                  borderColor: "#11245a",
+                  borderRadius: "15px",
+                }}
               />
             </div>
             <div className="elem-group inlined">
@@ -181,7 +209,11 @@ function Listing() {
                 onChange={(event) => {
                   setEndDate(event.target.value);
                 }}
-                style={{fontFamily:"Source Sans Pro",borderColor:"#11245a", borderRadius:"15px"}}
+                style={{
+                  fontFamily: "Source Sans Pro",
+                  borderColor: "#11245a",
+                  borderRadius: "15px",
+                }}
               />
             </div>
             <hr></hr>
@@ -195,7 +227,11 @@ function Listing() {
                 onChange={(event) => {
                   setAmenities(event.target.value);
                 }}
-                style={{fontFamily:"Source Sans Pro",borderColor:"#11245a", borderRadius:"15px"}}
+                style={{
+                  fontFamily: "Source Sans Pro",
+                  borderColor: "#11245a",
+                  borderRadius: "15px",
+                }}
               ></textarea>
             </div>
             <div className="elem-group">
@@ -213,7 +249,11 @@ function Listing() {
                 onChange={(event) => {
                   setInfo(event.target.value);
                 }}
-                style={{fontFamily:"Source Sans Pro",borderColor:"#11245a", borderRadius:"15px"}}
+                style={{
+                  fontFamily: "Source Sans Pro",
+                  borderColor: "#11245a",
+                  borderRadius: "15px",
+                }}
               ></textarea>
             </div>
             <hr></hr>
@@ -223,7 +263,12 @@ function Listing() {
                 type="file"
                 id="images"
                 name="images"
-                style={{ fontFamily:"Source Sans Pro",padding: "3%", borderColor:"#11245a", borderRadius:"15px" }}
+                style={{
+                  fontFamily: "Source Sans Pro",
+                  padding: "3%",
+                  borderColor: "#11245a",
+                  borderRadius: "15px",
+                }}
                 onChange={(event) => {
                   console.log(event.target.files[0]);
                   setImages({ ...images, 0: event.target.files[0] });
@@ -233,17 +278,26 @@ function Listing() {
                 type="file"
                 id="images"
                 name="images"
-                style={{fontFamily:"Source Sans Pro", padding: "3%"  ,borderColor:"#11245a", borderRadius:"15px"}}
+                style={{
+                  fontFamily: "Source Sans Pro",
+                  padding: "3%",
+                  borderColor: "#11245a",
+                  borderRadius: "15px",
+                }}
                 onChange={(event) => {
                   setImages({ ...images, 1: event.target.files[0] });
                 }}
-                
               />
               <input
                 type="file"
                 id="images"
                 name="images"
-                style={{ fontFamily:"Source Sans Pro",padding: "3%" , borderColor:"#11245a", borderRadius:"15px"  }}
+                style={{
+                  fontFamily: "Source Sans Pro",
+                  padding: "3%",
+                  borderColor: "#11245a",
+                  borderRadius: "15px",
+                }}
                 onChange={(event) => {
                   setImages({ ...images, 2: event.target.files[0] });
                 }}
@@ -252,7 +306,12 @@ function Listing() {
                 type="file"
                 id="images"
                 name="images"
-                style={{ fontFamily:"Source Sans Pro",padding: "3%" , borderColor:"#11245a", borderRadius:"15px" }}
+                style={{
+                  fontFamily: "Source Sans Pro",
+                  padding: "3%",
+                  borderColor: "#11245a",
+                  borderRadius: "15px",
+                }}
                 onChange={(event) => {
                   setImages({ ...images, 3: event.target.files[0] });
                 }}
@@ -261,7 +320,12 @@ function Listing() {
                 type="file"
                 id="images"
                 name="images"
-                style={{ fontFamily:"Source Sans Pro",padding: "3%" , borderColor:"#11245a" , borderRadius:"15px" }}
+                style={{
+                  fontFamily: "Source Sans Pro",
+                  padding: "3%",
+                  borderColor: "#11245a",
+                  borderRadius: "15px",
+                }}
                 onChange={(event) => {
                   setImages({ ...images, 4: event.target.files[0] });
                 }}
@@ -270,7 +334,12 @@ function Listing() {
                 type="file"
                 id="images"
                 name="images"
-                style={{ fontFamily:"Source Sans Pro",padding: "3%" , borderColor:"#11245a", borderRadius:"15px" }}
+                style={{
+                  fontFamily: "Source Sans Pro",
+                  padding: "3%",
+                  borderColor: "#11245a",
+                  borderRadius: "15px",
+                }}
                 onChange={(event) => {
                   setImages({ ...images, 5: event.target.files[0] });
                 }}
@@ -292,12 +361,12 @@ function Listing() {
                   info,
                   images,
                 });
-                // navigate("/");
+                navigate("/");
               }}
               type="submit"
               className="btn btn-brand"
               style={{
-                fontFamily:"Source Sans Pro",
+                fontFamily: "Source Sans Pro",
                 backgroundColor: "#ff5a60",
                 color: "#fff",
                 fontWeight: "500",
