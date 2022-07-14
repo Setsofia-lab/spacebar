@@ -102,7 +102,7 @@ function HomePage() {
                 <form action="">
                   <input
                     type="text"
-                    placeholder="What are you planning.."
+                    placeholder="event type.."
                     name="search"
                     style={{ fontFamily:"Source Sans Pro",width: "30%", height: "45px" }}
                   />
