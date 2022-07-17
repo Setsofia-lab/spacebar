@@ -73,8 +73,8 @@ function Booking() {
                   <h5>About Space</h5>
                   <p>{selectedListing.description}</p>
                   <hr></hr>
-                  <h5>Rate</h5>
-                  <p>{selectedListing.hourlyRate}GHS/hr</p>
+                  <h5>Daily Rate</h5>
+                  <p>{selectedListing.price}GHS/day</p>
                   <hr></hr>
                   <h5>Availability</h5>
                   <p>24/7</p>
