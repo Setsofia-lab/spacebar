@@ -7,6 +7,22 @@ import Navbar from "../components/Navbar";
 import { addBookings } from "../utils/firebase";
 import SimpleImageSlider from "react-simple-image-slider";
 
+const images = [
+  {
+    url:
+      "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+  },
+  {
+    url:
+      "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+  },
+
+  {
+    url:
+      "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+  },
+];
+
 function Booking() {
   const dispatch = useDispatch();
   // const bookingList = useSelector((state) =>state.booking.value);
@@ -30,10 +46,9 @@ function Booking() {
     });
     filteredListing.length && setSelectedListing(filteredListing[0]);
   }, []);
-  useEffect(() => {
-    console.log(selectedListing);
-  }, [selectedListing]);
+
   const navigate = useNavigate();
+
   return (
     <div>
       <section id="booking">
@@ -50,20 +65,35 @@ function Booking() {
             >
               <div className="row align-items-center">
                 <div className="col-lg-6">
-                  <img
+                  {/* <img
                     src={selectedListing.images && selectedListing.images[0]}
                     alt="something"
-                  />
+                  /> */}
+
                   {/* <SimpleImageSlider
-                    width={"100%"}
-                    height={"40vh"}
+                    width={496}
+                    height={304}
                     images={selectedListing.images}
                     showBullets={true}
                     showNavs={true}
                     style={{
+                      borderRadius: "15px",
                       position: "relative",
                     }}
                   /> */}
+
+                  {selectedListing.images && (
+                    <SimpleImageSlider
+                      width={"100%"}
+                      height={"40vh"}
+                      images={selectedListing.images}
+                      showBullets={true}
+                      showNavs={true}
+                      style={{
+                        position: "relative",
+                      }}
+                    />
+                  )}
 
                   <h4>{selectedListing.name}</h4>
                   <hr></hr>
@@ -121,7 +151,11 @@ function Booking() {
                           onChange={(event) => {
                             setName(event.target.value);
                           }}
-                          style={{fontFamily:"Source Sans Pro",borderColor:"#11245a" , borderRadius:"15px"}}
+                          style={{
+                            fontFamily: "Source Sans Pro",
+                            borderColor: "#11245a",
+                            borderRadius: "15px",
+                          }}
                         />
                       </div>
                       <div className="elem-group">
@@ -134,7 +168,11 @@ function Booking() {
                           onChange={(event) => {
                             setEmail(event.target.value);
                           }}
-                          style={{fontFamily:"Source Sans Pro",borderColor:"#11245a", borderRadius:"15px"}}
+                          style={{
+                            fontFamily: "Source Sans Pro",
+                            borderColor: "#11245a",
+                            borderRadius: "15px",
+                          }}
                         />
                       </div>
                       <div className="elem-group">
@@ -148,7 +186,11 @@ function Booking() {
                           onChange={(event) => {
                             setPhone(event.target.value);
                           }}
-                          style={{fontFamily:"Source Sans Pro",borderColor:"#11245a", borderRadius:"15px"}}
+                          style={{
+                            fontFamily: "Source Sans Pro",
+                            borderColor: "#11245a",
+                            borderRadius: "15px",
+                          }}
                         />
                       </div>
                       <hr></hr>
@@ -161,7 +203,11 @@ function Booking() {
                           onChange={(event) => {
                             setEventSelection(event.target.value);
                           }}
-                          style={{fontFamily:"Source Sans Pro",borderColor:"#11245a", borderRadius:"15px"}}
+                          style={{
+                            fontFamily: "Source Sans Pro",
+                            borderColor: "#11245a",
+                            borderRadius: "15px",
+                          }}
                         >
                           <option value="">Choose from the List</option>
                           <option value="Party">Party</option>
@@ -191,7 +237,11 @@ function Booking() {
                           onChange={(event) => {
                             setAttendance(event.target.value);
                           }}
-                          style={{fontFamily:"Source Sans Pro",borderColor:"#11245a", borderRadius:"15px"}}
+                          style={{
+                            fontFamily: "Source Sans Pro",
+                            borderColor: "#11245a",
+                            borderRadius: "15px",
+                          }}
                         />
                       </div>
                       <div className="elem-group">
@@ -204,7 +254,11 @@ function Booking() {
                           onChange={(event) => {
                             setCheckinDate(event.target.value);
                           }}
-                          style={{fontFamily:"Source Sans Pro",borderColor:"#11245a", borderRadius:"15px"}}
+                          style={{
+                            fontFamily: "Source Sans Pro",
+                            borderColor: "#11245a",
+                            borderRadius: "15px",
+                          }}
                         />
                       </div>
                       <div className="elem-group inlined">
@@ -217,7 +271,11 @@ function Booking() {
                           onChange={(event) => {
                             setStartTime(event.target.value);
                           }}
-                          style={{fontFamily:"Source Sans Pro",borderColor:"#11245a", borderRadius:"15px"}}
+                          style={{
+                            fontFamily: "Source Sans Pro",
+                            borderColor: "#11245a",
+                            borderRadius: "15px",
+                          }}
                         />
                       </div>
                       <div className="elem-group inlined">
@@ -230,7 +288,11 @@ function Booking() {
                           onChange={(event) => {
                             setEndTime(event.target.value);
                           }}
-                          style={{fontFamily:"Source Sans Pro",borderColor:"#11245a", borderRadius:"15px"}}
+                          style={{
+                            fontFamily: "Source Sans Pro",
+                            borderColor: "#11245a",
+                            borderRadius: "15px",
+                          }}
                         />
                       </div>
                       <hr></hr>
@@ -244,7 +306,11 @@ function Booking() {
                           onChange={(event) => {
                             setInfo(event.target.value);
                           }}
-                          style={{fontFamily:"Source Sans Pro",borderColor:"#11245a", borderRadius:"15px"}}
+                          style={{
+                            fontFamily: "Source Sans Pro",
+                            borderColor: "#11245a",
+                            borderRadius: "15px",
+                          }}
                         ></textarea>
                       </div>
                       <button
@@ -267,7 +333,7 @@ function Booking() {
                         type="submit"
                         className="btn btn-brand"
                         style={{
-                          fontFamily:"Source Sans Pro",
+                          fontFamily: "Source Sans Pro",
                           backgroundColor: "#ff5a60",
                           color: "#fff",
                           fontWeight: "500",

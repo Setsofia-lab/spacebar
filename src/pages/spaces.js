@@ -107,7 +107,9 @@ function Space() {
                     name={space.name}
                     location={space.location}
                     capacity={space.capacity}
+                    // image={space.images}
                     image={space.images}
+
                   />
                 );
               })}
