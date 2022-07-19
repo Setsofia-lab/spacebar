@@ -82,7 +82,7 @@ function HomePage() {
             <div className="col-md-10">
               <div
                 className="container"
-                style={{ backgroundColor: "hsla(0, 4%, 20%, 0.4)" }}
+                style={{ backgroundColor: "hsla(0, 4%, 40%, 0.5)" }}
               >
                 <p
                   className="text-white h1"
@@ -98,29 +98,38 @@ function HomePage() {
                 </p>
               </div>
 
-              <div className="search-container" style={{ paddingTop: "6%" }}>
-                <form action="">
+              <div className="elem-group inlined" style={{ paddingTop: "6%" }}>
+                <form>
                   <input
-                    type="text"
-                    placeholder="event type.."
                     name="search"
-                    style={{ fontFamily:"Source Sans Pro",width: "30%", height: "45px" }}
+                    placeholder="what are you planning?"
+                    style={{
+                      width:"100%",
+                      fontFamily: "Source Sans Pro",
+                      borderColor: "#11245a",
+                      borderRadius: "15px",
+                      marginBottom: "4%",
+                    }}
                   />
                   <input
-                    type="text"
-                    placeholder="Where.."
                     name="search"
-                    style={{ fontFamily:"Source Sans Pro",width: "25%", height: "45px" }}
+                    placeholder="where?"
+                    style={{
+                      fontFamily: "Source Sans Pro",
+                      borderColor: "#11245a",
+                      borderRadius: "15px",
+                      marginBottom: "4%",
+                    }}
                   />
                   <input
                     type="date"
-                    placeholder="When.."
-                    // value=""
+                    name="date"
+                    placeholder="when?"
                     style={{
-                      fontFamily:"Source Sans Pro",
-                      width: "25%",
-                      height: "45px",
-                      paddingRight: "15px",
+                      fontFamily: "Source Sans Pro",
+                      borderColor: "#11245a",
+                      borderRadius: "15px",
+                      
                     }}
                   />
                   <button
@@ -130,7 +139,7 @@ function HomePage() {
                     }}
                     className="btn btn-brand"
                     style={{
-                      fontFamily:"Source Sans Pro",
+                      fontFamily: "Source Sans Pro",
                       backgroundColor: "#ff5a60",
                       color: "#fff",
                       fontWeight: "500",
