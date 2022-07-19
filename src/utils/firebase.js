@@ -138,7 +138,7 @@ export async function addBookings({
       startTime: startTime,
       endTime: endTime,
       info: info,
-      selectedListing: selectedListing.name,
+      selectedListing: selectedListing,
     });
     console.log("Booking with booking ID :", bookings.id);
   } catch (e) {
