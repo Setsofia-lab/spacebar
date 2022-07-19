@@ -10,7 +10,7 @@ const EventSpace = ({ image, price, name, location, capacity }) => {
   const navigate = useNavigate();
   return (
     <div className="col-lg-4 col-sm-6 p-4">
-      <Card style={{ height: "70vh" }} className="overflow-hidden">
+      <div style={{ height: "70vh" }} className="overflow-hidden">
         <section
           id="book"
           className="align-item-stretch"
@@ -96,7 +96,7 @@ const EventSpace = ({ image, price, name, location, capacity }) => {
             </div>
           </div>
         </section>
-      </Card>
+      </div>
     </div>
   );
 };
