@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import CardGroup from "react-bootstrap/CardGroup";
 import "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import EventSpace from "../components/eventSpace";
@@ -52,7 +53,7 @@ function Space() {
                 showBullets={true}
                 showNavs={true}
                 style={{
-                  borderRadius:"15px",
+                  borderRadius: "15px",
                   position: "relative",
                 }}
               />
@@ -98,21 +99,22 @@ function Space() {
             </div>
           </div>
           <div className="row">
-            {listings &&
-              listings.map((space) => {
-                return (
-                  <EventSpace
-                    description={space.description}
-                    price={space.price}
-                    name={space.name}
-                    location={space.location}
-                    capacity={space.capacity}
-                    // image={space.images}
-                    image={space.images}
-
-                  />
-                );
-              })}
+            <CardGroup>
+              {listings &&
+                listings.map((space) => {
+                  return (
+                    <EventSpace
+                      description={space.description}
+                      price={space.price}
+                      name={space.name}
+                      location={space.location}
+                      capacity={space.capacity}
+                      // image={space.images}
+                      image={space.images}
+                    />
+                  );
+                })}
+            </CardGroup>
           </div>
         </div>
       </section>
