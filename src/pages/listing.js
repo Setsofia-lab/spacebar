@@ -72,6 +72,7 @@ function Listing() {
                   textAlign: "left",
                   fontWeight: "400",
                   paddingBottom: "2%",
+                  paddingTop: "2%",
                 }}
               >
                 How to become a Spacebar host{" "}

@@ -65,6 +65,7 @@ function Space() {
                 textAlign: "left",
                 fontWeight: "400",
                 paddingBottom: "2%",
+                paddingTop: "4%",
               }}
             >
               How Spacebar works
