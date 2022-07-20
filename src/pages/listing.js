@@ -78,22 +78,22 @@ function Listing() {
               </h2>
 
               <h4>List your space for free</h4>
-              <p>
+              <h6>
                 Set your price, add photos and details, then your listing is
-                ready to be seen by millions of people searching for space.
-              </p>
+                ready to be seen by people searching for space.
+              </h6>
               <h4>Get contacted by spacebar team</h4>
-              <p>
+              <h6>
                 Expect a call from spacebar team and discussion on payment and
                 security. Once you confirm, your guests will receive information
                 on how to get there and details like your wifi code.
-              </p>
+              </h6>
               <h4>Get paid every time</h4>
-              <p>
+              <h6>
                 Guests are charged upfront through Spacebar's secure payment
                 system. Your payout is directly deposited after each event,
-                minus our 25% service fee.
-              </p>
+                minus our service fee.
+              </h6>
             </div>
           </div>
         </div>

@@ -71,19 +71,19 @@ function Space() {
             </h2>
 
             <h4>Find the perfect space</h4>
-            <p>
-              Browse the marketplace and tailor your search to your activity
-              needs.
-            </p>
+            <h6>
+              Browse our featured spaces and find the right space for 
+              your event needs. Spaces range from indoor auditoriums to outdoor gardens, private suites with root top swimming pools and other unqiue spaces
+            </h6>
             <h4>Book it with ease</h4>
-            <p>
-              Once you find a perfect match, book the space and pay online
-              through our easy-to-use payment system
-            </p>
+            <h6>
+              Once you find a perfect match, book the space by providing accurate details for the spaces required, cross check the info provided  and click BOOK to submit  
+              Our customer service team will contact you with a summary of your booking and provide appropriate steps to make payments through our easy-to-use payment system
+            </h6>
             <h4>Meet and create memorable events</h4>
-            <p>
+            <h6>
               Create a memorable experience in a memorable space, and enjoy!
-            </p>
+            </h6>
           </div>
         </div>
       </div>
