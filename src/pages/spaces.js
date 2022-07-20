@@ -47,7 +47,7 @@ function Space() {
           <div className="col-lg-4" style={{ paddingTop: "50px" }}>
             <div>
               <SimpleImageSlider
-                width={496}
+                width={"100%"}
                 height={304}
                 images={images}
                 showBullets={true}
