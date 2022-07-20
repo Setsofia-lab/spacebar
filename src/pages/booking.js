@@ -7,25 +7,24 @@ import Navbar from "../components/Navbar";
 import { addBookings } from "../utils/firebase";
 import SimpleImageSlider from "react-simple-image-slider";
 
-const images = [
-  {
-    url:
-      "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
-  },
-  {
-    url:
-      "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
-  },
+// const images = [
+//   {
+//     url:
+//       "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+//   },
+//   {
+//     url:
+//       "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+//   },
 
-  {
-    url:
-      "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
-  },
-];
+//   {
+//     url:
+//       "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+//   },
+// ];
 
 function Booking() {
   const dispatch = useDispatch();
-  // const bookingList = useSelector((state) =>state.booking.value);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -40,6 +39,9 @@ function Booking() {
   const [selectedListing, setSelectedListing] = useState({});
   const { listing, listings } = useSelector((state) => state.users);
 
+  const [submitted, setSubmitted] = useState(false);
+ 
+
   useEffect(() => {
     const filteredListing = listings.filter((spaces) => {
       return spaces.name == listing;
@@ -48,6 +50,20 @@ function Booking() {
   }, []);
 
   const navigate = useNavigate();
+
+  const successMessage = () => {
+    return (
+      <div
+        className="success"
+        style={{
+          display: submitted ? "" : "none",
+        }}
+      >
+        <h5>{name}Booking is succefully submitted! Navigate to <a href="/">HomePage</a></h5>
+        <h5>Or Browse more <a href="/space">Spaces</a></h5>
+      </div>
+    );
+  };
 
   return (
     <div>
@@ -64,24 +80,7 @@ function Booking() {
               style={{ marginRight: "25px", marginLeft: "25px" }}
             >
               <div className="row align-items-center">
-                <div className="col-lg-6">
-                  {/* <img
-                    src={selectedListing.images && selectedListing.images[0]}
-                    alt="something"
-                  /> */}
-
-                  {/* <SimpleImageSlider
-                    width={496}
-                    height={304}
-                    images={selectedListing.images}
-                    showBullets={true}
-                    showNavs={true}
-                    style={{
-                      borderRadius: "15px",
-                      position: "relative",
-                    }}
-                  /> */}
-
+                <div className="col-lg-7">
                   {selectedListing.images && (
                     <SimpleImageSlider
                       width={"100%"}
@@ -131,7 +130,7 @@ function Booking() {
                   <hr></hr>
                 </div>
 
-                <div className="col-lg-6 ">
+                <div className="col-lg-5 ">
                   <div
                     className="container"
                     style={{ marginRight: "25px", marginLeft: "25px" }}
@@ -328,7 +327,9 @@ function Booking() {
                             info,
                             selectedListing,
                           });
-                          navigate("/space");
+                          setSubmitted(true);
+                          
+                          // navigate("/space");
                         }}
                         type="submit"
                         className="btn btn-brand"
@@ -345,6 +346,7 @@ function Booking() {
                       >
                         Book
                       </button>
+                      {successMessage()}
                     </form>
                   </div>
                 </div>

@@ -1,11 +1,11 @@
 import React from "react";
 import "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 import Footer from "../components/footer";
 import Navbar from "../components/Navbar";
 
 function Blog() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   return (
     <div>

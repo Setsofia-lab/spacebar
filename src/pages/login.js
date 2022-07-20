@@ -3,7 +3,7 @@ import Footer from "../components/footer";
 import Navbar from "../components/Navbar";
 import React, { useState, useEffect } from "react";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { useSelector, useDispatch } from "react-redux";
+import {  useDispatch } from "react-redux";
 import { setUserToState } from "../redux/users";
 
 const Login = ({ history }) => {

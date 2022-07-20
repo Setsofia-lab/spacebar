@@ -2,10 +2,8 @@ import React, { createContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/footer";
 import Navbar from "../components/Navbar";
-import { useState, useEffect, useCallback } from "react";
-import { app } from "../utils/firebase";
+import { useState} from "react";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import HomePage from "./homepage";
 import { setUserToState } from "../redux/users";
 import { useDispatch } from "react-redux";
 

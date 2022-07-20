@@ -1,8 +1,8 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     return (
         <footer>
         <div className="footer-top">

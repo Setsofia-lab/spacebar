@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import CardGroup from "react-bootstrap/CardGroup";
 import "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 import EventSpace from "../components/eventSpace";
 import Footer from "../components/footer";
 import Navbar from "../components/Navbar";
@@ -37,7 +37,7 @@ function Space() {
     getAllSpaces();
   }, []);
 
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
   return (
     <div>
       <Navbar />
