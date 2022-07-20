@@ -40,7 +40,6 @@ function Booking() {
   const { listing, listings } = useSelector((state) => state.users);
 
   const [submitted, setSubmitted] = useState(false);
- 
 
   useEffect(() => {
     const filteredListing = listings.filter((spaces) => {
@@ -59,8 +58,26 @@ function Booking() {
           display: submitted ? "" : "none",
         }}
       >
-        <h5>{name}Booking is succefully submitted! Navigate to <a href="/">HomePage</a></h5>
-        <h5>Or Browse more <a href="/space">Spaces</a></h5>
+        <h5>
+          {name}Booking is succefully submitted! Navigate to{" "}
+          <a href="/">HomePage</a>
+        </h5>
+        <h5>
+          Or Browse more <a href="/space">Spaces</a>
+        </h5>
+      </div>
+    );
+  };
+
+  const errorMessage = () => {
+    return (
+      <div
+        className="error"
+        style={{
+          display: !submitted ? "" : "none",
+        }}
+      >
+        <h3>Please enter all the fields</h3>
       </div>
     );
   };
@@ -328,7 +345,7 @@ function Booking() {
                             selectedListing,
                           });
                           setSubmitted(true);
-                          
+
                           // navigate("/space");
                         }}
                         type="submit"
@@ -347,6 +364,7 @@ function Booking() {
                         Book
                       </button>
                       {successMessage()}
+                      {errorMessage()}
                     </form>
                   </div>
                 </div>

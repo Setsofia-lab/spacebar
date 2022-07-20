@@ -19,6 +19,40 @@ function Listing() {
   const [images, setImages] = useState({});
 
   const navigate = useNavigate();
+  const [submitted, setSubmitted] = useState(false);
+
+  const successMessage = () => {
+    return (
+      <div
+        className="success"
+        style={{
+          display: submitted ? "" : "none",
+        }}
+      >
+        <h5>
+          {name}Listing is succefully submitted! Navigate to{" "}
+          <a href="/">HomePage</a>
+        </h5>
+        <h5>
+          Or Browse featured <a href="/space">Spaces</a>
+        </h5>
+      </div>
+    );
+  };
+
+  const errorMessage = () => {
+    return (
+      <div
+        className="error"
+        style={{
+          display: !submitted ? "" : "none",
+        }}
+      >
+        <h3>All fields required.Please fill all fields</h3>
+      </div>
+    );
+  };
+  
   return (
     <div>
       <Navbar />
@@ -361,7 +395,8 @@ function Listing() {
                   info,
                   images,
                 });
-                navigate("/");
+                setSubmitted(true);
+                //navigate("/");
               }}
               type="submit"
               className="btn btn-brand"
@@ -378,6 +413,8 @@ function Listing() {
             >
               Add Space
             </button>
+            {successMessage()}
+            {errorMessage()}
           </form>
         </div>
       </section>
