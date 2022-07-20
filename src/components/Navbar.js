@@ -23,7 +23,7 @@ export default () => {
             <NavDropdown title="Blog" id="basic-nav-dropdown">
               <NavDropdown.Item href="/blog">Blog</NavDropdown.Item>
               <NavDropdown.Item href="/contact">Contact Us</NavDropdown.Item>
-              <NavDropdown.Item href="/">Spacebar Moments</NavDropdown.Item>
+              <NavDropdown.Item href="/moments">Spacebar Moments</NavDropdown.Item>
             </NavDropdown>
 
             <button

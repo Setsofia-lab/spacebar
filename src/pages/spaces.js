@@ -13,11 +13,11 @@ import { getListings } from "../utils/firebase";
 const images = [
   {
     url:
-      "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDRrsjPVGW8W0omG3Ayh2--s7qNyu0fWW4Pw&usqp=CAU",
   },
   {
     url:
-      "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9j4A_4UpYPqyZwQtnAz91lIzj1gYxoCcg4Q&usqp=CAU",
   },
 
   {
