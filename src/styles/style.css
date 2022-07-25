@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap");
 
 body {
   line-height: normal;
@@ -183,7 +183,7 @@ div.elem-group.inlined {
 
 label {
   display: block;
-  font-family:  "Source Sans Pro", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   padding-bottom: 10px;
   font-size: 1.25em;
 }
@@ -195,7 +195,7 @@ textarea {
   border: 2px solid #777;
   box-sizing: border-box;
   font-size: 1.25em;
-  font-family:  "Source Sans Pro", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   width: 100%;
   padding: 10px;
 }
@@ -278,7 +278,6 @@ button:hover {
 }
 .social-container {
   background: #fff;
-  padding: 25px 50px;
 }
 a.social {
   margin: 0 1rem;
@@ -289,7 +288,7 @@ a.social:hover {
   transform: translateY(-2px);
 }
 a.whatsapp {
-  color: #25D366;
+  color: #25d366;
 }
 
 a.facebook {
@@ -303,4 +302,3 @@ a.twitter {
 a.instagram {
   color: #8a3ab9;
 }
-

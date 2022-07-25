@@ -21,7 +21,7 @@ const Footer = () => {
               <p>
                 {" "}
                 Create memorable moments with unique spaces for your upcoming
-                events - <a href="/space">Browse Spaces now</a> 
+                events - <a href="/space">Browse Spaces now</a>
               </p>
             </div>
             <div className="col-md-3">
