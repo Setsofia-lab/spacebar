@@ -122,6 +122,17 @@ function HomePage() {
                       marginBottom: "4%",
                     }}
                   />
+                   {/* <input
+                   type="date"
+                    name="search"
+                    placeholder="when?"
+                    style={{
+                      width:"100%",
+                      fontFamily: "Source Sans Pro",
+                      borderColor: "#11245a",
+                      borderRadius: "15px",
+                    }}
+                  /> */}
                   <input
                     type="date"
                     name="date"

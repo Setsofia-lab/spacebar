@@ -50,7 +50,7 @@ const EventSpace = ({ image, price, name, location, capacity }) => {
                   className=" e-card-text"
                   style={{ fontSize: "18", marginRight: "50px" }}
                 >
-                  <h6>{location}</h6>
+                  <h6 style={{fontWeight:'bold'}}>{location}</h6>
                 </div>
                 <div className=" e-card-icon">
                   <h6>4.5/5 stars</h6>
@@ -61,7 +61,7 @@ const EventSpace = ({ image, price, name, location, capacity }) => {
                   className=" e-card-text"
                   style={{ fontStyle: "italic ", marginRight: "50px" }}
                 >
-                  <h6>{price} GHS</h6>
+                  <h6 style={{fontWeight:'bold'}}>{price} GHS</h6>
                 </div>
                 <div className=" e-card-text">
                   <h6>{capacity} heads</h6>
