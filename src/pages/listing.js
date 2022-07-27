@@ -101,7 +101,7 @@ function Listing() {
       </section>
 
       <section>
-        <div style={{ paddingRight: "20%", paddingLeft: "20%" }}>
+        <div style={{ paddingRight: "30%", paddingLeft: "30%" }}>
           <h1 style={{ fontWeight: "400", paddingBottom: "2%" }}>
             List your space
           </h1>
