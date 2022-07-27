@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import CardGroup from "react-bootstrap/CardGroup";
 import "react-bootstrap";
 //import { useNavigate } from "react-router-dom";
@@ -9,6 +9,9 @@ import SimpleImageSlider from "react-simple-image-slider";
 import { useDispatch, useSelector } from "react-redux";
 import { setListingsToState } from "../redux/users";
 import { getListings } from "../utils/firebase";
+
+
+
 
 const images = [
   {
@@ -36,6 +39,8 @@ function Space() {
     };
     getAllSpaces();
   }, []);
+
+  
 
   //const navigate = useNavigate();
   return (

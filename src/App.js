@@ -11,6 +11,7 @@ import Signup from "./pages/signup";
 import Login from "./pages/login";
 import Blog from "./pages/blog";
 import Moments from "./pages/moments";
+import BlogPage from "./pages/blogpage";
 import "./utils/firebase";
 
 const App = () => {
@@ -34,6 +35,7 @@ const App = () => {
         <Route path="/blog" element={<Blog />} />
         <Route path="/login" element={<Login />} />
         <Route path="/moments" element={<Moments />} />
+        <Route path="/blogpage" element={<BlogPage />} />
       </Routes>
     </BrowserRouter>
   );
