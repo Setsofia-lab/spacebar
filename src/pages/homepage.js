@@ -161,6 +161,7 @@ function HomePage() {
                       padding: "12px 28px",
                       borderRadius: "30",
                       height: "45px",
+                      width:"100%"
                     }}
                   >
                     Search

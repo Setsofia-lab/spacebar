@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import SimpleImageSlider from "react-simple-image-slider";
 import { selectedListing } from "../redux/users";
 
-const EventSpace = ({ image, price, name, location, capacity }) => {
+const EventSpace = ({ image, price, name, location, capacity, index }) => {
+  const [images, setImages] = useState([]);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   return (
@@ -18,6 +20,8 @@ const EventSpace = ({ image, price, name, location, capacity }) => {
           <div className="e-card" style={{ height: "100%" }}>
             <div className="e-card-image">
               <SimpleImageSlider
+                autoPlay={true}
+                autoPlayDelay={2}
                 width={"100%"}
                 height={"40vh"}
                 images={image}
@@ -50,7 +54,7 @@ const EventSpace = ({ image, price, name, location, capacity }) => {
                   className=" e-card-text"
                   style={{ fontSize: "18", marginRight: "50px" }}
                 >
-                  <h6 style={{fontWeight:'bold'}}>{location}</h6>
+                  <h6 style={{ fontWeight: "bold" }}>{location}</h6>
                 </div>
                 <div className=" e-card-icon">
                   <h6>4.5/5 stars</h6>
@@ -61,7 +65,7 @@ const EventSpace = ({ image, price, name, location, capacity }) => {
                   className=" e-card-text"
                   style={{ fontStyle: "italic ", marginRight: "50px" }}
                 >
-                  <h6 style={{fontWeight:'bold'}}>{price} GHS</h6>
+                  <h6 style={{ fontWeight: "bold" }}>{price} GHS</h6>
                 </div>
                 <div className=" e-card-text">
                   <h6>{capacity} heads</h6>

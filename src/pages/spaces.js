@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import CardGroup from "react-bootstrap/CardGroup";
 import "react-bootstrap";
-//import { useNavigate } from "react-router-dom";
 import EventSpace from "../components/eventSpace";
 import Footer from "../components/footer";
 import Navbar from "../components/Navbar";
@@ -9,9 +8,10 @@ import SimpleImageSlider from "react-simple-image-slider";
 import { useDispatch, useSelector } from "react-redux";
 import { setListingsToState } from "../redux/users";
 import { getListings } from "../utils/firebase";
+import ReactPaginate from "react-paginate";
+import { ReactDOM } from "react";
 
-
-
+const items = [getListings];
 
 const images = [
   {
@@ -29,8 +29,18 @@ const images = [
   },
 ];
 
+function Items({ listings }) {
+  return (
+    <div className="items">
+      {listings && listings.map((item) => <div>{listings}</div>)}
+    </div>
+  );
+}
+
 function Space() {
   const dispatch = useDispatch();
+  const [ind, setInd] = useState(0);
+  const [newListings, setNewListings] = useState([]);
   const { listings } = useSelector((state) => state.users);
   useEffect(() => {
     const getAllSpaces = async () => {
@@ -40,13 +50,33 @@ function Space() {
     getAllSpaces();
   }, []);
 
-  
+  const [pageCount, setPageCount] = useState(0);
+  // Here we use item offsets; we could also use page offsets
+  // following the API or data you're working with.
+  const [itemOffset, setItemOffset] = useState(0);
 
-  //const navigate = useNavigate();
+  useEffect(() => {
+    // Fetch items from another resources.
+    const endOffset = itemOffset + 12;
+    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+    setNewListings(listings.slice(itemOffset, endOffset));
+    setPageCount(Math.ceil(listings.length / 12));
+  }, [listings, itemOffset, 12]);
+
+  // Invoke when user click to request another page.
+  const handlePageClick = (listings) => {
+    const newOffset = listings.selected * 12;
+    console.log(
+      `User requested page number ${listings.selected}, which is offset ${newOffset}`
+    );
+    setItemOffset(newOffset);
+    const changeImageIndex = listings.selected % 2 == 0 ? 0 : 1;
+    setInd(changeImageIndex);
+  };
+
   return (
     <div>
       <Navbar />
-
       <div className="container">
         <div className="row align-items-center">
           <div className="col-lg-4" style={{ paddingTop: "50px" }}>
@@ -78,13 +108,18 @@ function Space() {
 
             <h4>Find the perfect space</h4>
             <h6>
-              Browse our featured spaces and find the right space for 
-              your event needs. Spaces range from indoor auditoriums to outdoor gardens, private suites with root top swimming pools and other unqiue spaces
+              Browse our featured spaces and find the right space for your event
+              needs. Spaces range from indoor auditoriums to outdoor gardens,
+              private suites with root top swimming pools and other unqiue
+              spaces
             </h6>
             <h4>Book it with ease</h4>
             <h6>
-              Once you find a perfect match, book the space by providing accurate details for the spaces required, cross check the info provided  and click BOOK to submit  
-              Our customer service team will contact you with a summary of your booking and provide appropriate steps to make payments through our easy-to-use payment system
+              Once you find a perfect match, book the space by providing
+              accurate details for the spaces required, cross check the info
+              provided and click BOOK to submit Our customer service team will
+              contact you with a summary of your booking and provide appropriate
+              steps to make payments through our easy-to-use payment system
             </h6>
             <h4>Meet and create memorable events</h4>
             <h6>
@@ -106,10 +141,11 @@ function Space() {
           </div>
           <div className="row">
             <CardGroup>
-              {listings &&
-                listings.map((space) => {
+              {newListings &&
+                newListings.map((space) => {
                   return (
                     <EventSpace
+                      index={ind}
                       description={space.description}
                       price={space.price}
                       name={space.name}
@@ -123,6 +159,26 @@ function Space() {
             </CardGroup>
           </div>
         </div>
+        <ReactPaginate
+          nextLabel="next >"
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={5}
+          marginPagesDisplayed={5}
+          pageCount={pageCount}
+          previousLabel="< previous"
+          pageClassName="page-item"
+          pageLinkClassName="page-link"
+          previousClassName="page-item"
+          previousLinkClassName="page-link"
+          nextClassName="page-item"
+          nextLinkClassName="page-link"
+          breakLabel="..."
+          breakClassName="page-item"
+          breakLinkClassName="page-link"
+          containerClassName="pagination"
+          activeClassName="active"
+          renderOnZeroPageCount={null}
+        />
       </section>
 
       <section id="list" className="py-5">

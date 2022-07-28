@@ -75,7 +75,7 @@ function PaginatedItems({ itemsPerPage }) {
 
 // Add a <div id="container"> to your HTML to see the componend rendered.
 ReactDOM.render(
-  <PaginatedItems itemsPerPage={4} />,
+  <PaginatedItems itemsPerPage={12} />,
   document.getElementById("container")
 );
 
