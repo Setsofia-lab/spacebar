@@ -21,7 +21,7 @@ const EventSpace = ({ image, price, name, location, capacity, index }) => {
             <div className="e-card-image">
               <SimpleImageSlider
                 autoPlay={true}
-                autoPlayDelay={2}
+                autoPlayDelay={4}
                 width={"100%"}
                 height={"40vh"}
                 images={image}

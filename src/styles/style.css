@@ -90,7 +90,8 @@ section {
   animation-name: background-images;
   animation-duration: 45s;
   animation-iteration-count: infinite;
-  animation-direction: reverse;
+  animation-direction: normal;
+  object-fit: cover;
 }
 
 @keyframes background-images {

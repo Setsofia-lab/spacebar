@@ -6,24 +6,27 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
+
+
+
 export default () => {
   const user = useSelector((state) => state.users.user);
   const navigate = useNavigate();
   return (
     <Navbar bg="light" expand="lg">
-      <Container>
+      <Container >
         <Navbar.Brand href="/" style={{ color: "#ff5a60", fontSize: "36px" }}>
-          spacebar
+        <img src={require("../images/logo.svg")} alt="spacebar" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto" style={{ alignItems: "center" }}>
-            <Nav.Link href="/space">Event Spaces</Nav.Link>
-            <Nav.Link href="/">Explore</Nav.Link>
+            <Nav.Link href="/space" style={{ fontSize: "16px" }}>Browse Spaces</Nav.Link>
+            <Nav.Link href="/" style={{ fontSize: "16px" }}>Explore</Nav.Link>
             <NavDropdown title="Blog" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/blog">Blog</NavDropdown.Item>
-              <NavDropdown.Item href="/contact">Contact Us</NavDropdown.Item>
-              <NavDropdown.Item href="/moments">Spacebar Moments</NavDropdown.Item>
+              <NavDropdown.Item href="/blog" style={{ fontSize: "16px" }}>Blog</NavDropdown.Item>
+              <NavDropdown.Item href="/contact" style={{ fontSize: "16px" }}>Contact Us</NavDropdown.Item>
+              <NavDropdown.Item href="/moments" style={{ fontSize: "16px" }}>Spacebar Moments</NavDropdown.Item>
             </NavDropdown>
 
             <button
@@ -38,9 +41,10 @@ export default () => {
                 textTransform: "uppercase",
                 padding: "12px 28px",
                 borderRadius: "30",
+                width:"30%"
               }}
             >
-              Add Listing
+              ADD LISTING
             </button>
 
             {user && (

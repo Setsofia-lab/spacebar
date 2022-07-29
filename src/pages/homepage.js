@@ -10,63 +10,63 @@ const eventType = [
   {
     image:
       "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTF8fGNvb3Jwb3JhdGUlMjBtZWV0aW5nc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-    type: "Coporate Meeting",
+    type: "COPORATE MEETING",
   },
   {
     image:
       "https://images.unsplash.com/photo-1548357158-fdf73a1496b4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTJ8MjQ2Nzc2Nnx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60",
-    type: "Marriage Ceremonies",
+    type: "MARRIAGE CEREMONIES",
   },
   {
     image:
       "https://static01.nyt.com/images/2022/02/15/fashion/15NYFWPARTIES-laquan-lead/15NYFWPARTIES-laquan-lead-mediumSquareAt3X.jpg",
-    type: "Parties",
+    type: "PARTIES",
   },
   {
     image:
       "https://flo.health/uploads/media/sulu-630x-inset/09/1229-Pregnant%20woman%20is%20opening%20a%20new%20gift%20at%20baby%20shower.jpg?v=1-0",
-    type: "Bridal/Baby Showers",
+    type: "BRIDAL/BABY SHOWERS",
   },
   {
     image:
       "https://pbblogassets.s3.amazonaws.com/uploads/2016/07/BTS-Featured1.jpg",
-    type: "Shoots",
+    type: "VIDEO/PHOTO SHOOTS",
   },
   {
     image:
       "https://images.squarespace-cdn.com/content/v1/5d842a5884f8e80274cf429d/1599360995544-3O7VZBP4W38G9VEG1FA8/funeral+venue+south+eastern+melbourne?format=500w",
-    type: "Funerals",
+    type: "FUNERALS",
   },
 ];
 const eventLocation = [
   {
     image:
       "https://www.einvestghana.com/wp-content/uploads/2020/02/Ghana-Night-.jpg",
-    location: "East Legon",
+    location: "EAST LEGON",
   },
   {
     image:
       "https://images.unsplash.com/photo-1568306954278-df7b9ad9a72f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1189&q=80",
-    location: "Accra",
+    location: "ACCRA",
   },
   {
     image:
       "https://www.worldatlas.com/r/w1200/upload/ca/1e/b0/shutterstock-1177833901.jpg",
-    location: "Kasoa",
+    location: "KASOA",
   },
   {
     image:
       "https://huvudstadsguiden.eu/wp-content/uploads/2021/01/Accra-1-580x368.jpg",
-    location: "Adenta",
+    location: "ADENTA",
   },
   {
     image:
       "https://cdn.statically.io/img/i0.wp.com/odarteyghnews.com/wp-content/uploads/2021/12/Accra-odarteyghnews.com_.jpg?resize=768%2C409&ssl=1&quality=70&f=auto",
-    location: "Tema",
+    location: "TEMA",
   },
   {
     image: "https://upload.wikimedia.org/wikipedia/commons/0/0a/Acca.jpg",
-    location: "Labadi",
+    location: "LABADI",
   },
 ];
 function HomePage() {

@@ -11,7 +11,7 @@ const EventLocation = ({ image, location }) => {
           navigate("space");
         }}
       >
-        <img src={image} alt="" style={{ borderRadius: "10px" , height:"220px"}} />
+        <img src={image} alt="" style={{ objectFit: 'cover', borderRadius: "10px" , height:"300px "}} />
       </div>
       <div className="e-card-title"><h4 style={{ textAlign:"center" }}>{location}</h4></div>
       </div>
