@@ -159,6 +159,7 @@ function Space() {
             </CardGroup>
           </div>
         </div>
+        <div style={{marginLeft:"50%", paddingTop:"2%" }}>
         <ReactPaginate
           nextLabel="next >"
           onPageChange={handlePageClick}
@@ -178,7 +179,7 @@ function Space() {
           containerClassName="pagination"
           activeClassName="active"
           renderOnZeroPageCount={null}
-        />
+        /></div>
       </section>
 
       <section id="list" className="py-5">
