@@ -11,9 +11,9 @@ const EventType = ({ image, type }) => {
           navigate("space");
         }}
       >
-        <img src={image} alt="" style={{ objectFit: 'cover', onMouseOver:"true", borderTopLeftRadius: "25px" , borderBottomRightRadius:"25px", paddingBottom:"3%"  , height:"350px", width:"100%"}} />
+        <img src={image} alt="" style={{ objectFit: 'cover', cursor:"pointer", borderTopLeftRadius: "25px" , borderBottomRightRadius:"25px", paddingBottom:"3%"  , height:"350px", width:"100%"}} />
       </div>
-      <div className="e-card-title"><h4 >{type}</h4></div>
+      <div className="e-card-title" style={{cursor:"pointer"}}><h4 >{type}</h4></div>
       </div>
     </div>
   );

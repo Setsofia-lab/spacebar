@@ -10,7 +10,7 @@ const eventType = [
   {
     image:
       "https://media.gettyimages.com/photos/presenting-to-coworkers-picture-id576901748?k=20&m=576901748&s=612x612&w=0&h=aXZ-XTrC3WX0ncluMORE72yP3jojrlYIGO8KRIE_kHU=",
-    type: "COPORATE MEETING",
+    type: "CORPORATE MEETINGS",
   },
   {
     image:
@@ -109,7 +109,7 @@ function HomePage() {
                     paddingTop: "15%",
                   }}
                 >
-                  Find affordable and unique spaces for all your activities and
+                  Find affordable and unique spaces for your activities and
                   events{" "}
                   <h4 className="text-white" style={{paddingTop:"5%"}}> Get up to 10% discount when you pay within 72hours of booking.  </h4>
                   {/* <h4 className="text-white"> Make cancellations up until two weeks of your events and get 100% refund.  </h4> */}
