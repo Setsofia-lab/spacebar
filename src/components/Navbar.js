@@ -16,12 +16,12 @@ export default () => {
     <Navbar bg="light" expand="lg">
       <Container >
         <Navbar.Brand href="/" style={{ color: "#ff5a60", fontSize: "36px" }}>
-        <img src={require("../images/logo.svg")} alt="spacebar" style={{height:"35%" , width:"35%"}} />
+        <img src={require("../images/logo.svg")} alt="spacebar" style={{height:"35%" , width:"55%"}} />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" style={{ paddingRight:"15%"}}>
           <Nav className="ms-auto" style={{ alignItems: "center" }}>
-            <Nav.Link href="/space" style={{ fontSize: "16px", paddingRight:"15%" }}> Spaces</Nav.Link>
+            <Nav.Link href="/space" style={{ fontSize: "16px", paddingRight:"15%" }}>Browse Spaces</Nav.Link>
             <Nav.Link href="/" style={{ fontSize: "16px" , paddingRight:"20%"}}>Explore</Nav.Link>
             <NavDropdown title="Blog" id="basic-nav-dropdown" style={{ paddingRight:"5%"}}>
               <NavDropdown.Item href="/blog" style={{ fontSize: "16px" }}>Blog</NavDropdown.Item>
