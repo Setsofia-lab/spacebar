@@ -30,6 +30,7 @@ const EventSpace = ({ image, price, name, location, capacity, index }) => {
                 style={{
                   borderRadius: "15px",
                   position: "relative",
+                  objectFit: 'cover',
                 }}
               />
             </div>

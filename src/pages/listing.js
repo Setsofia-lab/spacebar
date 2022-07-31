@@ -63,10 +63,10 @@ function Listing() {
             <div className="col-12 section-intro">
               <div className="hline"></div>
             </div>
-            <div className="col-lg-4">
-              <img src={require("../images/wedding.jpg")} alt="" />
+            <div className="col-lg-6">
+              <img src={require("../images/yop.jpg")} alt="" />
             </div>
-            <div className="col-lg-6 offset-lg-1">
+            <div className="col-lg-6 ">
               <h2
                 style={{
                   textAlign: "left",

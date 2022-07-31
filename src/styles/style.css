@@ -82,7 +82,7 @@ section {
 }
 
 #home {
-  min-height: 95vh;
+  min-height: 90vh;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -90,25 +90,26 @@ section {
   animation-name: background-images;
   animation-duration: 45s;
   animation-iteration-count: infinite;
-  animation-direction: normal;
-  object-fit: cover;
+  animation-direction: reverse;
+  
 }
+
 
 @keyframes background-images {
   0% {
-    background-image: url("https://www.rifaidate.it/casa/costruire-una-casa/costruire-appartamenti-con-terrazzo_NG1.jpg");
+    background-image: url("https://media.gettyimages.com/photos/green-village-with-swiming-pool-picture-id170522241?s=2048x2048");
   }
   25% {
-    background-image: url("https://citynews-riminitoday.stgy.ovh/~media/horizontal-hi/66384696782680/balcone-4.jpg");
+    background-image: url("https://media.gettyimages.com/photos/green-village-with-swiming-pool-picture-id170522241?s=2048x2048");
   }
   50% {
-    background-image: url("https://florim-cdn.thron.com/delivery/public/image/florim/1589_015/gggcrc/std/1024x0/1589_015.jpg/?quality=80&format=webp&scalemode=centered&dpr=100");
+    background-image: url("https://media.gettyimages.com/photos/green-village-with-swiming-pool-picture-id170522241?s=2048x2048");
   }
   75% {
-    background-image: url("https://citynews-parmatoday.stgy.ovh/~media/horizontal-hi/11304736408210/privacy-terrazzo-2-2.jpeg");
+    background-image: url("https://media.gettyimages.com/photos/green-village-with-swiming-pool-picture-id170522241?s=2048x2048");
   }
   100% {
-    background-image: url("https://citynews-milanotoday.stgy.ovh/~media/horizontal-hi/56343782060505/terrazzo-3-3.jpg");
+    background-image: url("https://media.gettyimages.com/photos/green-village-with-swiming-pool-picture-id170522241?s=2048x2048");
   }
 }
 

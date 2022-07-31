@@ -9,34 +9,50 @@ import Navbar from "../components/Navbar";
 const eventType = [
   {
     image:
-      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTF8fGNvb3Jwb3JhdGUlMjBtZWV0aW5nc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+      "https://media.gettyimages.com/photos/presenting-to-coworkers-picture-id576901748?k=20&m=576901748&s=612x612&w=0&h=aXZ-XTrC3WX0ncluMORE72yP3jojrlYIGO8KRIE_kHU=",
     type: "COPORATE MEETING",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1548357158-fdf73a1496b4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTJ8MjQ2Nzc2Nnx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60",
+      "https://media.gettyimages.com/photos/wedding-guests-applauding-newlyweds-picture-id56901619?k=20&m=56901619&s=612x612&w=0&h=dIHaXa3PtR4jjbcbCc9IHCfaCjaf5ZaO55b2SP4iZhU=",
     type: "MARRIAGE CEREMONIES",
   },
   {
     image:
-      "https://static01.nyt.com/images/2022/02/15/fashion/15NYFWPARTIES-laquan-lead/15NYFWPARTIES-laquan-lead-mediumSquareAt3X.jpg",
+      "https://media.gettyimages.com/photos/its-a-day-for-family-picture-id1064987534?k=20&m=1064987534&s=612x612&w=0&h=ulf0L8BnwaE_PanIPRUtaSdP90slu2ti0n01JQBlaSA=",
     type: "PARTIES",
   },
   {
     image:
-      "https://flo.health/uploads/media/sulu-630x-inset/09/1229-Pregnant%20woman%20is%20opening%20a%20new%20gift%20at%20baby%20shower.jpg?v=1-0",
+      "https://media.gettyimages.com/photos/women-smiling-at-baby-shower-picture-id149316508?k=20&m=149316508&s=612x612&w=0&h=YLTo-oZV7QG0IaTZSShyDgRMzCgGyHtCbkY6FxsXjJQ=",
     type: "BRIDAL/BABY SHOWERS",
   },
   {
     image:
-      "https://pbblogassets.s3.amazonaws.com/uploads/2016/07/BTS-Featured1.jpg",
+      "https://media.gettyimages.com/photos/rapper-gigi-lamayne-on-the-set-of-a-video-shoot-directed-by-mj-by-picture-id544850224?k=20&m=544850224&s=612x612&w=0&h=aXQalOX3YIvuWU1AJVsrkqCWeRFv7qaLTlzQkLShLyg=",
     type: "VIDEO/PHOTO SHOOTS",
   },
   {
     image:
-      "https://images.squarespace-cdn.com/content/v1/5d842a5884f8e80274cf429d/1599360995544-3O7VZBP4W38G9VEG1FA8/funeral+venue+south+eastern+melbourne?format=500w",
+      "https://media.gettyimages.com/photos/members-of-the-south-african-communist-party-sing-and-dance-around-picture-id1126868060?k=20&m=1126868060&s=612x612&w=0&h=E__NI4JB0f80PIbZFupBEfQVLxHu1-hjNrKJaUAIl3M=",
     type: "FUNERALS",
   },
+  {
+    image:
+      "https://media.gettyimages.com/photos/ruth-akulu-and-her-colleagues-dance-while-attending-a-function-at-the-picture-id1187382163?k=20&m=1187382163&s=612x612&w=0&h=9g7yyoriYZUAt3L467uB6Z8WEKu38Vq9Gs9mRoCPTT8=",
+    type: "GRADUATION PARTIES",
+  },
+  {
+    image:
+      "https://media.gettyimages.com/photos/laughing-friends-in-discussion-while-hanging-out-at-outdoor-bar-picture-id1063846452?k=20&m=1063846452&s=612x612&w=0&h=xhhTmEF3dEdxXL8k9aYzsKMoKmkIh7PEXoih7OfHz7w=",
+    type: "NETWORKING EVENTS",
+  },
+  {
+    image:
+      "https://media.gettyimages.com/photos/women-participate-in-a-fashion-show-of-the-mougnan-foundation-as-part-picture-id1236989964?k=20&m=1236989964&s=612x612&w=0&h=mtPJ7jiIL8MfeHO6uTn_5Ds6t2nbtNNYO-uO8yfrP9A=",
+    type: "FASHION SHOWS",
+  },
+  
 ];
 const eventLocation = [
   {
@@ -95,7 +111,7 @@ function HomePage() {
                 >
                   Find affordable and unique spaces for all your activities and
                   events{" "}
-                  <h4 className="text-white" style={{paddingTop:"5%"}}> Get up to 10% discount when you pay within 24hours of booking.  </h4>
+                  <h4 className="text-white" style={{paddingTop:"5%"}}> Get up to 10% discount when you pay within 72hours of booking.  </h4>
                   {/* <h4 className="text-white"> Make cancellations up until two weeks of your events and get 100% refund.  </h4> */}
                 </p>
               </div>
@@ -202,42 +218,64 @@ function HomePage() {
         </div>
       </section>
 
-      <div className="container">
+      <div className="column-container">
+      <div className="flex-basis-50 img-col">
         <div className="row align-items-center">
           <div className="col-12 section-intro">
             <div className="hline"> </div>
             
           </div>
-         <div className="col-lg-4">
-            <img src={require("../images/clubs.jpg")} alt="" />
+         <div className="col-lg-6 ">
+            <img src={require("../images/background1.jpg")} alt="" />
           </div> 
-           <div className="col-lg-6 offset-lg-1">
-            <h2
+           <div className="col-lg-6 ">
+            <h1
               style={{
                 textAlign: "left",
                 fontWeight: "400",
-                paddingBottom: "2%",
+                paddingBottom: "4%",
               }}
             >
-              How Spacebar works
-            </h2>
+            How Spacebar works
+            {" "}
+            </h1>
 
-            <h4>Find the perfect space</h4>
-            <p>
-              Browse the marketplace and tailor your search to your activity
+            <h3  style={{
+                textAlign: "left",
+                fontWeight: "400",
+                paddingBottom: "2%",
+              }}>Find the perfect space
+            {" "} </h3>
+
+            <h5 style={{paddingBottom:"5%"}}>
+              Browse the marketplace and tailor your search 
+               to your activity
               needs.
-            </p>
-            <h4>Book it with ease</h4>
-            <p>
-              Once you find a perfect match, book the space and pay online
-              through our easy-to-use payment system
-            </p>
-            <h4>Meet and create memorable events</h4>
-            <p>
+              {" "}
+            </h5>
+            
+            <h3 style={{
+                textAlign: "left",
+                fontWeight: "400",
+                paddingBottom: "2%",
+              }}>Book it with ease{" "}</h3>
+
+            <h5 style={{paddingBottom:"5%"}}>
+              Once you find a perfect match, book the space and wait for a call from the Spacebar team to complete payment {" "}
+            </h5>
+
+            <h3 style={{
+                textAlign: "left",
+                fontWeight: "400",
+                paddingBottom: "2%",
+              }}>Meet and create memorable events{" "}</h3>
+            <h5 style={{paddingBottom:"5%"}}>
+
               Create a memorable experience in a memorable space, and enjoy!
-            </p>
+            </h5>
           </div> 
         </div>
+      </div>
       </div>
       <section id="explore">
         <div className="container">
