@@ -82,7 +82,7 @@ function HomePage() {
             <div className="col-md-10">
               <div
                 className="container"
-                style={{ backgroundColor: "hsla(0, 4%, 40%, 0.5)" }}
+                style={{ backgroundColor: "hsla(0, 2%, 20%, 0.3)" }}
               >
                 <p
                   className="text-white h1"
@@ -95,6 +95,8 @@ function HomePage() {
                 >
                   Find affordable and unique spaces for all your activities and
                   events{" "}
+                  <h4 className="text-white" style={{paddingTop:"5%"}}> Get up to 10% discount when you pay within 24hours of booking.  </h4>
+                  {/* <h4 className="text-white"> Make cancellations up until two weeks of your events and get 100% refund.  </h4> */}
                 </p>
               </div>
 
@@ -203,12 +205,13 @@ function HomePage() {
       <div className="container">
         <div className="row align-items-center">
           <div className="col-12 section-intro">
-            <div className="hline"></div>
+            <div className="hline"> </div>
+            
           </div>
-          <div className="col-lg-4">
+         <div className="col-lg-4">
             <img src={require("../images/clubs.jpg")} alt="" />
-          </div>
-          <div className="col-lg-6 offset-lg-1">
+          </div> 
+           <div className="col-lg-6 offset-lg-1">
             <h2
               style={{
                 textAlign: "left",
@@ -233,7 +236,7 @@ function HomePage() {
             <p>
               Create a memorable experience in a memorable space, and enjoy!
             </p>
-          </div>
+          </div> 
         </div>
       </div>
       <section id="explore">
@@ -338,7 +341,7 @@ function HomePage() {
                   fontWeight: "400",
                 }}
               >
-                List your outdoor space to earn extra income.
+                Earn up to GHS 10,000 monthly by listing your space on spacebar {" "}
               </h3>
             </div>
             <div className="col-auto">

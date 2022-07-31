@@ -16,7 +16,7 @@ export default () => {
     <Navbar bg="light" expand="lg">
       <Container >
         <Navbar.Brand href="/" style={{ color: "#ff5a60", fontSize: "36px" }}>
-        <img src={require("../images/logo.svg")} alt="spacebar" />
+        <img src={require("../images/logo.svg")} alt="spacebar" style={{height:"35%" , width:"50%"}} />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
