@@ -112,9 +112,9 @@ function Listing() {
                 type="text"
                 id="name"
                 name="name"
-                placeholder="name"
+                placeholder="Name"
                 pattern="[A-Z\sa-z]{3,50}"
-                required
+                required={true}
                 onChange={(event) => {
                   setName(event.target.value);
                 }}
@@ -130,8 +130,8 @@ function Listing() {
                 type="email"
                 id="email"
                 name="email"
-                placeholder="abc@email.com"
-                required
+                placeholder="Email"
+                required={true}
                 onChange={(event) => {
                   setEmail(event.target.value);
                 }}
@@ -147,9 +147,9 @@ function Listing() {
                 type="tel"
                 id="phone"
                 name="phone"
-                placeholder="000-000-0000"
+                placeholder="Phone Number"
                 pattern="(\d{3})-?\s?(\d{3})-?\s?(\d{4})"
-                required
+                required={true}
                 onChange={(event) => {
                   setPhone(event.target.value);
                 }}
@@ -168,7 +168,7 @@ function Listing() {
                 name="location"
                 placeholder="Location"
                 pattern="[A-Z\sa-z]{3,50}"
-                required
+                required={true}
                 onChange={(event) => {
                   setLocation(event.target.value);
                 }}
@@ -188,7 +188,7 @@ function Listing() {
                 name="capacity"
                 placeholder=" 100"
                 min="10"
-                required
+                required={true}
                 onChange={(event) => {
                   setCapacity(event.target.value);
                 }}
@@ -206,7 +206,7 @@ function Listing() {
                 id="dailyRate"
                 name="dailyRate"
                 placeholder=" GHS 250"
-                required
+                required={true}
                 onChange={(event) => {
                   setDailyrate(event.target.value);
                 }}
@@ -223,7 +223,7 @@ function Listing() {
                 type="date"
                 id="startDate"
                 name="startDate"
-                required
+                required={true}
                 onChange={(event) => {
                   setStartDate(event.target.value);
                 }}
@@ -240,7 +240,7 @@ function Listing() {
                 type="date"
                 id="endDate"
                 name="endDate"
-                required
+                required={true}
                 onChange={(event) => {
                   setEndDate(event.target.value);
                 }}
@@ -258,7 +258,7 @@ function Listing() {
                 id="amenities"
                 name="amenities"
                 placeholder="Washroom,CCTV,BBQ,"
-                required
+                required={true}
                 onChange={(event) => {
                   setAmenities(event.target.value);
                 }}
@@ -280,7 +280,7 @@ function Listing() {
                 your dreams. We can offer creative set designs and all
                 lighting and grip demands of the most talented and demanding
                 of creatives. One of New York oldest prop-house is 10 ft"
-                required
+                required={true}
                 onChange={(event) => {
                   setInfo(event.target.value);
                 }}
@@ -405,11 +405,12 @@ function Listing() {
                 fontFamily: "Source Sans Pro",
                 backgroundColor: "#ff5a60",
                 color: "#fff",
-                fontWeight: "500",
-                fontSize: "12px",
+                fontWeight: "bold",
+                fontSize: "16px",
                 textTransform: "uppercase",
                 padding: "12px 28px",
                 borderRadius: "30",
+                width:"100%"
               }}
             >
               Add Space

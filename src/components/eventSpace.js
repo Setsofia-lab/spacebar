@@ -20,6 +20,10 @@ const EventSpace = ({ image, price, name, location, capacity, index }) => {
           <div className="e-card" style={{ height: "100%" }}>
             <div className="e-card-image">
               <SimpleImageSlider
+              onClick={() => {
+                dispatch(selectedListing(name));
+                navigate("/booking");
+              }}
                 autoPlay={true}
                 autoPlayDelay={4}
                 width={"100%"}
@@ -28,9 +32,11 @@ const EventSpace = ({ image, price, name, location, capacity, index }) => {
                 showBullets={true}
                 showNavs={true}
                 style={{
+                  href:"/booking",
                   borderRadius: "15px",
                   position: "relative",
                   objectFit: 'cover',
+                  cursor:"pointer"
                 }}
               />
             </div>
@@ -69,7 +75,7 @@ const EventSpace = ({ image, price, name, location, capacity, index }) => {
                   <h6 style={{ fontWeight: "bold" }}>{price} GHS</h6>
                 </div>
                 <div className=" e-card-text">
-                  <h6>{capacity} heads</h6>
+                  <h6>{capacity} guests</h6>
                 </div>
               </div>
               <div

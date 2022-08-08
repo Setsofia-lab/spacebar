@@ -161,9 +161,9 @@ function Booking() {
                           type="text"
                           id="name"
                           name="name"
-                          placeholder="Sam Spacebar"
+                          placeholder="Name"
                           pattern="[A-Z\sa-z]{3,50}"
-                          required
+                          required={true}
                           onChange={(event) => {
                             setName(event.target.value);
                           }}
@@ -179,8 +179,8 @@ function Booking() {
                           type="email"
                           id="email"
                           name="email"
-                          placeholder="sam@spacebar.com"
-                          required
+                          placeholder="email"
+                          required={true}
                           onChange={(event) => {
                             setEmail(event.target.value);
                           }}
@@ -196,9 +196,9 @@ function Booking() {
                           type="tel"
                           id="phone"
                           name="phone"
-                          placeholder="000-000-0000"
+                          placeholder="Phone Number"
                           pattern="(\d{3})-?\s?(\d{3})-?\s?(\d{4})"
-                          required
+                          required={true}
                           onChange={(event) => {
                             setPhone(event.target.value);
                           }}
@@ -215,7 +215,7 @@ function Booking() {
                         <select
                           id="eventSelection"
                           name="eventSelection"
-                          required
+                          required={true}
                           onChange={(event) => {
                             setEventSelection(event.target.value);
                           }}
@@ -249,7 +249,7 @@ function Booking() {
                           name="attendance"
                           placeholder="e.g 100"
                           min="10"
-                          required
+                          required={true}
                           onChange={(event) => {
                             setAttendance(event.target.value);
                           }}
@@ -266,7 +266,7 @@ function Booking() {
                           type="date"
                           id="checkinDate"
                           name="checkinDate"
-                          required
+                          required={true}
                           onChange={(event) => {
                             setCheckinDate(event.target.value);
                           }}
@@ -283,7 +283,7 @@ function Booking() {
                           type="time"
                           id="startTime"
                           name="startTime"
-                          required
+                          required={true}
                           onChange={(event) => {
                             setStartTime(event.target.value);
                           }}
@@ -300,7 +300,7 @@ function Booking() {
                           type="time"
                           id="endTime"
                           name="endTime"
-                          required
+                          required={true}
                           onChange={(event) => {
                             setEndTime(event.target.value);
                           }}
@@ -318,7 +318,7 @@ function Booking() {
                           id="info"
                           name="info"
                           placeholder="Tell us anything else that might be important."
-                          required
+                          required={true}
                           onChange={(event) => {
                             setInfo(event.target.value);
                           }}
@@ -359,6 +359,7 @@ function Booking() {
                           textTransform: "uppercase",
                           padding: "12px 28px",
                           borderRadius: "30",
+                          width:"100%"
                         }}
                       >
                         Book

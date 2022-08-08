@@ -93,6 +93,7 @@ function HomePage() {
       <Navbar />
 
       <section id="home">
+        
         <div className="container text-center">
           <div className="row justify-content-center">
             <div className="col-md-10">
@@ -107,11 +108,12 @@ function HomePage() {
                     fontWeight: "600",
                     paddingBottom: "0%",
                     paddingTop: "15%",
+                    fontSize:"64px"
                   }}
                 >
                   Find affordable and unique spaces for your activities and
                   events{" "}
-                  <h4 className="text-white" style={{paddingTop:"5%"}}> Get up to 10% discount when you pay within 72hours of booking.  </h4>
+                  <h3 className="text-white" style={{paddingTop:"5%" , fontWeight:"bold"}}> Get up to 10% discount when you pay within 72hours of booking.  </h3>
                   {/* <h4 className="text-white"> Make cancellations up until two weeks of your events and get 100% refund.  </h4> */}
                 </p>
               </div>
@@ -160,7 +162,7 @@ function HomePage() {
                       fontFamily: "Source Sans Pro",
                       borderColor: "#11245a",
                       borderRadius: "15px",
-                      
+                      marginBottom: "2%",
                     }}
                   />
                   <button
@@ -174,7 +176,7 @@ function HomePage() {
                       backgroundColor: "#ff5a60",
                       color: "#fff",
                       fontWeight: "500",
-                      fontSize: "12px",
+                      fontSize: "16px",
                       textTransform: "uppercase",
                       padding: "12px 28px",
                       borderRadius: "30",
