@@ -16,16 +16,16 @@ const items = [getListings];
 const images = [
   {
     url:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDRrsjPVGW8W0omG3Ayh2--s7qNyu0fWW4Pw&usqp=CAU",
+      "https://media.gettyimages.com/photos/presenting-to-coworkers-picture-id576901748?k=20&m=576901748&s=612x612&w=0&h=aXZ-XTrC3WX0ncluMORE72yP3jojrlYIGO8KRIE_kHU=",
   },
   {
     url:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9j4A_4UpYPqyZwQtnAz91lIzj1gYxoCcg4Q&usqp=CAU",
+      "https://media.gettyimages.com/photos/wedding-guests-applauding-newlyweds-picture-id56901619?k=20&m=56901619&s=612x612&w=0&h=dIHaXa3PtR4jjbcbCc9IHCfaCjaf5ZaO55b2SP4iZhU=",
   },
 
   {
     url:
-      "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+      "https://media.gettyimages.com/photos/its-a-day-for-family-picture-id1064987534?k=20&m=1064987534&s=612x612&w=0&h=ulf0L8BnwaE_PanIPRUtaSdP90slu2ti0n01JQBlaSA=",
   },
 ];
 
@@ -159,27 +159,28 @@ function Space() {
             </CardGroup>
           </div>
         </div>
-        <div style={{marginLeft:"50%", paddingTop:"2%" }}>
-        <ReactPaginate
-          nextLabel="next >"
-          onPageChange={handlePageClick}
-          pageRangeDisplayed={5}
-          marginPagesDisplayed={5}
-          pageCount={pageCount}
-          previousLabel="< previous"
-          pageClassName="page-item"
-          pageLinkClassName="page-link"
-          previousClassName="page-item"
-          previousLinkClassName="page-link"
-          nextClassName="page-item"
-          nextLinkClassName="page-link"
-          breakLabel="..."
-          breakClassName="page-item"
-          breakLinkClassName="page-link"
-          containerClassName="pagination"
-          activeClassName="active"
-          renderOnZeroPageCount={null}
-        /></div>
+        <div style={{ marginLeft: "50%", paddingTop: "2%" }}>
+          <ReactPaginate
+            nextLabel="next >"
+            onPageChange={handlePageClick}
+            pageRangeDisplayed={5}
+            marginPagesDisplayed={5}
+            pageCount={pageCount}
+            previousLabel="< previous"
+            pageClassName="page-item"
+            pageLinkClassName="page-link"
+            previousClassName="page-item"
+            previousLinkClassName="page-link"
+            nextClassName="page-item"
+            nextLinkClassName="page-link"
+            breakLabel="..."
+            breakClassName="page-item"
+            breakLinkClassName="page-link"
+            containerClassName="pagination"
+            activeClassName="active"
+            renderOnZeroPageCount={null}
+          />
+        </div>
       </section>
 
       <section id="list" className="py-5">
