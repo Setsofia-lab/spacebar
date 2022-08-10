@@ -31,7 +31,7 @@ function Listing() {
       >
         <h5>
           {name}Listing is succefully submitted! Navigate to{" "}
-          <a href="/">HomePage</a>
+          <a href="https://ourspacebar.tilda.ws/">HomePage</a>
         </h5>
         <h5>
           Or Browse featured <a href="/space">Spaces</a>
