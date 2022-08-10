@@ -60,7 +60,7 @@ function Booking() {
       >
         <h5>
           {name}Booking is succefully submitted! Navigate to{" "}
-          <a href="/">HomePage</a>
+          <a href="https://ourspacebar.tilda.ws/">HomePage</a>
         </h5>
         <h5>
           Or Browse more <a href="/space">Spaces</a>

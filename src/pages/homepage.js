@@ -72,7 +72,7 @@ const eventLocation = [
   },
   {
     image:
-      "https://huvudstadsguiden.eu/wp-content/uploads/2021/01/Accra-1-580x368.jpg",
+      "https://www.einvestghana.com/wp-content/uploads/2020/02/Ghana-Night-.jpg",
     location: "ADENTA",
   },
   {
@@ -99,7 +99,7 @@ function HomePage() {
             <div className="col-md-10">
               <div
                 className="container"
-                style={{ backgroundColor: "hsla(0, 2%, 20%, 0.3)" }}
+                // style={{ backgroundColor: "hsla(0, 2%, 20%, 0.3)" }}
               >
                 <p
                   className="text-white h1"
