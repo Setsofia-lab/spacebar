@@ -772,8 +772,8 @@ function HomePage() {
                       >
                         
                       </h1>
-                      <h1 className="text-white"   style={{fontWeight:"bold" , fontSize:"48px", fontColor: "white"}}> Find event spaces conveniently</h1>
-                      <h4 className="text-white"> Explore unique and affordable event spaces near you </h4>
+                      <h1 className="text-white"   style={{fontWeight:"bold" , fontSize:"64px", fontColor: "white"}}> Find event spaces conveniently</h1>
+                      <h4 className="text-white" style={{paddingTop:"12px"}}> Explore unique and affordable event spaces near you </h4>
                     </div>
                   </div>
 
@@ -1043,7 +1043,7 @@ function HomePage() {
             showBullets={true}
             showNavs={true}
             style={{
-              position: "cover",
+              position: "center",
               marginTop: "4%",
               marginBottom: "4%",
               

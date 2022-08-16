@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useNavigate  } from "react";
 import CardGroup from "react-bootstrap/CardGroup";
 import "react-bootstrap";
 import EventSpace from "../components/eventSpace";
@@ -10,6 +10,7 @@ import { setListingsToState } from "../redux/users";
 import { getListings } from "../utils/firebase";
 import ReactPaginate from "react-paginate";
 import { ReactDOM } from "react";
+
 
 const items = [getListings];
 
@@ -77,68 +78,190 @@ function Space() {
   return (
     <div>
       <Navbar />
+      <div
+        className=""
+        style={{
+          height: "610px",
+          backgroundPosition: "center top",
+          backgroundSize: "cover",
+          backgroundColor: "red",
+          backgroundImage:
+            'url("https://thumb.tildacdn.com/tild3666-3738-4234-a536-343630363430/-/format/webp/safarivalley_2689507.png")',
+        }}
+      >
+        <div className="backgroundImageOpacity"></div>{" "}
+        <div className="row" style={{ justifyContent: "center" }}>
+          <h1
+            className="text-white"
+            style={{
+              textAlign: "center",
+              paddingTop: "10%",
+              paddingBottom: "2%",
+              fontSize: "62px",
+              fontWeight: "500",
+            }}
+          >
+            {" "}
+            Browse through our spaces{" "}
+          </h1>
+        </div>
+        <div className="row" style={{ justifyContent: "center" }}>
+          <h1
+            className="text-white"
+            style={{
+              textAlign: "center",
+              paddingBottom: "2%",
+              fontSize: "22px",
+            }}
+          >
+            {" "}
+            Check out our list of the top 10 spaces in Accra for 2022
+          </h1>
+          <button
+          //  onClick={() => {
+          //   navigate("blog");
+          // }}
+            style={{
+              width: "20%",
+              backgroundColor: "#ff5a60",
+              borderRadius: "3px",
+              paddingBottom: "10",
+            }}
+          >
+            {" "}
+            Read Blog{" "}
+          </button>
+        </div>
+      </div>
       <div className="container">
-        <div className="row align-items-center">
-          <div className="col-lg-4" style={{ paddingTop: "50px" }}>
-            <div>
-              <SimpleImageSlider
-                width={"100%"}
-                height={304}
-                images={images}
-                showBullets={true}
-                showNavs={true}
-                style={{
-                  borderRadius: "15px",
-                  position: "relative",
-                }}
-              />
-            </div>
-          </div>
-          <div className="col-lg-6 offset-lg-1">
-            <h2
+        <div className="row">
+          <div className="col-12 section-intro">
+            <h1
               style={{
-                textAlign: "left",
-                fontWeight: "400",
-                paddingBottom: "2%",
-                paddingTop: "4%",
+                textAlign: "center",
+                fontWeight: "500",
+                color: "#ff5a60",
+                paddingTop: "1%",
               }}
             >
-              How Spacebar works
-            </h2>
-
-            <h4>Find the perfect space</h4>
-            <h6>
-              Browse our featured spaces and find the right space for your event
-              needs. Spaces range from indoor auditoriums to outdoor gardens,
-              private suites with root top swimming pools and other unqiue
-              spaces
-            </h6>
-            <h4>Book it with ease</h4>
-            <h6>
-              Once you find a perfect match, book the space by providing
-              accurate details for the spaces required, cross check the info
-              provided and click BOOK to submit Our customer service team will
-              contact you with a summary of your booking and provide appropriate
-              steps to make payments through our easy-to-use payment system
-            </h6>
-            <h4>Meet and create memorable events</h4>
-            <h6>
-              Create a memorable experience in a memorable space, and enjoy!
-            </h6>
+              Your space, Your choice.
+            </h1>
+            <div className="hline">
+              {" "}
+              <h1
+                style={{
+                  textAlign: "center",
+                  paddingTop: "1%",
+                  fontSize: "20px",
+                }}
+              >
+                {" "}
+                Select from our distinct featured spaces or exquisite unique
+                spaces.
+              </h1>
+            </div>
           </div>
         </div>
       </div>
 
+      <div className="row-container" style={{ paddingTop: "50px" }}>
+        <div className="row align-items-center">
+          <div
+            className="col-lg-6"
+            style={{
+              height: "510px",
+              position: "",
+              backgroundImage:
+                'url("https://exp.cdn-hotels.com/hotels/30000000/29980000/29970700/29970657/9a639199_z.jpg?impolicy=fcrop&w=1000&h=666&q=medium")',
+            }}
+          >
+            <div>
+              <div className="row" style={{ justifyContent: "center" }}>
+                <h1
+                  className="text-white"
+                  style={{
+                    textAlign: "center",
+                    paddingTop: "20%",
+                    paddingBottom: "2%",
+                    fontSize: "62px",
+                  }}
+                >
+                  {" "}
+                  Featured Spaces{" "}
+                </h1>
+                <button
+                  href="/featuredspaces"
+                  style={{
+                    width: "15%",
+                    backgroundColor: "#ff5a60",
+                    borderRadius: "30px",
+                  }}
+                >
+                  {" "}
+                  Browse{" "}
+                </button>
+              </div>
+              <div className="row" style={{ justifyContent: "center" }}></div>
+            </div>
+          </div>
+          <div
+            className="col-lg-6"
+            style={{
+              height: "510px",
+              position: "",
+              backgroundImage:
+                'url("https://images.trvl-media.com/hotels/3000000/2810000/2804900/2804841/bb590468.jpg?impolicy=resizecrop&rw=1200&ra=fit")',
+            }}
+          >
+            <div>
+              <div className="row" style={{ justifyContent: "center" }}>
+                <h1
+                  className="text-white"
+                  style={{
+                    textAlign: "center",
+                    paddingTop: "20%",
+                    paddingBottom: "2%",
+                    fontSize: "62px",
+                  }}
+                >
+                  {" "}
+                  Unique spaces{" "}
+                </h1>
+              </div>
+              <div className="row" style={{ justifyContent: "center" }}>
+                <button
+                  href="/featuredspaces"
+                  style={{
+                    width: "15%",
+                    backgroundColor: "#ff5a60",
+                    borderRadius: "30px",
+                  }}
+                >
+                  {" "}
+                  Browse{" "}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <section id="space">
         <div className="container">
           <div className="row">
             <div className="col-12 section-intro">
-              <h2 style={{ textAlign: "center", fontWeight: "400" }}>
-                Featured spaces on spacebar
-              </h2>
+              <h1
+                style={{
+                  textAlign: "center",
+                  fontWeight: "500",
+                  color: "#ff5a60",
+                }}
+              >
+                Featured spaces
+              </h1>
               <div className="hline"></div>
             </div>
           </div>
+
           <div className="row">
             <CardGroup>
               {newListings &&
@@ -182,7 +305,6 @@ function Space() {
           />
         </div>
       </section>
-
       <section id="list" className="py-5">
         <div className="container py-4">
           <div className="row justify-content-center">
@@ -211,7 +333,6 @@ function Space() {
           </div>
         </div>
       </section>
-
       <Footer />
     </div>
   );

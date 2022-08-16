@@ -31,7 +31,7 @@ function Listing() {
       >
         <h5>
           {name}Listing is succefully submitted! Navigate to{" "}
-          <a href="https://ourspacebar.tilda.ws/">HomePage</a>
+          <a href="/">HomePage</a>
         </h5>
         <h5>
           Or Browse featured <a href="/space">Spaces</a>
@@ -48,54 +48,69 @@ function Listing() {
           display: !submitted ? "" : "none",
         }}
       >
-        <h3>All fields required.Please fill all fields</h3>
+        <h6>All fields required.Please fill all fields</h6>
       </div>
     );
   };
-  
+
   return (
     <div>
       <Navbar />
 
       <section id="listing">
-        <div className="container">
-          <div className="row align-items-center">
-            <div className="col-12 section-intro">
-              <div className="hline"></div>
-            </div>
-            <div className="col-lg-6">
-              <img src={require("../images/yop.jpg")} alt="" />
-            </div>
-            <div className="col-lg-6 ">
-              <h2
-                style={{
-                  textAlign: "left",
-                  fontWeight: "400",
-                  paddingBottom: "2%",
-                  paddingTop: "2%",
-                }}
-              >
-                How to become a Spacebar host{" "}
-              </h2>
-
-              <h4>List your space for free</h4>
-              <h6>
-                Set your price, add photos and details, then your listing is
-                ready to be seen by people searching for space.
-              </h6>
-              <h4>Get contacted by spacebar team</h4>
-              <h6>
-                Expect a call from spacebar team and discussion on payment and
-                security. Once you confirm, your guests will receive information
-                on how to get there and details like your wifi code.
-              </h6>
-              <h4>Get paid every time</h4>
-              <h6>
-                Guests are charged upfront through Spacebar's secure payment
-                system. Your payout is directly deposited after each event,
-                minus our service fee.
-              </h6>
-            </div>
+        <div
+          className=""
+          style={{
+            height: "610px",
+            backgroundPosition: "center top",
+            backgroundSize: "cover",
+            backgroundColor: "hsla(0, 10%, 20%, 0.3)",
+            backgroundImage:
+              'url("https://images.squarespace-cdn.com/content/v1/5fb2f8c5528c9024dcb915de/1605641581803-2FK6N8Q5GPTPIRPO4XVJ/four-tips-remote-hiring.png?format=1500w")',
+          }}
+        >
+          {" "}
+          <div className="row" style={{ justifyContent: "center" }}>
+            <h1
+              className="text-white"
+              style={{
+                textAlign: "center",
+                paddingTop: "10%",
+                paddingBottom: "2%",
+                fontSize: "62px",
+                fontWeight: "500",
+              }}
+            >
+              {" "}
+              Become a space owner{" "}
+            </h1>
+          </div>
+          <div className="row" style={{ justifyContent: "center" }}>
+            <h1
+              className="text-white"
+              style={{
+                textAlign: "center",
+                paddingBottom: "2%",
+                fontSize: "22px",
+              }}
+            >
+              {" "}
+              Learn how to make extra cash from listing your space
+            </h1>
+            <button
+              // onClick={() => {
+              //   navigate("space");
+              // }}
+              style={{
+                width: "20%",
+                backgroundColor: "#ff5a60",
+                borderRadius: "3px",
+                paddingBottom: "10",
+              }}
+            >
+              {" "}
+              Read Blog{" "}
+            </button>
           </div>
         </div>
       </section>
@@ -105,8 +120,10 @@ function Listing() {
           <h1 style={{ fontWeight: "400", paddingBottom: "2%" }}>
             List your space
           </h1>
-
+          {successMessage()}
+          {errorMessage()}
           <form action="reservation">
+            <h5>Personal details</h5>
             <div className="elem-group">
               <input
                 type="text"
@@ -160,6 +177,7 @@ function Listing() {
                 }}
               />
             </div>
+            <h5>Space details</h5>
             <hr></hr>
             <div className="elem-group">
               <input
@@ -402,7 +420,7 @@ function Listing() {
               type="submit"
               className="btn btn-brand"
               style={{
-                fontFamily: "Source Sans Pro",
+                fontFamily: "Montserrat",
                 backgroundColor: "#ff5a60",
                 color: "#fff",
                 fontWeight: "bold",
@@ -410,13 +428,11 @@ function Listing() {
                 textTransform: "uppercase",
                 padding: "12px 28px",
                 borderRadius: "30",
-                width:"100%"
+                width: "100%",
               }}
             >
-              Add Space
+              List Space
             </button>
-            {successMessage()}
-            {errorMessage()}
           </form>
         </div>
       </section>
