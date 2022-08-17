@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useNavigate  } from "react";
+import React, { useState, useEffect } from "react";
 import CardGroup from "react-bootstrap/CardGroup";
 import "react-bootstrap";
 import EventSpace from "../components/eventSpace";
@@ -9,8 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setListingsToState } from "../redux/users";
 import { getListings } from "../utils/firebase";
 import ReactPaginate from "react-paginate";
-import { ReactDOM } from "react";
-
+import { useNavigate } from "react-router-dom";
 
 const items = [getListings];
 
@@ -40,6 +39,8 @@ function Items({ listings }) {
 
 function Space() {
   const dispatch = useDispatch();
+  const navigate = useNavigate()
+
   const [ind, setInd] = useState(0);
   const [newListings, setNewListings] = useState([]);
   const { listings } = useSelector((state) => state.users);
@@ -118,9 +119,11 @@ function Space() {
             Check out our list of the top 10 spaces in Accra for 2022
           </h1>
           <button
-          //  onClick={() => {
-          //   navigate("blog");
-          // }}
+            onClick={() => {
+              navigate("/blog");
+            }}
+            // href="/blog"
+            target="_blank"
             style={{
               width: "20%",
               backgroundColor: "#ff5a60",
@@ -190,7 +193,9 @@ function Space() {
                   Featured Spaces{" "}
                 </h1>
                 <button
-                  href="/featuredspaces"
+                  onClick={() => {
+                    navigate("/space");
+                  }}
                   style={{
                     width: "15%",
                     backgroundColor: "#ff5a60",
@@ -230,7 +235,9 @@ function Space() {
               </div>
               <div className="row" style={{ justifyContent: "center" }}>
                 <button
-                  href="/featuredspaces"
+                   onClick={() => {
+                    navigate("/space");
+                  }}
                   style={{
                     width: "15%",
                     backgroundColor: "#ff5a60",

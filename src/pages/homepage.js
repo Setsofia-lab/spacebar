@@ -621,11 +621,7 @@ function HomePage() {
                 style={{ minWidth: "90px", width: "90px" }}
               >
                 <div>
-                  <a
-                    href="https://www.ourspacebar.com/"
-                    target="_blank"
-                    style={{ color: "#ffffff" }}
-                  >
+                  <a href="/" target="_blank" style={{ color: "#ffffff" }}>
                     <div
                       className="t456__logo t-title"
                       field="title"
@@ -653,10 +649,13 @@ function HomePage() {
                     style={{ padding: "0 15px 0 0" }}
                   >
                     <a
-                      className="t-menu__link-item"
-                      href="https://www.ourspacebar.com/space"
+                      // className="t-menu__link-item"
+                      // onClick={() => {
+                      //   navigate("/space");
+                      // }}
+                      href="/space"
                       data-menu-submenu-hook
-                      target="_blank"
+                      //target="_blank"
                       style={{
                         color: "#ff004f",
                         fontSize: "16px",
@@ -673,10 +672,14 @@ function HomePage() {
                     style={{ padding: "0 0 0 15px" }}
                   >
                     <a
-                      className="t-menu__link-item"
-                      href="https://www.ourspacebar.com/listing"
+                      // className="t-menu__link-item"
+                      // onClick={() => {
+                      //   navigate("/listing");
+                      // }}
+
+                      href="/listing"
                       data-menu-submenu-hook
-                      target="_blank"
+                      // target="_blank"
                       style={{
                         color: "#ff004f",
                         fontSize: "16px",
@@ -746,7 +749,7 @@ function HomePage() {
               className="t-cover__filter"
               style={{
                 height: "800px",
-                backgroundColor: "hsla(0, 2%, 20%, 0.3)" 
+                backgroundColor: "hsla(0, 2%, 20%, 0.3)",
               }}
             />
             <div className="t712 t-container">
@@ -769,11 +772,22 @@ function HomePage() {
                           fontFamily: '"Montserrat"',
                         }}
                         field="title"
+                      ></h1>
+                      <h1
+                        className="text-white"
+                        style={{
+                          fontWeight: "bold",
+                          fontSize: "64px",
+                          fontColor: "white",
+                        }}
                       >
-                        
+                        {" "}
+                        Find event spaces conveniently
                       </h1>
-                      <h1 className="text-white"   style={{fontWeight:"bold" , fontSize:"64px", fontColor: "white"}}> Find event spaces conveniently</h1>
-                      <h4 className="text-white" style={{paddingTop:"12px"}}> Explore unique and affordable event spaces near you </h4>
+                      <h4 className="text-white" style={{ paddingTop: "12px" }}>
+                        {" "}
+                        Explore unique and affordable event spaces near you{" "}
+                      </h4>
                     </div>
                   </div>
 
@@ -823,7 +837,7 @@ function HomePage() {
                         method="POST"
                         data-formactiontype={0}
                         data-inputbox=".t-input-group"
-                        data-success-url="https://www.ourspacebar.com/space"
+                        data-success-url="/space"
                         className="t-form js-form-proccess t-form_inputs-total_3"
                         data-success-callback="t712_onSuccess"
                       >
@@ -929,7 +943,7 @@ function HomePage() {
                             <button
                               type="submit"
                               onClick={() => {
-                                navigate("space");
+                                navigate("/space");
                               }}
                               className="t-submit"
                               style={{
@@ -1046,11 +1060,10 @@ function HomePage() {
               position: "center",
               marginTop: "4%",
               marginBottom: "4%",
-              
             }}
           />
         </div>
-       
+
         <div
           id="rec477571844"
           className="r t-rec t-rec_pt_30 t-rec_pb_0"
@@ -1088,7 +1101,8 @@ function HomePage() {
               className="t-cover__filter"
               style={{
                 height: "200px",
-                backgroundColor: "hsla(0, 2%, 20%, 0.3)"  }}
+                backgroundColor: "hsla(0, 2%, 20%, 0.3)",
+              }}
             />
             <div className="t-container">
               <div className="t-col t-col_12">
@@ -1137,7 +1151,9 @@ function HomePage() {
               <div className="t142__wrapone">
                 <div className="t142__wraptwo">
                   <a
-                    href="https://www.ourspacebar.com/listing"
+                    onClick={() => {
+                      navigate("/listing");
+                    }}
                     rel="nofollow"
                     target="_blank"
                     className
@@ -1336,7 +1352,9 @@ function HomePage() {
               <div className="t-col t-col_12">
                 <div className="t-section__bottomwrapper t-clear t-align_center">
                   <a
-                    href="https://www.ourspacebar.com/space"
+                    onClick={() => {
+                      navigate("/space");
+                    }}
                     target="_blank"
                     className="t-btn t-btn_md js-click-stat"
                     data-tilda-event-name="/tilda/click/rec477441160/button1"
@@ -1708,7 +1726,8 @@ function HomePage() {
               className="t-cover__filter"
               style={{
                 height: "700px",
-                backgroundColor: "hsla(0, 2%, 20%, 0.3)"   }}
+                backgroundColor: "hsla(0, 2%, 20%, 0.3)",
+              }}
             />
             <div className="t698">
               <div className="t-container">
@@ -1792,7 +1811,6 @@ function HomePage() {
                                   autoComplete="name"
                                   name="Name"
                                   className="t-input js-tilda-rule"
-                                  
                                   placeholder="name"
                                   data-tilda-req={1}
                                   data-tilda-rule="name"
@@ -1814,7 +1832,6 @@ function HomePage() {
                                   autoComplete="tel"
                                   name="Phone"
                                   className="t-input js-tilda-rule"
-                                 
                                   placeholder="phone number"
                                   data-tilda-req={1}
                                   data-tilda-rule="phone"
@@ -1836,7 +1853,6 @@ function HomePage() {
                                   type="text"
                                   name="Input"
                                   className="t-input js-tilda-rule"
-                                  
                                   placeholder="location"
                                   data-tilda-req={1}
                                   style={{
@@ -1857,7 +1873,6 @@ function HomePage() {
                                     type="text"
                                     name="Date"
                                     className="t-input t-datepicker js-tilda-rule js-tilda-mask"
-                                    
                                     placeholder="00-00-0000"
                                     data-tilda-req={1}
                                     data-tilda-rule="date"
