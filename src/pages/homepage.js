@@ -451,7 +451,9 @@ function HomePage() {
   const navigate = useNavigate();
 
   return (
+    
     <div>
+      
       <meta httpEquiv="content-type" content="text/html;charset=UTF-8" />
       <meta charSet="utf-8" />
       <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
@@ -562,7 +564,9 @@ function HomePage() {
         data-tilda-formskey="15ea5a49ec7e763fb02762ebc5892684"
         data-tilda-lazy="yes"
       >
-        <div
+
+        <Navbar/>
+        {/* <div
           id="rec477622108"
           className="r t-rec t-rec_pt_30 t-rec_pb_30"
           style={{
@@ -620,7 +624,7 @@ function HomePage() {
                 className="t456__leftwrapper"
                 style={{ minWidth: "90px", width: "90px" }}
               >
-                <div>
+                 <div>
                   <a href="/" target="_blank" style={{ color: "#ffffff" }}>
                     <div
                       className="t456__logo t-title"
@@ -640,9 +644,9 @@ function HomePage() {
                       </div>
                     </div>
                   </a>
-                </div>
+                </div> 
               </div>
-              <div className="t456__rightwrapper t456__menualign_right">
+               <div className="t456__rightwrapper t456__menualign_right">
                 <ul className="t456__list">
                   <li
                     className="t456__list_item"
@@ -692,7 +696,7 @@ function HomePage() {
                     </a>
                   </li>
                 </ul>
-              </div>
+              </div> 
             </div>
           </div>
           <style
@@ -707,7 +711,7 @@ function HomePage() {
                 "\n          #rec477622108 .t-menu__link-item {\n            -webkit-transition: color 0.3s ease-in-out, opacity 0.3s ease-in-out;\n            transition: color 0.3s ease-in-out, opacity 0.3s ease-in-out;\n          }\n\n          #rec477622108\n            .t-menu__link-item:not(.t-active):not(.tooltipstered):hover {\n            color: #8ef9f3 !important;\n          }\n\n          @supports (overflow: -webkit-marquee) and (justify-content: inherit) {\n            #rec477622108 .t-menu__link-item,\n            #rec477622108 .t-menu__link-item.t-active {\n              opacity: 1 !important;\n            }\n          }\n        ",
             }}
           />
-        </div>
+        </div> */}
         <div
           id="rec477441155"
           className="r t-rec t-rec_pt_0 t-rec_pb_15"
