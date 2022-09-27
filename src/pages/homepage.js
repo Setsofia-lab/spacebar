@@ -2039,6 +2039,7 @@ function HomePage() {
                         >
                           No. 20 Aluguntugui Street, Ambassadorial Enclave, East
                           Legon, Accra, Ghana
+                          +233 20 049 8056 | +233 50 571 5339
                         </span>
                       </div>
                     </div>
