@@ -451,9 +451,7 @@ function HomePage() {
   const navigate = useNavigate();
 
   return (
-    
     <div>
-      
       <meta httpEquiv="content-type" content="text/html;charset=UTF-8" />
       <meta charSet="utf-8" />
       <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
@@ -564,8 +562,7 @@ function HomePage() {
         data-tilda-formskey="15ea5a49ec7e763fb02762ebc5892684"
         data-tilda-lazy="yes"
       >
-
-        <Navbar/>
+        <Navbar />
         {/* <div
           id="rec477622108"
           className="r t-rec t-rec_pt_30 t-rec_pb_30"
@@ -1594,6 +1591,7 @@ function HomePage() {
                   </div>
                 </div>
               </div>
+
               <div className="t-col t-col_5">
                 <div className="t486__imgcontainer">
                   <div className="t486__row">
@@ -1691,7 +1689,92 @@ function HomePage() {
             }}
           />
         </div>
-
+        <div>
+          {" "}
+          <div className="t555">
+            <div className="t-container" style={{ margin: "0 auto" }}>
+              <div className="t-col t-col_6">
+                <div className="t555__contentbox" style={{ height: "200px" }}>
+                  <div className="t555__contentwrapper">
+                    <div
+                      className="t555__title t-heading t-heading_sm"
+                      style={{ color: "#ff004f", fontFamily: '"Montserrat"' }}
+                      field="title"
+                    >
+                      <div style={{ fontSize: "38px" }} data-customstyle="yes">
+                        <span
+                          style={{
+                            fontWeight: 600,
+                            fontFamily: "Montserrat",
+                            color: "rgb(255, 0, 79)",
+                          }}
+                        >
+                          Testimonials
+                        </span>
+                      </div>
+                    </div>
+                    <div className="t-text t-text_md" field="text">
+                <div
+                  style={{ fontSize: "20px", paddingTop: "0%" }}
+                  data-customstyle="yes"
+                >
+                  <span
+                    style={{
+                      fontWeight: 400,
+                      fontFamily: "Montserrat",
+                      color: "rgb(62, 42, 53)",
+                    }}
+                  > <h3> Mush</h3>
+                    "I was planning to host a magazine launch party with zero
+                    idea of how to plan an event. I reached out to spacebar to
+                    help me out and that was the best decision I ever made. They
+                    helped me choose the right venue that suited the theme of my
+                    event and adequately met my budget. And it didn't end there.
+                    Spacebar didn't just get me a venue but their services
+                    catered to all the things that I needed to make my event a
+                    success. There are not enough words to describe how pleased
+                    and happy I am with the work they did. They made the day
+                    absolutely perfect! There was nothing to worry about or
+                    stress over. They were not only professional, they also were
+                    very friendly! 1000/10"
+                  </span>
+                </div>
+              </div>
+                  </div>
+                </div>
+              </div>
+               <div className="t-col t-col_6"> 
+              <div className="t-text t-text_md" field="text">
+                <div
+                  style={{ fontSize: "20px", paddingTop: "6%" }}
+                  data-customstyle="yes"
+                >
+                  <span
+                    style={{
+                      fontWeight: 400,
+                      fontFamily: "Montserrat",
+                      color: "rgb(62, 42, 53)",
+                    }}
+                  > <h3> Odafe</h3>
+                    "I was planning to host a magazine launch party with zero
+                    idea of how to plan an event. I reached out to spacebar to
+                    help me out and that was the best decision I ever made. They
+                    helped me choose the right venue that suited the theme of my
+                    event and adequately met my budget. And it didn't end there.
+                    Spacebar didn't just get me a venue but their services
+                    catered to all the things that I needed to make my event a
+                    success. There are not enough words to describe how pleased
+                    and happy I am with the work they did. They made the day
+                    absolutely perfect! There was nothing to worry about or
+                    stress over. They were not only professional, they also were
+                    very friendly! 1000/10 "
+                  </span>
+                </div>
+              </div>
+               </div> 
+            </div>
+          </div>
+        </div>
         <div
           id="rec477441170"
           className="r t-rec"
@@ -1733,6 +1816,7 @@ function HomePage() {
                 backgroundColor: "hsla(0, 2%, 20%, 0.3)",
               }}
             />
+
             <div className="t698">
               <div className="t-container">
                 <div className="t-width t-width_8 t698__mainblock">
@@ -2038,8 +2122,8 @@ function HomePage() {
                           }}
                         >
                           No. 20 Aluguntugui Street, Ambassadorial Enclave, East
-                          Legon, Accra, Ghana
-                          +233 20 049 8056 | +233 50 571 5339
+                          Legon, Accra, Ghana +233 20 049 8056 | +233 50 571
+                          5339
                         </span>
                       </div>
                     </div>
@@ -2131,6 +2215,7 @@ function HomePage() {
             </div>
           </div>
         </div>
+
         <div
           id="rec477942951"
           className="r t-rec t-rec_pt_15 t-rec_pb_15"
