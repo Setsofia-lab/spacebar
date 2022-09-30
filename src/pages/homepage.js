@@ -1714,64 +1714,64 @@ function HomePage() {
                       </div>
                     </div>
                     <div className="t-text t-text_md" field="text">
-                <div
-                  style={{ fontSize: "20px", paddingTop: "0%" }}
-                  data-customstyle="yes"
-                >
-                  <span
-                    style={{
-                      fontWeight: 400,
-                      fontFamily: "Montserrat",
-                      color: "rgb(62, 42, 53)",
-                    }}
-                  > <h3> Mush</h3>
-                    "I was planning to host a magazine launch party with zero
-                    idea of how to plan an event. I reached out to spacebar to
-                    help me out and that was the best decision I ever made. They
-                    helped me choose the right venue that suited the theme of my
-                    event and adequately met my budget. And it didn't end there.
-                    Spacebar didn't just get me a venue but their services
-                    catered to all the things that I needed to make my event a
-                    success. There are not enough words to describe how pleased
-                    and happy I am with the work they did. They made the day
-                    absolutely perfect! There was nothing to worry about or
-                    stress over. They were not only professional, they also were
-                    very friendly! 1000/10"
-                  </span>
-                </div>
-              </div>
+                      <div
+                        style={{ fontSize: "20px", paddingTop: "0%" }}
+                        data-customstyle="yes"
+                      >
+                        <span
+                          style={{
+                            fontWeight: 400,
+                            fontFamily: "Montserrat",
+                            color: "rgb(62, 42, 53)",
+                          }}
+                        >
+                          {" "}
+                          
+                          <h3> Mush</h3>
+                          "I was planning to host a magazine launch party with
+                          zero idea of how to plan an event. I reached out to
+                          spacebar to help me out and that was the best decision
+                          I ever made. They helped me choose the right venue
+                          that suited the theme of my event and adequately met
+                          my budget. And it didn't end there. Spacebar didn't
+                          just get me a venue but their services catered to all
+                          the things that I needed to make my event a success.
+                          They made the day absolutely perfect! There was
+                          nothing to worry about or stress over. They were not
+                          only professional, they also were very
+                          friendly! 1000/10"
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-               <div className="t-col t-col_6"> 
-              <div className="t-text t-text_md" field="text">
-                <div
-                  style={{ fontSize: "20px", paddingTop: "6%" }}
-                  data-customstyle="yes"
-                >
-                  <span
-                    style={{
-                      fontWeight: 400,
-                      fontFamily: "Montserrat",
-                      color: "rgb(62, 42, 53)",
-                    }}
-                  > <h3> Odafe</h3>
-                    "I was planning to host a magazine launch party with zero
-                    idea of how to plan an event. I reached out to spacebar to
-                    help me out and that was the best decision I ever made. They
-                    helped me choose the right venue that suited the theme of my
-                    event and adequately met my budget. And it didn't end there.
-                    Spacebar didn't just get me a venue but their services
-                    catered to all the things that I needed to make my event a
-                    success. There are not enough words to describe how pleased
-                    and happy I am with the work they did. They made the day
-                    absolutely perfect! There was nothing to worry about or
-                    stress over. They were not only professional, they also were
-                    very friendly! 1000/10 "
-                  </span>
+              <div className="t-col t-col_6">
+                <div className="t-text t-text_md" field="text">
+                  <div
+                    style={{ fontSize: "20px", paddingTop: "6%" }}
+                    data-customstyle="yes"
+                  >
+                    <span
+                      style={{
+                        fontWeight: 400,
+                        fontFamily: "Montserrat",
+                        color: "rgb(62, 42, 53)",
+                      }}
+                    >
+                      {" "}
+                      <h3> Odafe</h3>
+                      "Working with Spacebar ensured the class trip was a blast.
+                      They helped us pick the venue and even planned fun
+                      activities that the group enjoyed and everyone was talking
+                      about for weeks afterward. They had a knack for providing
+                      minute details that helped the team ultimately decide
+                      better. The trip wouldn't have been a success the way it
+                      was without them! "
+                    </span>
+                  </div>
                 </div>
               </div>
-               </div> 
             </div>
           </div>
         </div>
