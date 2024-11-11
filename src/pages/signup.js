@@ -2,10 +2,8 @@ import React, { createContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/footer";
 import Navbar from "../components/Navbar";
-import { useState, useEffect, useCallback } from "react";
-import { app } from "../utils/firebase";
+import { useState} from "react";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import HomePage from "./homepage";
 import { setUserToState } from "../redux/users";
 import { useDispatch } from "react-redux";
 
@@ -82,7 +80,11 @@ const Signup = ({ history }) => {
           display: submitted ? "" : "none",
         }}
       >
-        <h3> Welcome to spacebar, {name}!</h3>
+        <h6>Thanks for signing up, {name}!</h6>
+        <h6>
+          Browse featured <a href="space">Spaces</a> or Continue to{" "}
+          <a href="/">Homepage</a>
+        </h6>
       </div>
     );
   };
@@ -148,7 +150,6 @@ const Signup = ({ history }) => {
 
               <button
                 onClick={handleSignUp}
-                href="homepage"
                 className="btn"
                 type="submit"
                 style={{

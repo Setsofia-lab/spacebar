@@ -1,12 +1,11 @@
-import React, {useState, useEffect} from "react";
+import React, { useState } from "react";
 import "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/footer";
 import Navbar from "../components/Navbar";
-import {addListing} from "../utils/firebase";
+import { addListing } from "../utils/firebase";
 
 function Listing() {
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -17,73 +16,129 @@ function Listing() {
   const [endDate, setEndDate] = useState("");
   const [info, setInfo] = useState("");
   const [amenities, setAmenities] = useState("");
-  const [images, setImages] = useState("");
+  const [images, setImages] = useState({});
 
+  const navigate = useNavigate();
+  const [submitted, setSubmitted] = useState(false);
 
-   const navigate = useNavigate();
+  const successMessage = () => {
+    return (
+      <div
+        className="success"
+        style={{
+          display: submitted ? "" : "none",
+        }}
+      >
+        <h5>
+          {name}Listing is succefully submitted! Navigate to{" "}
+          <a href="/">HomePage</a>
+        </h5>
+        <h5>
+          Or Browse featured <a href="/space">Spaces</a>
+        </h5>
+      </div>
+    );
+  };
+
+  const errorMessage = () => {
+    return (
+      <div
+        className="error"
+        style={{
+          display: !submitted ? "" : "none",
+        }}
+      >
+        <h6>All fields required.Please fill all fields</h6>
+      </div>
+    );
+  };
+
   return (
     <div>
       <Navbar />
 
       <section id="listing">
-        <div className="container">
-          <div className="row align-items-center">
-            <div className="col-12 section-intro">
-              <div className="hline"></div>
-            </div>
-            <div className="col-lg-4">
-              <img src={require("../images/wedding.jpg")} alt="" />
-            </div>
-            <div className="col-lg-6 offset-lg-1">
-              <h2
-                style={{
-                  textAlign: "left",
-                  fontWeight: "400",
-                  paddingBottom: "2%",
-                }}
-              >
-                How to become a Spacebar host{" "}
-              </h2>
-
-              <h4>List your space for free</h4>
-              <p>
-                Set your price, add photos and details, then your listing is
-                ready to be seen by millions of people searching for space.
-              </p>
-              <h4>Get contacted by spacebar team</h4>
-              <p>
-                Expect a call from spacebar team and discussion on payment and
-                security. Once you confirm, your guests will receive information
-                on how to get there and details like your wifi code.
-              </p>
-              <h4>Get paid every time</h4>
-              <p>
-                Guests are charged upfront through Spacebar's secure payment
-                system. Your payout is directly deposited after each event,
-                minus our 25% service fee.
-              </p>
-            </div>
+        <div
+          className=""
+          style={{
+            height: "610px",
+            backgroundPosition: "center top",
+            backgroundSize: "cover",
+            backgroundColor: "hsla(0, 10%, 20%, 0.3)",
+            backgroundImage:
+              'url("https://images.squarespace-cdn.com/content/v1/5fb2f8c5528c9024dcb915de/1605641581803-2FK6N8Q5GPTPIRPO4XVJ/four-tips-remote-hiring.png?format=1500w")',
+          }}
+        >
+          {" "}
+          <div className="row" style={{ justifyContent: "center" }}>
+            <h1
+              className="text-white"
+              style={{
+                textAlign: "center",
+                paddingTop: "10%",
+                paddingBottom: "2%",
+                fontSize: "62px",
+                fontWeight: "500",
+              }}
+            >
+              {" "}
+              Become a space owner{" "}
+            </h1>
+          </div>
+          <div className="row" style={{ justifyContent: "center" }}>
+            <h1
+              className="text-white"
+              style={{
+                textAlign: "center",
+                paddingBottom: "2%",
+                fontSize: "22px",
+              }}
+            >
+              {" "}
+              Learn how to make extra cash from listing your space
+            </h1>
+            <button
+              // onClick={() => {
+              //   navigate("space");
+              // }}
+              style={{
+                width: "20%",
+                backgroundColor: "#ff5a60",
+                borderRadius: "3px",
+                paddingBottom: "10",
+              }}
+            >
+              {" "}
+              Read Blog{" "}
+            </button>
           </div>
         </div>
       </section>
 
       <section>
-        <div style={{ paddingRight: "20%", paddingLeft: "20%" }}>
+        <div style={{ paddingRight: "30%", paddingLeft: "30%" }}>
           <h1 style={{ fontWeight: "400", paddingBottom: "2%" }}>
             List your space
           </h1>
-
-          <form action="reservation" >
+          {successMessage()}
+          {errorMessage()}
+          <form action="reservation">
+            <h5>Personal details</h5>
             <div className="elem-group">
               <input
                 type="text"
                 id="name"
                 name="name"
-                placeholder="name"
+                placeholder="Name"
                 pattern="[A-Z\sa-z]{3,50}"
-                required
+                required={true}
                 onChange={(event) => {
                   setName(event.target.value);
+                }}
+                style={{
+                  fontFamily: "Source Sans Pro",
+                  borderColor: "#11245a",
+                  borderRadius: "15px",
                 }}
               />
             </div>
@@ -92,10 +147,15 @@ function Listing() {
                 type="email"
                 id="email"
                 name="email"
-                placeholder="abc@email.com"
-                required
+                placeholder="Email"
+                required={true}
                 onChange={(event) => {
                   setEmail(event.target.value);
+                }}
+                style={{
+                  fontFamily: "Source Sans Pro",
+                  borderColor: "#11245a",
+                  borderRadius: "15px",
                 }}
               />
             </div>
@@ -104,14 +164,20 @@ function Listing() {
                 type="tel"
                 id="phone"
                 name="phone"
-                placeholder="000-000-0000"
+                placeholder="Phone Number"
                 pattern="(\d{3})-?\s?(\d{3})-?\s?(\d{4})"
-                required
+                required={true}
                 onChange={(event) => {
                   setPhone(event.target.value);
                 }}
+                style={{
+                  fontFamily: "Source Sans Pro",
+                  borderColor: "#11245a",
+                  borderRadius: "15px",
+                }}
               />
             </div>
+            <h5>Space details</h5>
             <hr></hr>
             <div className="elem-group">
               <input
@@ -120,13 +186,18 @@ function Listing() {
                 name="location"
                 placeholder="Location"
                 pattern="[A-Z\sa-z]{3,50}"
-                required
+                required={true}
                 onChange={(event) => {
                   setLocation(event.target.value);
                 }}
+                style={{
+                  fontFamily: "Source Sans Pro",
+                  borderColor: "#11245a",
+                  borderRadius: "15px",
+                }}
               />
             </div>
-            
+
             <div className="elem-group ">
               <label for="adult">Capacity</label>
               <input
@@ -135,9 +206,14 @@ function Listing() {
                 name="capacity"
                 placeholder=" 100"
                 min="10"
-                required
+                required={true}
                 onChange={(event) => {
                   setCapacity(event.target.value);
+                }}
+                style={{
+                  fontFamily: "Source Sans Pro",
+                  borderColor: "#11245a",
+                  borderRadius: "15px",
                 }}
               />
             </div>
@@ -148,24 +224,50 @@ function Listing() {
                 id="dailyRate"
                 name="dailyRate"
                 placeholder=" GHS 250"
-                required
+                required={true}
                 onChange={(event) => {
                   setDailyrate(event.target.value);
+                }}
+                style={{
+                  fontFamily: "Source Sans Pro",
+                  borderColor: "#11245a",
+                  borderRadius: "15px",
                 }}
               />
             </div>
             <div className="elem-group inlined">
               <label for="start-date">Availability start date</label>
-              <input type="date" id="startDate" name="startDate" required
-               onChange={(event) => {
-                setStartDate(event.target.value);
-              }} />
+              <input
+                type="date"
+                id="startDate"
+                name="startDate"
+                required={true}
+                onChange={(event) => {
+                  setStartDate(event.target.value);
+                }}
+                style={{
+                  fontFamily: "Source Sans Pro",
+                  borderColor: "#11245a",
+                  borderRadius: "15px",
+                }}
+              />
             </div>
             <div className="elem-group inlined">
               <label for="end-date">Availability end date</label>
-              <input type="date" id="endDate" name="endDate" required onChange={(event) => {
+              <input
+                type="date"
+                id="endDate"
+                name="endDate"
+                required={true}
+                onChange={(event) => {
                   setEndDate(event.target.value);
-                }} />
+                }}
+                style={{
+                  fontFamily: "Source Sans Pro",
+                  borderColor: "#11245a",
+                  borderRadius: "15px",
+                }}
+              />
             </div>
             <hr></hr>
             <div className="elem-group">
@@ -174,9 +276,14 @@ function Listing() {
                 id="amenities"
                 name="amenities"
                 placeholder="Washroom,CCTV,BBQ,"
-                required
+                required={true}
                 onChange={(event) => {
                   setAmenities(event.target.value);
+                }}
+                style={{
+                  fontFamily: "Source Sans Pro",
+                  borderColor: "#11245a",
+                  borderRadius: "15px",
                 }}
               ></textarea>
             </div>
@@ -191,9 +298,14 @@ function Listing() {
                 your dreams. We can offer creative set designs and all
                 lighting and grip demands of the most talented and demanding
                 of creatives. One of New York oldest prop-house is 10 ft"
-                required
+                required={true}
                 onChange={(event) => {
                   setInfo(event.target.value);
+                }}
+                style={{
+                  fontFamily: "Source Sans Pro",
+                  borderColor: "#11245a",
+                  borderRadius: "15px",
                 }}
               ></textarea>
             </div>
@@ -204,89 +316,122 @@ function Listing() {
                 type="file"
                 id="images"
                 name="images"
-                style={{ padding: "3%" }}
+                style={{
+                  fontFamily: "Source Sans Pro",
+                  padding: "3%",
+                  borderColor: "#11245a",
+                  borderRadius: "15px",
+                }}
                 onChange={(event) => {
-                  setImages(event.target.value);
+                  console.log(event.target.files[0]);
+                  setImages({ ...images, 0: event.target.files[0] });
                 }}
               />
               <input
                 type="file"
                 id="images"
                 name="images"
-                style={{ padding: "3%" }}
+                style={{
+                  fontFamily: "Source Sans Pro",
+                  padding: "3%",
+                  borderColor: "#11245a",
+                  borderRadius: "15px",
+                }}
                 onChange={(event) => {
-                  setImages(event.target.value);
+                  setImages({ ...images, 1: event.target.files[0] });
                 }}
               />
               <input
                 type="file"
                 id="images"
                 name="images"
-                style={{ padding: "3%" }}
+                style={{
+                  fontFamily: "Source Sans Pro",
+                  padding: "3%",
+                  borderColor: "#11245a",
+                  borderRadius: "15px",
+                }}
                 onChange={(event) => {
-                  setImages(event.target.value);
+                  setImages({ ...images, 2: event.target.files[0] });
                 }}
               />
               <input
                 type="file"
                 id="images"
                 name="images"
-                style={{ padding: "3%" }}
+                style={{
+                  fontFamily: "Source Sans Pro",
+                  padding: "3%",
+                  borderColor: "#11245a",
+                  borderRadius: "15px",
+                }}
                 onChange={(event) => {
-                  setImages(event.target.value);
+                  setImages({ ...images, 3: event.target.files[0] });
                 }}
               />
               <input
                 type="file"
                 id="images"
                 name="images"
-                style={{ padding: "3%" }}
+                style={{
+                  fontFamily: "Source Sans Pro",
+                  padding: "3%",
+                  borderColor: "#11245a",
+                  borderRadius: "15px",
+                }}
                 onChange={(event) => {
-                  setImages(event.target.value);
+                  setImages({ ...images, 4: event.target.files[0] });
                 }}
               />
               <input
                 type="file"
                 id="images"
                 name="images"
-                style={{ padding: "3%" }}
+                style={{
+                  fontFamily: "Source Sans Pro",
+                  padding: "3%",
+                  borderColor: "#11245a",
+                  borderRadius: "15px",
+                }}
                 onChange={(event) => {
-                  setImages(event.target.value);
+                  setImages({ ...images, 5: event.target.files[0] });
                 }}
               />
             </div>
             <button
-            onClick={async (e) => {
-              e.preventDefault();
-              await addListing({
-                name,
-                email,
-                phone,
-                location,
-                capacity,
-                dailyRate,
-                startDate,
-                endDate,
-                amenities,
-                info,
-                images,
-              });
-              navigate("/");
-            }}
+              onClick={async (e) => {
+                e.preventDefault();
+                await addListing({
+                  name,
+                  email,
+                  phone,
+                  location,
+                  capacity,
+                  dailyRate,
+                  startDate,
+                  endDate,
+                  amenities,
+                  info,
+                  images,
+                });
+                setSubmitted(true);
+                //navigate("/");
+              }}
               type="submit"
               className="btn btn-brand"
               style={{
+                fontFamily: "Montserrat",
                 backgroundColor: "#ff5a60",
                 color: "#fff",
-                fontWeight: "500",
-                fontSize: "12px",
+                fontWeight: "bold",
+                fontSize: "16px",
                 textTransform: "uppercase",
                 padding: "12px 28px",
                 borderRadius: "30",
+                width: "100%",
               }}
-              
             >
-               Add Space
+              List Space
             </button>
           </form>
         </div>
@@ -308,7 +453,7 @@ function Listing() {
               </h3>
             </div>
             <div className="col-auto">
-            <a
+              <a
                 href="listing"
                 className="btn btn-light"
                 style={{ color: "#ff5a60" }}

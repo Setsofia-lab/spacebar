@@ -7,9 +7,24 @@ import Navbar from "../components/Navbar";
 import { addBookings } from "../utils/firebase";
 import SimpleImageSlider from "react-simple-image-slider";
 
+// const images = [
+//   {
+//     url:
+//       "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+//   },
+//   {
+//     url:
+//       "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+//   },
+
+//   {
+//     url:
+//       "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+//   },
+// ];
+
 function Booking() {
   const dispatch = useDispatch();
-  // const bookingList = useSelector((state) =>state.booking.value);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -24,16 +39,49 @@ function Booking() {
   const [selectedListing, setSelectedListing] = useState({});
   const { listing, listings } = useSelector((state) => state.users);
 
+  const [submitted, setSubmitted] = useState(false);
+
   useEffect(() => {
     const filteredListing = listings.filter((spaces) => {
       return spaces.name == listing;
     });
     filteredListing.length && setSelectedListing(filteredListing[0]);
   }, []);
-  useEffect(() => {
-    console.log(selectedListing);
-  }, [selectedListing]);
+
   const navigate = useNavigate();
+
+  const successMessage = () => {
+    return (
+      <div
+        className="success"
+        style={{
+          display: submitted ? "" : "none",
+        }}
+      >
+        <h5>
+          {name}Booking is succefully submitted! Navigate to{" "}
+          <a href="https://ourspacebar.tilda.ws/">HomePage</a>
+        </h5>
+        <h5>
+          Or Browse more <a href="/space">Spaces</a>
+        </h5>
+      </div>
+    );
+  };
+
+  const errorMessage = () => {
+    return (
+      <div
+        className="error"
+        style={{
+          display: !submitted ? "" : "none",
+        }}
+      >
+        <h3>Please enter all the fields</h3>
+      </div>
+    );
+  };
+
   return (
     <div>
       <section id="booking">
@@ -49,21 +97,19 @@ function Booking() {
               style={{ marginRight: "25px", marginLeft: "25px" }}
             >
               <div className="row align-items-center">
-                <div className="col-lg-6">
-                  <img
-                    src={selectedListing.images && selectedListing.images[0]}
-                    alt="something"
-                  />
-                  {/* <SimpleImageSlider
-                    width={"100%"}
-                    height={"40vh"}
-                    images={selectedListing.images}
-                    showBullets={true}
-                    showNavs={true}
-                    style={{
-                      position: "relative",
-                    }}
-                  /> */}
+                <div className="col-lg-7">
+                  {selectedListing.images && (
+                    <SimpleImageSlider
+                      width={"100%"}
+                      height={"40vh"}
+                      images={selectedListing.images}
+                      showBullets={true}
+                      showNavs={true}
+                      style={{
+                        position: "relative",
+                      }}
+                    />
+                  )}
 
                   <h4>{selectedListing.name}</h4>
                   <hr></hr>
@@ -73,8 +119,8 @@ function Booking() {
                   <h5>About Space</h5>
                   <p>{selectedListing.description}</p>
                   <hr></hr>
-                  <h5>Rate</h5>
-                  <p>{selectedListing.hourlyRate}GHS/hr</p>
+                  <h5>Daily Rate</h5>
+                  <p>{selectedListing.price}GHS/day</p>
                   <hr></hr>
                   <h5>Availability</h5>
                   <p>24/7</p>
@@ -87,21 +133,21 @@ function Booking() {
                   <hr></hr>
                   <h5>Host Rules</h5>
                   <p>
-                    Guests are charged upfront through Spacebar's secure payment
-                    system. Your payout is directly deposited after each event,
-                    minus our 25% service fee.
+                    Guests are charged upfront . Your payout is directly
+                    deposited after each event, minus our service fee.
                   </p>
                   <hr></hr>
                   <h5>Security and Safety Guidelines</h5>
                   <p>
-                    Guests are charged upfront through Spacebar's secure payment
-                    system. Your payout is directly deposited after each event,
-                    minus our 25% service fee.
+                    The Spacebar Insurance Policy protects hosts for general
+                    liability claims. Every booking made on Spacebar is covered
+                    automatically. Learn more about the Spacebar Insurance
+                    Policy here.
                   </p>
                   <hr></hr>
                 </div>
 
-                <div className="col-lg-6 ">
+                <div className="col-lg-5 ">
                   <div
                     className="container"
                     style={{ marginRight: "25px", marginLeft: "25px" }}
@@ -115,11 +161,16 @@ function Booking() {
                           type="text"
                           id="name"
                           name="name"
-                          placeholder="Sam Spacebar"
+                          placeholder="Name"
                           pattern="[A-Z\sa-z]{3,50}"
-                          required
+                          required={true}
                           onChange={(event) => {
                             setName(event.target.value);
+                          }}
+                          style={{
+                            fontFamily: "Source Sans Pro",
+                            borderColor: "#11245a",
+                            borderRadius: "15px",
                           }}
                         />
                       </div>
@@ -128,10 +179,15 @@ function Booking() {
                           type="email"
                           id="email"
                           name="email"
-                          placeholder="sam@spacebar.com"
-                          required
+                          placeholder="email"
+                          required={true}
                           onChange={(event) => {
                             setEmail(event.target.value);
+                          }}
+                          style={{
+                            fontFamily: "Source Sans Pro",
+                            borderColor: "#11245a",
+                            borderRadius: "15px",
                           }}
                         />
                       </div>
@@ -140,11 +196,16 @@ function Booking() {
                           type="tel"
                           id="phone"
                           name="phone"
-                          placeholder="000-000-0000"
+                          placeholder="Phone Number"
                           pattern="(\d{3})-?\s?(\d{3})-?\s?(\d{4})"
-                          required
+                          required={true}
                           onChange={(event) => {
                             setPhone(event.target.value);
+                          }}
+                          style={{
+                            fontFamily: "Source Sans Pro",
+                            borderColor: "#11245a",
+                            borderRadius: "15px",
                           }}
                         />
                       </div>
@@ -154,9 +215,14 @@ function Booking() {
                         <select
                           id="eventSelection"
                           name="eventSelection"
-                          required
+                          required={true}
                           onChange={(event) => {
                             setEventSelection(event.target.value);
+                          }}
+                          style={{
+                            fontFamily: "Source Sans Pro",
+                            borderColor: "#11245a",
+                            borderRadius: "15px",
                           }}
                         >
                           <option value="">Choose from the List</option>
@@ -183,9 +249,14 @@ function Booking() {
                           name="attendance"
                           placeholder="e.g 100"
                           min="10"
-                          required
+                          required={true}
                           onChange={(event) => {
                             setAttendance(event.target.value);
+                          }}
+                          style={{
+                            fontFamily: "Source Sans Pro",
+                            borderColor: "#11245a",
+                            borderRadius: "15px",
                           }}
                         />
                       </div>
@@ -195,9 +266,14 @@ function Booking() {
                           type="date"
                           id="checkinDate"
                           name="checkinDate"
-                          required
+                          required={true}
                           onChange={(event) => {
                             setCheckinDate(event.target.value);
+                          }}
+                          style={{
+                            fontFamily: "Source Sans Pro",
+                            borderColor: "#11245a",
+                            borderRadius: "15px",
                           }}
                         />
                       </div>
@@ -207,9 +283,14 @@ function Booking() {
                           type="time"
                           id="startTime"
                           name="startTime"
-                          required
+                          required={true}
                           onChange={(event) => {
                             setStartTime(event.target.value);
+                          }}
+                          style={{
+                            fontFamily: "Source Sans Pro",
+                            borderColor: "#11245a",
+                            borderRadius: "15px",
                           }}
                         />
                       </div>
@@ -219,9 +300,14 @@ function Booking() {
                           type="time"
                           id="endTime"
                           name="endTime"
-                          required
+                          required={true}
                           onChange={(event) => {
                             setEndTime(event.target.value);
+                          }}
+                          style={{
+                            fontFamily: "Source Sans Pro",
+                            borderColor: "#11245a",
+                            borderRadius: "15px",
                           }}
                         />
                       </div>
@@ -232,9 +318,14 @@ function Booking() {
                           id="info"
                           name="info"
                           placeholder="Tell us anything else that might be important."
-                          required
+                          required={true}
                           onChange={(event) => {
                             setInfo(event.target.value);
+                          }}
+                          style={{
+                            fontFamily: "Source Sans Pro",
+                            borderColor: "#11245a",
+                            borderRadius: "15px",
                           }}
                         ></textarea>
                       </div>
@@ -253,11 +344,14 @@ function Booking() {
                             info,
                             selectedListing,
                           });
-                          navigate("/space");
+                          setSubmitted(true);
+
+                          // navigate("/space");
                         }}
                         type="submit"
                         className="btn btn-brand"
                         style={{
+                          fontFamily: "Source Sans Pro",
                           backgroundColor: "#ff5a60",
                           color: "#fff",
                           fontWeight: "500",
@@ -265,10 +359,13 @@ function Booking() {
                           textTransform: "uppercase",
                           padding: "12px 28px",
                           borderRadius: "30",
+                          width:"100%"
                         }}
                       >
                         Book
                       </button>
+                      {successMessage()}
+                      {errorMessage()}
                     </form>
                   </div>
                 </div>

@@ -4,7 +4,6 @@ import "./index.css";
 import App from "./App";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
-
 import usersReducer from "./redux/users";
 
 const store = configureStore({
@@ -21,3 +20,7 @@ root.render(
     </Provider>
   </React.StrictMode>
 );
+// ReactDOM.render(
+//   <PaginatedItems itemsPerPage={12} />,
+//   document.getElementById("container")
+// );
